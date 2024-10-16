@@ -10,6 +10,8 @@ class Program
     static void Main(string[] args)
     {
         Challenge clg = new Challenge();
-
-        clg.TestFunction(100);
-    }}
+       
+        
+        clg.TestFunction("Hey fellow warriors");
+    }
+}

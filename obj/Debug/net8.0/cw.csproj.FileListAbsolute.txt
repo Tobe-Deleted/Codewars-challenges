@@ -12,3 +12,4 @@ C:\Users\Olive\Documents\kodehode\cw\obj\Debug\net8.0\refint\cw.dll
 C:\Users\Olive\Documents\kodehode\cw\obj\Debug\net8.0\cw.pdb
 C:\Users\Olive\Documents\kodehode\cw\obj\Debug\net8.0\cw.genruntimeconfig.cache
 C:\Users\Olive\Documents\kodehode\cw\obj\Debug\net8.0\ref\cw.dll
+C:\Users\Olive\Documents\kodehode\cw\obj\Debug\net8.0\cw.sourcelink.json
