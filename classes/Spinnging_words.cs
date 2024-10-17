@@ -1,12 +1,6 @@
-using System.Security.Cryptography.X509Certificates;
 using System;
-using System.Globalization;
-using System.Xml;
-using System.Transactions;
-using Microsoft.VisualBasic;
-using System.Security.AccessControl;
 using System.Collections.Generic;
-using System.Runtime.InteropServices;
+
 public class SpinningWords
 {
     public void SpinWords(string sentence)

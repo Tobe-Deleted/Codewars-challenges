@@ -1,16 +1,16 @@
 ﻿using System.Security.Cryptography;
-/*
-    Jeg har brukt kommentar til å forklare ting som kanskje er litt utenfor 
-    det oppgaven spør om
-*/
+using System;
 namespace Codewars_test;
 
 class Program
 {
     static void Main(string[] args)
     {
-        SpinningWords clg = new SpinningWords();
+        SpinningWords  spnwrd = new SpinningWords();
         //clg.SpinWords("Hey fellow warriors");
-        
+
+        Squared issquare = new Squared();
+        issquare.IsSquare(25);   
+
     }
 }
