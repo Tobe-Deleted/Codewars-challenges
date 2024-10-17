@@ -12,8 +12,8 @@ class Program
         Squared issquare = new Squared();
         //issquare.IsSquare(25);   
 
-        Digital_Root dgrt = new Digital_Root();
-        //dgrt.DigitalRoot(56798);
+        DigitalRoot dgrt = new DigitalRoot();
+        //dgrt.GetDigitalRoot(56798);
 
         MiddleCharacter mdch = new MiddleCharacter();
         //mdch.GetMidChar("testing");
@@ -22,7 +22,6 @@ class Program
         //isgm.IsIsogram("MoOse");
         
         CountingBits cntb = new CountingBits();
-        cntb.HowManyOnes(55);
-
+        Console.WriteLine(cntb.HowManyOnes(55));
     }
 }

@@ -1,11 +1,11 @@
 using System;
 using System.Linq;
-public class CountingBits
+public class CountingBits : ICountingBits
 {
-    public void HowManyOnes(int n)
+    public int HowManyOnes(int n)
     {
         string binary = Convert.ToString(n, 2);
-        binary = binary.Replace("0", "");
-        Console.WriteLine(binary.Count());
+        //count x. return all x that = 1
+        return binary.Count(x => x == '1');
     }
 }
