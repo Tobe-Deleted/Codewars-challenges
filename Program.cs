@@ -9,9 +9,8 @@ class Program
 {
     static void Main(string[] args)
     {
-        Challenge clg = new Challenge();
-       
+        SpinningWords clg = new SpinningWords();
+        //clg.SpinWords("Hey fellow warriors");
         
-        clg.TestFunction("Hey fellow warriors");
     }
 }

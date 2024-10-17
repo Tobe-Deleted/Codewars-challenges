@@ -7,9 +7,9 @@ using Microsoft.VisualBasic;
 using System.Security.AccessControl;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
-public class Challenge
+public class SpinningWords
 {
-    public void TestFunction(string sentence)
+    public void SpinWords(string sentence)
     {   
         char[] chArr;
         string temp = "";
