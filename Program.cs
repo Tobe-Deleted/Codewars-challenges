@@ -19,8 +19,10 @@ class Program
         //mdch.GetMidChar("testing");
         
         Isograms isgm = new Isograms();
-        isgm.IsIsogram("MoOse");
-        isgm.IsIsogram("fisk");
+        //isgm.IsIsogram("MoOse");
+        
+        CountingBits cntb = new CountingBits();
+        cntb.HowManyOnes(55);
 
     }
 }
