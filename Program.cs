@@ -10,7 +10,9 @@ class Program
         //clg.SpinWords("Hey fellow warriors");
 
         Squared issquare = new Squared();
-        issquare.IsSquare(25);   
+        //issquare.IsSquare(25);   
+        Digital_Root dgrt = new Digital_Root();
+        dgrt.DigitalRoot(56798);
 
     }
 }
