@@ -16,8 +16,11 @@ class Program
         //dgrt.DigitalRoot(56798);
 
         MiddleCharacter mdch = new MiddleCharacter();
-        mdch.GetMidChar("testing");
-        mdch.GetMidChar("test");
+        //mdch.GetMidChar("testing");
+        
+        Isograms isgm = new Isograms();
+        isgm.IsIsogram("MoOse");
+        isgm.IsIsogram("fisk");
 
     }
 }
