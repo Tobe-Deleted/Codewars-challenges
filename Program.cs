@@ -6,22 +6,18 @@ class Program
 {
     static void Main(string[] args)
     {
-        SpinningWords  spnwrd = new SpinningWords();
-        //clg.SpinWords("Hey fellow warriors");
+        EightKyu kyu8 = new EightKyu();
+        //Console.WriteLine(kyu8.Litres(11.8));
 
-        Squared issquare = new Squared();
-        //issquare.IsSquare(25);   
-
-        DigitalRoot dgrt = new DigitalRoot();
-        //dgrt.GetDigitalRoot(56798);
-
-        MiddleCharacter mdch = new MiddleCharacter();
-        //mdch.GetMidChar("testing");
         
-        Isograms isgm = new Isograms();
-        //isgm.IsIsogram("MoOse");
+        SevenKyu kyu7 = new SevenKyu();
+        //kyu7.IsIsogram("MoOse");
+        //kyu7.GetMidChar("testing");
+        //kyu7.IsSquare(25);
         
-        CountingBits cntb = new CountingBits();
-        Console.WriteLine(cntb.HowManyOnes(55));
+        SixKyu kyu6 = new SixKyu();
+        //Console.WriteLine(kyu6.HowManyOnes(55));
+        //kyu6.GetDigitalRoot(56798);
+        //kyu6.SpinWords("Hey fellow warriors");
     }
 }

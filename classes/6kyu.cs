@@ -1,8 +1,22 @@
 using System;
-using System.Collections.Generic;
-
-public class SpinningWords
+using System.Linq;
+public class SixKyu : I6kyu
 {
+    public int HowManyOnes(int n)
+    {
+        string binary = Convert.ToString(n, 2);
+        //count x. return all x that = 1
+        return binary.Count(x => x == '1');
+    }
+
+
+    public void GetDigitalRoot(long n)
+    {
+        //convert unecessary unless required to return int
+        if (n == 0 || n % 9 != 0) Console.WriteLine(Convert.ToInt32(n % 9));
+        else Console.WriteLine(9);
+    }
+
     public void SpinWords(string sentence)
     {   
         char[] chArr;
