@@ -18,4 +18,11 @@ public interface I6kyu
     /// </summary>
     /// <param name="sentence"></param>
     public void SpinWords(string sentence);
+
+    /// <summary>
+    /// counts how many distinct characters have duplicates
+    /// </summary>
+    /// <param name="str"></param>
+    /// <returns> integer result</returns>
+    public int DuplicateCount(string str);
 }

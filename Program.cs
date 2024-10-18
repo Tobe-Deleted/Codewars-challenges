@@ -19,5 +19,6 @@ class Program
         //Console.WriteLine(kyu6.HowManyOnes(55));
         //kyu6.GetDigitalRoot(56798);
         //kyu6.SpinWords("Hey fellow warriors");
+        Console.WriteLine(kyu6.DuplicateCount("fisk i øret ned elven"));
     }
 }

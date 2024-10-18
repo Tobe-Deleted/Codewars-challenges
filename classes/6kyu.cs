@@ -40,4 +40,25 @@ public class SixKyu : I6kyu
         foreach(string stri in words)Console.WriteLine(stri);
     }
 
+    public int DuplicateCount(string str)
+    {
+        str = str.ToLower();
+        int count = 0;
+        string newStr;
+        string check = "";
+        foreach(char ch in str)
+        {
+            if (ch != '*')
+            {
+                newStr = str.Remove(str.IndexOf(ch), 1);
+                if (newStr.Contains(ch) ^ check.Contains(ch)) 
+                {
+                    count++;
+                    check += Convert.ToString(ch);
+                }
+            }
+        }
+
+        return count;
+  }
 }
