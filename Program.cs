@@ -1,5 +1,6 @@
 ﻿using System.Security.Cryptography;
 using System;
+using System.Runtime.InteropServices;
 namespace Codewars_test;
 
 class Program
@@ -19,6 +20,11 @@ class Program
         //Console.WriteLine(kyu6.HowManyOnes(55));
         //kyu6.GetDigitalRoot(56798);
         //kyu6.SpinWords("Hey fellow warriors");
-        Console.WriteLine(kyu6.DuplicateCount("fisk i øret ned elven"));
+        //Console.WriteLine(kyu6.DuplicateCount("fisk i øret ned elven"));
+
+        FiveKyu kyu5 = new FiveKyu();
+        int[] arr = {1, 0, 2, 0, 1, 0, 1, 0, 3, 1};
+        kyu5.MoveZeroes(arr);
+
     }
 }
