@@ -1,3 +1,4 @@
+using System.Linq;
 public class SevenKyu : I7kyu
 {
     public void IsIsogram(string str)
@@ -29,4 +30,13 @@ public class SevenKyu : I7kyu
         Console.WriteLine(Math.Sqrt(n) % 1 == 0);
     }
 
+    public bool XandO(string input)
+    {
+        
+        if(input.ToLower().Count(x => x == 'x') == input.ToLower().Count(o => o == 'o') )
+        {
+        return true;
+        }
+        return false;
+    }
 }

@@ -15,16 +15,18 @@ class Program
         //kyu7.IsIsogram("MoOse");
         //kyu7.GetMidChar("testing");
         //kyu7.IsSquare(25);
+        Console.WriteLine(kyu7.XandO("xmXmoo"));
         
         SixKyu kyu6 = new SixKyu();
         //Console.WriteLine(kyu6.HowManyOnes(55));
         //kyu6.GetDigitalRoot(56798);
         //kyu6.SpinWords("Hey fellow warriors");
-        //Console.WriteLine(kyu6.DuplicateCount("fisk i øret ned elven"));
+        //Console.WriteLine(kyu6.DuplicateCount("bro bro brille klokken ringer elleve"));
 
         FiveKyu kyu5 = new FiveKyu();
-        int[] arr = {1, 0, 2, 0, 1, 0, 1, 0, 3, 1};
-        kyu5.MoveZeroes(arr);
+        /*int[] arr = {1, 0, 2, 0, 1, 0, 1, 0, 3, 1};
+        kyu5.MoveZeroes(arr);*/
+
 
     }
 }
