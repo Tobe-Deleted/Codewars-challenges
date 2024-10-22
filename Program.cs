@@ -18,7 +18,9 @@ class Program
         //Console.WriteLine(kyu7.XandO("xmXmoo"));
         //Console.WriteLine(kyu7.ToJadenCase("fiskene svømmer forbi i full faRt"));
         //Console.WriteLine(kyu7.ShortWordLength("dette kan ikke fiskene huske"));
-        Console.WriteLine(kyu7.Accumul("abcde"));
+        //Console.WriteLine(kyu7.Accumul("abcde"));
+        //Console.WriteLine(kyu7.Solution("abc", "bc"));
+        Console.WriteLine(kyu7.MakeComplement("ATGC"));
         
         SixKyu kyu6 = new SixKyu();
         //Console.WriteLine(kyu6.HowManyOnes(55));

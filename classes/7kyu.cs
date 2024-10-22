@@ -82,4 +82,24 @@ public class SevenKyu : I7kyu
         }
         return myTI.ToTitleCase(result);
     }
+
+    public bool Solution(string str, string ending) //=> str.EndsWith(ending)
+    {
+        if (str.Length < ending.Length) return false;
+        str = str.Remove(0, str.Length - ending.Length);
+        return str.Contains(ending);
+    }
+
+    public string MakeComplement(string dna)
+    {
+        string dnaNew = "";
+        foreach (char ch in dna)
+        {
+            if (ch == 'T')dnaNew += "A";
+            if (ch == 'A')dnaNew += "T";
+            if (ch == 'C')dnaNew += "G";
+            if (ch == 'G')dnaNew += "C";
+        }
+        return dnaNew;
+    }
 }

@@ -47,4 +47,20 @@ public interface I7kyu
 /// <param name="s"></param>
 /// <returns>string where each char is put in x times where x = IndexOf(char +1)</returns>
     public string Accumul(string s);
+
+/// <summary>
+/// checks if str ends with ending
+/// </summary>
+/// <param name="str"></param>
+/// <param name="ending"></param>
+/// <returns>true or false</returns>
+    public bool Solution(string str, string ending);
+
+
+/// <summary>
+/// returns the opposite DNA A = T, C = G and reversed
+/// </summary>
+/// <param name="dna"></param>
+/// <returns>string</returns>
+    public string MakeComplement(string dna);
 }
