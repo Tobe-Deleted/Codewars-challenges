@@ -3,6 +3,7 @@ using System.Linq;
 using System.Globalization;
 using System.Collections.Generic;
 using System.Xml.XPath;
+using System.Diagnostics.Metrics;
 public class SevenKyu : I7kyu
 {
     public void IsIsogram(string str)
@@ -65,5 +66,20 @@ public class SevenKyu : I7kyu
             if (str.Length < result || result == 0) result = str.Length;
         }
         return result;
+    }
+
+    public string Accumul(string s)
+    {
+        s = s.ToLower();
+        TextInfo myTI = new CultureInfo("en-US",false).TextInfo;
+        int counter = 0;
+        string result = "";
+        foreach (char ch in s)
+        {
+            counter++;
+            for (int i = 0; i < counter; i++) result += ch;
+            if(counter < s.Length)result+= "-";
+        }
+        return myTI.ToTitleCase(result);
     }
 }

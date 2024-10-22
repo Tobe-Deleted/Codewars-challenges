@@ -40,4 +40,11 @@ public interface I7kyu
 /// <param name="s"></param>
 /// <returns>int = length of shortest word</returns>
     public int ShortWordLength(string s);
+
+/// <summary>
+/// Returns each char x amount of times where x is position of char
+/// </summary>
+/// <param name="s"></param>
+/// <returns>string where each char is put in x times where x = IndexOf(char +1)</returns>
+    public string Accumul(string s);
 }
