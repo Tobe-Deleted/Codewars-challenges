@@ -15,7 +15,9 @@ class Program
         //kyu7.IsIsogram("MoOse");
         //kyu7.GetMidChar("testing");
         //kyu7.IsSquare(25);
-        Console.WriteLine(kyu7.XandO("xmXmoo"));
+        //Console.WriteLine(kyu7.XandO("xmXmoo"));
+        //Console.WriteLine(kyu7.ToJadenCase("fiskene svømmer forbi i full faRt"));
+        Console.WriteLine(kyu7.ShortWordLength("dette kan ikke fiskene huske"));
         
         SixKyu kyu6 = new SixKyu();
         //Console.WriteLine(kyu6.HowManyOnes(55));
