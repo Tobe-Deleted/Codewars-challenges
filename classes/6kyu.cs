@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Linq;
 public class SixKyu : I6kyu
 {
@@ -113,6 +114,23 @@ public class SixKyu : I6kyu
         if (result != "")result = result.Remove(result.Length - 1, 1);
         return result;
 
+    }
+
+    public bool ValidWalk(string[] walk)
+    {
+        if (walk.Length != 10) return false;
+        int w = 0;
+        int e = 0;
+        int s = 0;
+        int n = 0;
+        foreach (string str in walk)
+        {
+            if (str == "s")s++;
+            if (str == "n")n++;
+            if (str == "w")w++;
+            if (str == "e")e++;
+        }
+        return s == n && w == e;
     }
 
 }

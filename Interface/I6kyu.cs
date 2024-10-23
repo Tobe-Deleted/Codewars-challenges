@@ -40,4 +40,11 @@ public interface I6kyu
 /// <param name="arr"></param>
 /// <returns>int = first odd/even number</returns>
     public int ParityOutlier(int[] arr);
+
+/// <summary>
+/// Will take in string and replace all letters with their corresponding number in the alphabet
+/// </summary>
+/// <param name="text"></param>
+/// <returns></returns>
+    public string ReplaceWithAlphabetPosition(string text);
 }

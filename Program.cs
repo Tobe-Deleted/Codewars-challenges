@@ -33,7 +33,9 @@ class Program
         //Console.WriteLine(kyu6.DuplicateEncoder("rEcede"));
         //int[] arr = {2, 2, 12, 5, 6, 2};
         //Console.WriteLine(kyu6.ParityOutlier(arr));
-        Console.WriteLine(kyu6.ReplaceWithAlphabetPosition("555"));
+        //Console.WriteLine(kyu6.ReplaceWithAlphabetPosition("555"));
+        string[] arr = {"n","s","n","s","n","s","n","s","n","w"};
+        Console.WriteLine(kyu6.ValidWalk(arr));
 
         FiveKyu kyu5 = new FiveKyu();
         /*int[] arr = {1, 0, 2, 0, 1, 0, 1, 0, 3, 1};
