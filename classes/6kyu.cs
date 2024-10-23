@@ -60,10 +60,10 @@ public class SixKyu : I6kyu
         }
 
         return count;
-  }
+    }
 
-  public string DuplicateEncoder(string word)
-  {
+    public string DuplicateEncoder(string word)
+    {
     word = word.ToLower();
     string encodedWord = "";
     string check = "";
@@ -74,10 +74,11 @@ public class SixKyu : I6kyu
         else encodedWord += "(";
     }
     return encodedWord;
-  }
+    }
 
-  public int ParityOutlier(int[] arr)
-  {
+    public int ParityOutlier(int[] arr)
+    {
+    // could use GroupBy(x => x%2, x => x) instead
     int odd = 0;
     int even = 0;
     for (int i = 0; i < 3; i++)
@@ -97,5 +98,6 @@ public class SixKyu : I6kyu
         if (a % 2 != 0) return a;
     }
     return 0;
-  }
+    }
+
 }

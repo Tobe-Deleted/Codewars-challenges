@@ -23,6 +23,7 @@ class Program
         //Console.WriteLine(kyu7.MakeComplement("ATGC"));
         //int[] arr = {5, 22, 55, 40, 2, 6};
         //Console.WriteLine(kyu7.SumOfTwoSmallestNumbers(arr));
+        Console.WriteLine(kyu7.GetSum(1, 15));
         
         SixKyu kyu6 = new SixKyu();
         //Console.WriteLine(kyu6.HowManyOnes(55));
@@ -30,8 +31,8 @@ class Program
         //kyu6.SpinWords("Hey fellow warriors");
         //Console.WriteLine(kyu6.DuplicateCount("bro bro brille klokken ringer elleve"));
         //Console.WriteLine(kyu6.DuplicateEncoder("rEcede"));
-        int[] arr = {2, 2, 12, 5, 6, 2};
-        Console.WriteLine(kyu6.ParityOutlier(arr));
+        //int[] arr = {2, 2, 12, 5, 6, 2};
+        //Console.WriteLine(kyu6.ParityOutlier(arr));
 
         FiveKyu kyu5 = new FiveKyu();
         /*int[] arr = {1, 0, 2, 0, 1, 0, 1, 0, 3, 1};

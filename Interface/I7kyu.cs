@@ -70,4 +70,12 @@ public interface I7kyu
 /// <param name="numbers"></param>
 /// <returns>int = sum of two smallest numbers</returns>
     public int SumOfTwoSmallestNumbers(int[] numbers);
+
+/// <summary>
+/// Takes in two integers and adds them and every whole number in between together.
+/// </summary>
+/// <param name="a"></param>
+/// <param name="b"></param>
+/// <returns>sum of every int between a and b</returns>
+    public int GetSum(int a, int b);
 }
