@@ -125,7 +125,6 @@ public class SevenKyu : I7kyu
 
     public int GetSum(int a, int b)
     {
-        if (a == b) return a;
         int c = 0;
         for (int i = Math.Min(a, b); i <= Math.Max(a, b); i++)
         {

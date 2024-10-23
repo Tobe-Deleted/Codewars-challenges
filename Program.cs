@@ -23,7 +23,7 @@ class Program
         //Console.WriteLine(kyu7.MakeComplement("ATGC"));
         //int[] arr = {5, 22, 55, 40, 2, 6};
         //Console.WriteLine(kyu7.SumOfTwoSmallestNumbers(arr));
-        Console.WriteLine(kyu7.GetSum(1, 15));
+        //Console.WriteLine(kyu7.GetSum(1, 15));
         
         SixKyu kyu6 = new SixKyu();
         //Console.WriteLine(kyu6.HowManyOnes(55));
