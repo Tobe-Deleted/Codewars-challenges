@@ -61,4 +61,18 @@ public class SixKyu : I6kyu
 
         return count;
   }
+
+  public string DuplicateEncoder(string word)
+  {
+    word = word.ToLower();
+    string encodedWord = "";
+    string check = "";
+    foreach (char ch in word)
+    {
+        check = word.Remove(word.IndexOf(ch), 1);
+        if (check.Contains(ch)) encodedWord += ")";
+        else encodedWord += "(";
+    }
+    return encodedWord;
+  }
 }

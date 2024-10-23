@@ -25,4 +25,12 @@ public interface I6kyu
     /// <param name="str"></param>
     /// <returns> integer result</returns>
     public int DuplicateCount(string str);
+
+/// <summary>
+/// Encodes a string turning characters only occuring once into ( 
+/// and characters with multiple occurances into )
+/// </summary>
+/// <param name="word"></param>
+/// <returns>string with word encoded</returns>
+    public string DuplicateEncoder(string word);
 }

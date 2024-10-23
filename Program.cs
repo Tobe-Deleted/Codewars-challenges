@@ -21,14 +21,15 @@ class Program
         //Console.WriteLine(kyu7.Accumul("abcde"));
         //Console.WriteLine(kyu7.Solution("abc", "bc"));
         //Console.WriteLine(kyu7.MakeComplement("ATGC"));
-        int[] arr = {5, 22, 55, 40, 2, 6};
-        Console.WriteLine(kyu7.SumOfTwoSmallestNumbers(arr));
+        //int[] arr = {5, 22, 55, 40, 2, 6};
+        //Console.WriteLine(kyu7.SumOfTwoSmallestNumbers(arr));
         
         SixKyu kyu6 = new SixKyu();
         //Console.WriteLine(kyu6.HowManyOnes(55));
         //kyu6.GetDigitalRoot(56798);
         //kyu6.SpinWords("Hey fellow warriors");
         //Console.WriteLine(kyu6.DuplicateCount("bro bro brille klokken ringer elleve"));
+        Console.WriteLine(kyu6.DuplicateEncoder("rEcede"));
 
         FiveKyu kyu5 = new FiveKyu();
         /*int[] arr = {1, 0, 2, 0, 1, 0, 1, 0, 3, 1};
