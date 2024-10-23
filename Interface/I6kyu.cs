@@ -33,4 +33,11 @@ public interface I6kyu
 /// <param name="word"></param>
 /// <returns>string with word encoded</returns>
     public string DuplicateEncoder(string word);
+
+/// <summary>
+/// Takes in an int array and returns the first number that doesn't fit
+/// </summary>
+/// <param name="arr"></param>
+/// <returns>int = first odd/even number</returns>
+    public int ParityOutlier(int[] arr);
 }

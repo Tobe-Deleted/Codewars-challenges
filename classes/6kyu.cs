@@ -75,4 +75,27 @@ public class SixKyu : I6kyu
     }
     return encodedWord;
   }
+
+  public int ParityOutlier(int[] arr)
+  {
+    int odd = 0;
+    int even = 0;
+    for (int i = 0; i < 3; i++)
+    {
+        if (arr[i] % 2 == 0) even++;
+        else odd++;
+    }
+    if (odd > even)
+    {
+        foreach(int a in arr)
+        {
+            if (a % 2 == 0) return a;
+        }
+    }
+    foreach (int a in arr)
+    {
+        if (a % 2 != 0) return a;
+    }
+    return 0;
+  }
 }

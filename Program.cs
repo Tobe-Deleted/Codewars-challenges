@@ -29,7 +29,9 @@ class Program
         //kyu6.GetDigitalRoot(56798);
         //kyu6.SpinWords("Hey fellow warriors");
         //Console.WriteLine(kyu6.DuplicateCount("bro bro brille klokken ringer elleve"));
-        Console.WriteLine(kyu6.DuplicateEncoder("rEcede"));
+        //Console.WriteLine(kyu6.DuplicateEncoder("rEcede"));
+        int[] arr = {2, 2, 12, 5, 6, 2};
+        Console.WriteLine(kyu6.ParityOutlier(arr));
 
         FiveKyu kyu5 = new FiveKyu();
         /*int[] arr = {1, 0, 2, 0, 1, 0, 1, 0, 3, 1};
