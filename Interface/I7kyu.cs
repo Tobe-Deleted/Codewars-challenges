@@ -63,4 +63,11 @@ public interface I7kyu
 /// <param name="dna"></param>
 /// <returns>string</returns>
     public string MakeComplement(string dna);
+
+/// <summary>
+/// Takes in an int array and prints out the sum of the two smallest numbers
+/// </summary>
+/// <param name="numbers"></param>
+/// <returns>int = sum of two smallest numbers</returns>
+    public int SumOfTwoSmallestNumbers(int[] numbers);
 }

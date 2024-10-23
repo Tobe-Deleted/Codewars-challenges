@@ -102,4 +102,24 @@ public class SevenKyu : I7kyu
         }
         return dnaNew;
     }
+
+    public int SumOfTwoSmallestNumbers(int[] numbers)
+    {
+        //Et lettere alternativ:
+        //return numbers.OrderBy(i => i).Take(2).Sum();
+        int a = int.MaxValue;
+        int b = int.MaxValue;
+
+        for(int i = 0; i < numbers.Length; i++)
+        {
+            if (numbers[i] < a) a = numbers[i];
+            if (numbers[i] < b && numbers[i] != a) b = numbers[i];
+        }
+        for(int i = 0; i < numbers.Length; i++)
+        {
+            if (numbers[i] < a) a = numbers[i];
+            if (numbers[i] < b && numbers[i] != a) b = numbers[i];
+        }
+        return a + b;
+    }
 }

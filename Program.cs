@@ -20,7 +20,9 @@ class Program
         //Console.WriteLine(kyu7.ShortWordLength("dette kan ikke fiskene huske"));
         //Console.WriteLine(kyu7.Accumul("abcde"));
         //Console.WriteLine(kyu7.Solution("abc", "bc"));
-        Console.WriteLine(kyu7.MakeComplement("ATGC"));
+        //Console.WriteLine(kyu7.MakeComplement("ATGC"));
+        int[] arr = {5, 22, 55, 40, 2, 6};
+        Console.WriteLine(kyu7.SumOfTwoSmallestNumbers(arr));
         
         SixKyu kyu6 = new SixKyu();
         //Console.WriteLine(kyu6.HowManyOnes(55));
