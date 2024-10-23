@@ -100,4 +100,19 @@ public class SixKyu : I6kyu
     return 0;
     }
 
+    public string ReplaceWithAlphabetPosition(string text)
+    {
+        //stor A i alphaet for å flytte alle bokstavene til riktig index#
+        string alphabet = "Aabcdefghijklmnopqrstuvwxyz";
+        string result = "";
+        text = text.ToLower();
+        foreach (char ch in text)
+        {
+            if(alphabet.Contains(ch))result += alphabet.IndexOf(ch) + " ";
+        }
+        if (result != "")result = result.Remove(result.Length - 1, 1);
+        return result;
+
+    }
+
 }
