@@ -47,4 +47,10 @@ public interface I6kyu
 /// <param name="text"></param>
 /// <returns></returns>
     public string ReplaceWithAlphabetPosition(string text);
+
+/// <summary>
+/// Checking if a walk will take 10 minutes and return you to the starting point
+/// </summary>
+/// <returns>false || true</returns>
+    public bool ValidWalk();
 }
