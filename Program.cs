@@ -36,7 +36,9 @@ class Program
         //Console.WriteLine(kyu6.ReplaceWithAlphabetPosition("555"));
         //string[] arr = {"n","s","n","s","n","s","n","s","n","w"};
         //Console.WriteLine(kyu6.ValidWalk(arr));
-        Console.WriteLine(kyu6.Persistence(39));
+        //Console.WriteLine(kyu6.Persistence(39));
+        Console.WriteLine(kyu6.CamelCase("the-StEalth_warrior_talks"));
+        
 
         FiveKyu kyu5 = new FiveKyu();
         /*int[] arr = {1, 0, 2, 0, 1, 0, 1, 0, 3, 1};

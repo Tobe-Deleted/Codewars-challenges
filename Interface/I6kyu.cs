@@ -60,4 +60,12 @@ public interface I6kyu
 /// <param name="n"></param>
 /// <returns>int number of processes needed to reach 1 digit</returns>
     public int Persistence(long n);
+
+/// <summary>
+/// Takes in string where words are seperated by _ or - and converts it to camel case
+/// If first letter is capital during input, it converts sentence to Pascal case
+/// </summary>
+/// <param name="str"></param>
+/// <returns>One word string where each word which is either camel case or pascal case</returns>
+    public string CamelCase(string str);
 }

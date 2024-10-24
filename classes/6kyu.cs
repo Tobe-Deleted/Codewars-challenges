@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Linq;
+using System.Globalization;
 public class SixKyu : I6kyu
 {
     public int HowManyOnes(int n)
@@ -149,5 +150,17 @@ public class SixKyu : I6kyu
             result++;
         }
         return result;
+    }
+
+    public string CamelCase(string str)
+    {
+        if (str == "") return "";
+        TextInfo myTI = new CultureInfo("en-US",false).TextInfo;
+        return str[0] + myTI
+            .ToTitleCase(str.Replace("-", " ")
+                            .Replace("_", " "))
+            .Remove(0, 1)
+            .Replace(" ", "");
+        
     }
 }
