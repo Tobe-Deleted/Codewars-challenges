@@ -52,5 +52,12 @@ public interface I6kyu
 /// Checking if a walk will take 10 minutes and return you to the starting point
 /// </summary>
 /// <returns>false || true</returns>
-    public bool ValidWalk();
+    public bool ValidWalk(string[] walk);
+
+/// <summary>
+/// Takes in a number and multiplies each digit with each other until it is left with only  1 digit
+/// </summary>
+/// <param name="n"></param>
+/// <returns>int number of processes needed to reach 1 digit</returns>
+    public int Persistence(long n);
 }

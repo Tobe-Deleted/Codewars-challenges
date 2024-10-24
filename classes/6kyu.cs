@@ -133,4 +133,21 @@ public class SixKyu : I6kyu
         return s == n && w == e;
     }
 
+    public int Persistence(long n)
+    {
+        int calc = 1;
+        int result = 0;
+        //Kan bruke (n > 9) for while loop
+        while (n.ToString().Length > 1)
+        {
+            foreach (char ch in n.ToString())
+            {
+                calc *= int.Parse(ch.ToString());
+            }
+            n = calc;
+            calc = 1;
+            result++;
+        }
+        return result;
+    }
 }
