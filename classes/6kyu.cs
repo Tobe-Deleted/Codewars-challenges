@@ -161,6 +161,5 @@ public class SixKyu : I6kyu
                             .Replace("_", " "))
             .Remove(0, 1)
             .Replace(" ", "");
-        
     }
 }

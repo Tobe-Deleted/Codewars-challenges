@@ -37,13 +37,15 @@ class Program
         //string[] arr = {"n","s","n","s","n","s","n","s","n","w"};
         //Console.WriteLine(kyu6.ValidWalk(arr));
         //Console.WriteLine(kyu6.Persistence(39));
-        Console.WriteLine(kyu6.CamelCase("the-StEalth_warrior_talks"));
+        //Console.WriteLine(kyu6.CamelCase("the-StEalth_warrior_talks"));
         
 
         FiveKyu kyu5 = new FiveKyu();
         /*int[] arr = {1, 0, 2, 0, 1, 0, 1, 0, 3, 1};
         kyu5.MoveZeroes(arr);*/
 
+        FourKyu kyu4 = new FourKyu();
+        Console.WriteLine(kyu4.FindMissingDigit("-?56373--9216=-?47157")); //8
 
     }
 }
