@@ -132,4 +132,15 @@ public class SevenKyu : I7kyu
         }
         return c;
     }
+
+    public IEnumerable<string> FriendOrFoe(string[] names)
+    {
+        List<string> l = new List<string>{};
+        foreach (string str in names)
+        {
+            if (str.Length == 4) l.Add(str);
+        }
+        return l;
+        //return names.Where(names => names.Length == 4); bedre løsning
+    }
 }
