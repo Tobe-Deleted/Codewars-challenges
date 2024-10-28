@@ -6,7 +6,6 @@ public class FourKyu
 {
     public int FindMissingDigit(string expression)
     {
-        Console.WriteLine(expression);
         if (expression == "") return -1;
         bool isFirstZero = true;
         int a = 0; int b = 0; int c = 0;
@@ -43,9 +42,10 @@ public class FourKyu
                         isFirstZero = false;
                         string[] strArr = expression.Insert(expression.IndexOf('-', 
                                                             expression.IndexOf('-') + 1), "=")
+                                                    .Remove(expression.IndexOf('-',
+                                                            expression.IndexOf('-') + 1) + 1, 1)
                                                     .Replace('?', Convert.ToChar(Convert.ToString(i)))
                                                     .Split('=');
-                        strArr[1] = strArr[1].Remove(0, 1);
 
                         if (strArr[0][0] == '-' && strArr[0][1] == '0' || 
                             strArr[1][0] == '-' && strArr[1][1] == '0' ||
@@ -70,9 +70,9 @@ public class FourKyu
                     {
                         isFirstZero = false;
                         string[] strArr = expression.Insert(expression.IndexOf('-'), "=")
+                                                    .Remove(expression.IndexOf('-') +1, 1)
                                                     .Replace('?', Convert.ToChar(Convert.ToString(i)))
                                                     .Split('=');
-                        strArr[1] = strArr[1].Remove(0, 1);
                         
                         if (strArr[0][0] == '-' && strArr[0][1] == '0' || 
                             strArr[1][0] == '-' && strArr[1][1] == '0' ||
@@ -94,9 +94,9 @@ public class FourKyu
             }
             if(!expression.Contains($"{i}"))
             {
-                if(a + b == c && expression.Contains('+')) return i;
-                if(a * b == c && expression.Contains('*')) return i;
-                if(a - b == c && expression.Contains('-')) return i;
+                if (a + b == c && expression.Contains('+') ||
+                    a * b == c && expression.Contains('*') ||
+                    a - b == c && expression.Contains('-')) return i;
             }
             isFirstZero = true;
         }
