@@ -6,19 +6,33 @@ public class FourKyu
 {
     public int FindMissingDigit(string expression)
     {
+        Console.WriteLine(expression);
         if (expression == "") return -1;
         bool isFirstZero = true;
-        int a; int b; int c;
+        int a = 0; int b = 0; int c = 0;
         for(int i = 0; i <10; i++)
         {
             if (expression.Contains('+') || expression.Contains('*'))
-            { 
-                string[] strArr = expression.Replace('?', Convert.ToChar(
-                                                            Convert.ToString(i)))
+                { 
+                while (isFirstZero)
+                {
+                    isFirstZero = false;
+                    string[] strArr = expression.Replace('?', Convert.ToChar(
+                                                                Convert.ToString(i)))
                                                 .Split('*', '=', '+');
-                a = Convert.ToInt32(strArr[0]);
-                b = Convert.ToInt32(strArr[1]);
-                c = Convert.ToInt32(strArr[2]);
+
+                    if (strArr[0][0] == '0' && strArr[0].Length > 1||
+                        strArr[1][0] == '0' && strArr[1].Length > 1||
+                        strArr[2][0] == '0' && strArr[2].Length > 1)
+                    {
+                        isFirstZero = true;
+                        i++;
+                        if(i > 9) return -1;
+                    }
+                    a = Convert.ToInt32(strArr[0]);
+                    b = Convert.ToInt32(strArr[1]);
+                    c = Convert.ToInt32(strArr[2]);
+                }
             }
             else
             {
@@ -30,19 +44,19 @@ public class FourKyu
                         string[] strArr = expression.Insert(expression.IndexOf('-', 
                                                             expression.IndexOf('-') + 1), "=")
                                                     .Replace('?', Convert.ToChar(Convert.ToString(i)))
-                                                    .Remove(expression.IndexOf('-', 
-                                                            expression.IndexOf('-') + 1))
                                                     .Split('=');
+                        strArr[1] = strArr[1].Remove(0, 1);
 
-                        if ( strArr[0][0] == '-' && strArr[0][1] == '0' || 
-                             strArr[1][1] == '-' && strArr[0][1] == '0' ||
-                             strArr[2][0] == '-' && strArr[2][1] == '0' ||
-                             strArr[0][0] == '0' ||
-                             strArr[1][0] == '0' ||
-                             strArr[2][0] == '0')
+                        if (strArr[0][0] == '-' && strArr[0][1] == '0' || 
+                            strArr[1][0] == '-' && strArr[1][1] == '0' ||
+                            strArr[2][0] == '-' && strArr[2][1] == '0' ||
+                            strArr[0][0] == '0' && strArr[0].Length > 1||
+                            strArr[1][0] == '0' && strArr[1].Length > 1||
+                            strArr[2][0] == '0' && strArr[2].Length > 1)
                         {
                             isFirstZero = true;
                             i++;
+                            if(i > 9) return -1;
                         }
 
                         a = Convert.ToInt32(strArr[0]);
@@ -57,18 +71,19 @@ public class FourKyu
                         isFirstZero = false;
                         string[] strArr = expression.Insert(expression.IndexOf('-'), "=")
                                                     .Replace('?', Convert.ToChar(Convert.ToString(i)))
-                                                    .Remove(expression.IndexOf('-'), 1)
                                                     .Split('=');
-
-                        if ( strArr[0][0] == '-' && strArr[0][1] == '0' || 
-                             strArr[1][1] == '-' && strArr[0][1] == '0' ||
-                             strArr[2][0] == '-' && strArr[2][1] == '0' ||
-                             strArr[0][0] == '0' ||
-                             strArr[1][0] == '0' ||
-                             strArr[2][0] == '0')
+                        strArr[1] = strArr[1].Remove(0, 1);
+                        
+                        if (strArr[0][0] == '-' && strArr[0][1] == '0' || 
+                            strArr[1][0] == '-' && strArr[1][1] == '0' ||
+                            strArr[2][0] == '-' && strArr[2][1] == '0' ||
+                            strArr[0][0] == '0' && strArr[0].Length > 1||
+                            strArr[1][0] == '0' && strArr[1].Length > 1||
+                            strArr[2][0] == '0' && strArr[2].Length > 1)
                         {
                             isFirstZero = true;
                             i++;
+                            if(i > 9) return -1;
                         }
 
                         a = Convert.ToInt32(strArr[0]);
@@ -77,10 +92,13 @@ public class FourKyu
                     }                                             
                 } 
             }
-
-            if(a + b == c && expression.Contains('+')) return i;
-            if(a * b == c && expression.Contains('*')) return i;
-            if(a - b == c && expression.Contains('-')) return i;
+            if(!expression.Contains($"{i}"))
+            {
+                if(a + b == c && expression.Contains('+')) return i;
+                if(a * b == c && expression.Contains('*')) return i;
+                if(a - b == c && expression.Contains('-')) return i;
+            }
+            isFirstZero = true;
         }
         return -1;
     }
