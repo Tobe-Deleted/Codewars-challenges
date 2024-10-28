@@ -30,23 +30,23 @@ public class FourKyu
                         string[] strArr = expression.Insert(expression.IndexOf('-', 
                                                             expression.IndexOf('-') + 1), "=")
                                                     .Replace('?', Convert.ToChar(Convert.ToString(i)))
+                                                    .Remove(expression.IndexOf('-', 
+                                                            expression.IndexOf('-') + 1))
                                                     .Split('=');
-                        if (strArr[0][0] == '0' || strArr[1][0] == '0' || strArr[2][0] == '0')
+
+                        if ( strArr[0][0] == '-' && strArr[0][1] == '0' || 
+                             strArr[1][1] == '-' && strArr[0][1] == '0' ||
+                             strArr[2][0] == '-' && strArr[2][1] == '0' ||
+                             strArr[0][0] == '0' ||
+                             strArr[1][0] == '0' ||
+                             strArr[2][0] == '0')
                         {
                             isFirstZero = true;
                             i++;
                         }
-                        else if (strArr[0][0] == '-' || strArr[1][0] == '-' || strArr[2][0] == '-')
-                        {
-                            if (strArr[0][1] == '0' || strArr[1][1] == '0' || strArr[2][1] == '0')
-                            {
-                                isFirstZero = true;
-                                i++;
-                            }
-                        }
 
                         a = Convert.ToInt32(strArr[0]);
-                        b = Convert.ToInt32(strArr[1].Remove(0,1));
+                        b = Convert.ToInt32(strArr[1]);
                         c = Convert.ToInt32(strArr[2]); 
                     }
                 }
@@ -57,23 +57,22 @@ public class FourKyu
                         isFirstZero = false;
                         string[] strArr = expression.Insert(expression.IndexOf('-'), "=")
                                                     .Replace('?', Convert.ToChar(Convert.ToString(i)))
+                                                    .Remove(expression.IndexOf('-'), 1)
                                                     .Split('=');
-                        if (strArr[0][0] == '0' || strArr[1][0] == '0' || strArr[2][0] == '0')
+
+                        if ( strArr[0][0] == '-' && strArr[0][1] == '0' || 
+                             strArr[1][1] == '-' && strArr[0][1] == '0' ||
+                             strArr[2][0] == '-' && strArr[2][1] == '0' ||
+                             strArr[0][0] == '0' ||
+                             strArr[1][0] == '0' ||
+                             strArr[2][0] == '0')
                         {
                             isFirstZero = true;
                             i++;
                         }
-                        else if (strArr[0][0] == '-' || strArr[1][0] == '-' || strArr[2][0] == '-')
-                        {
-                            if (strArr[0][1] == '0' || strArr[1][1] == '0' || strArr[2][1] == '0')
-                            {
-                                isFirstZero = true;
-                                i++;
-                            }
-                        }
 
                         a = Convert.ToInt32(strArr[0]);
-                        b = Convert.ToInt32(strArr[1].Remove(0,1));
+                        b = Convert.ToInt32(strArr[1]);
                         c = Convert.ToInt32(strArr[2]); 
                     }                                             
                 } 
