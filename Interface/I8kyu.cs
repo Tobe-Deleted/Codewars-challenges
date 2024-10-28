@@ -9,4 +9,11 @@ public interface I8kyu
     /// <param name="time"></param>
     /// <returns>Time / 2 convertet to lowest int</returns>
     public int Litres(double time);
+
+    /// <summary>
+    /// takes in a year and returns the century that year was in
+    /// </summary>
+    /// <param name="year"></param>
+    /// <returns>returns int representing the century</returns>
+    public int CenturyFromYear(int year);
 }

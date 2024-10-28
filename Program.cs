@@ -9,6 +9,7 @@ class Program
     {
         EightKyu kyu8 = new EightKyu();
         //Console.WriteLine(kyu8.Litres(11.8));
+        Console.WriteLine(kyu8.CenturyFromYear(1705));
 
         
         SevenKyu kyu7 = new SevenKyu();
