@@ -16,10 +16,13 @@ public class FourKyu
                 while (isFirstZero)
                 {
                     isFirstZero = false;
+
+                    //Splits the string into the different numbers
                     string[] strArr = expression.Replace('?', Convert.ToChar(
                                                                 Convert.ToString(i)))
                                                 .Split('*', '=', '+');
 
+                    //checks if number starts with 0; Skips testing 0 if it does
                     if (strArr[0][0] == '0' && strArr[0].Length > 1||
                         strArr[1][0] == '0' && strArr[1].Length > 1||
                         strArr[2][0] == '0' && strArr[2].Length > 1)
@@ -40,6 +43,7 @@ public class FourKyu
                     while (isFirstZero)
                     {
                         isFirstZero = false;
+                        //Splits the string into the different numbers
                         string[] strArr = expression.Insert(expression.IndexOf('-', 
                                                             expression.IndexOf('-') + 1), "=")
                                                     .Remove(expression.IndexOf('-',
@@ -47,6 +51,7 @@ public class FourKyu
                                                     .Replace('?', Convert.ToChar(Convert.ToString(i)))
                                                     .Split('=');
 
+                        //checks if number starts with 0; Skips testing 0 if it does
                         if (strArr[0][0] == '-' && strArr[0][1] == '0' || 
                             strArr[1][0] == '-' && strArr[1][1] == '0' ||
                             strArr[2][0] == '-' && strArr[2][1] == '0' ||
@@ -69,11 +74,14 @@ public class FourKyu
                     while (isFirstZero)
                     {
                         isFirstZero = false;
+
+                        //Splits the string into the different numbers
                         string[] strArr = expression.Insert(expression.IndexOf('-'), "=")
                                                     .Remove(expression.IndexOf('-') +1, 1)
                                                     .Replace('?', Convert.ToChar(Convert.ToString(i)))
                                                     .Split('=');
-                        
+
+                        //checks if number starts with 0; Skips testing 0 if it does
                         if (strArr[0][0] == '-' && strArr[0][1] == '0' || 
                             strArr[1][0] == '-' && strArr[1][1] == '0' ||
                             strArr[2][0] == '-' && strArr[2][1] == '0' ||
