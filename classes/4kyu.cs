@@ -6,6 +6,10 @@ public class FourKyu
 {
     public int FindMissingDigit(string expression)
     {
+
+        // Kan bruke 
+        //new DataTable().Compute(string, emptyString) 
+        //for å prosessere mattestykker som string
         if (expression == "") return -1;
         bool isFirstZero = true;
         int a = 0; int b = 0; int c = 0;
