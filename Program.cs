@@ -9,6 +9,7 @@ class Program
     {
         EightKyu kyu8 = new EightKyu();
         //Console.WriteLine(kyu8.Litres(11.8));
+        //Console.WriteLine(kyu8.CenturyFromYear(1705));
 
         
         SevenKyu kyu7 = new SevenKyu();
@@ -24,6 +25,8 @@ class Program
         //int[] arr = {5, 22, 55, 40, 2, 6};
         //Console.WriteLine(kyu7.SumOfTwoSmallestNumbers(arr));
         //Console.WriteLine(kyu7.GetSum(1, 15));
+        string[] input = {"Ryan", "Kieran", "Jason", "Yous"};
+        foreach (string str in kyu7.FriendOrFoe(input)) Console.WriteLine(str);
         
         SixKyu kyu6 = new SixKyu();
         //Console.WriteLine(kyu6.HowManyOnes(55));
@@ -45,7 +48,7 @@ class Program
         kyu5.MoveZeroes(arr);*/
 
         FourKyu kyu4 = new FourKyu();
-        Console.WriteLine(kyu4.FindMissingDigit("123?45-?=123?45")); //?
+        //Console.WriteLine(kyu4.FindMissingDigit("123?45-?=123?45")); //?
 
     }
 }

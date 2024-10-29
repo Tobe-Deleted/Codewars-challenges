@@ -120,10 +120,9 @@ public class SixKyu : I6kyu
     public bool ValidWalk(string[] walk)
     {
         if (walk.Length != 10) return false;
-        int w = 0;
-        int e = 0;
-        int s = 0;
-        int n = 0;
+
+        int w = 0; int e = 0; int s = 0; int n = 0;
+        
         foreach (string str in walk)
         {
             if (str == "s")s++;
