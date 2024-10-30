@@ -181,10 +181,10 @@ public class SixKyu : I6kyu
         foreach(T t in result)Console.Write(t);
     }
 
-    public bool IsPangram(string str)
-        => str.ToLower()
-              .Distinct()
-              .Count("abcdefghijklmnopqrstuvwxyz"
+    public bool IsPangram(string str) =>
+        str .ToLower()
+            .Distinct()
+            .Count("abcdefghijklmnopqrstuvwxyz"
                     .Contains) == 26;
 
     public bool IsArmstrongNumber(int value)
@@ -192,7 +192,12 @@ public class SixKyu : I6kyu
         long armstrongedNumber = 0;
         foreach (char ch in value.ToString())
         {
-            armstrongedNumber += Convert.ToInt64(Math.Pow(int.Parse(ch.ToString()), value.ToString().Length));
+            armstrongedNumber += Convert.ToInt64(
+                                        Math.Pow(
+                                            int.Parse(
+                                                ch.ToString())
+                                            , value.ToString()
+                                                   .Length));
         }
         return value == armstrongedNumber;
     }

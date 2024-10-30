@@ -30,70 +30,80 @@ public interface I6kyu
     /// <returns> integer result</returns>
     public int DuplicateCount(string str);
 
-/// <summary>
-/// Encodes a string turning characters only occuring once into ( 
-/// and characters with multiple occurances into )
-/// https://www.codewars.com/kata/54b42f9314d9229fd6000d9c
-/// </summary>
-/// <param name="word"></param>
-/// <returns>string with word encoded</returns>
+    /// <summary>
+    /// Encodes a string turning characters only occuring once into ( 
+    /// and characters with multiple occurances into )
+    /// https://www.codewars.com/kata/54b42f9314d9229fd6000d9c
+    /// </summary>
+    /// <param name="word"></param>
+    /// <returns>string with word encoded</returns>
     public string DuplicateEncoder(string word);
 
-/// <summary>
-/// Takes in an int array and returns the first number that doesn't fit
-/// https://www.codewars.com/kata/5526fc09a1bbd946250002dc
-/// </summary>
-/// <param name="arr"></param>
-/// <returns>int = first odd/even number</returns>
+    /// <summary>
+    /// Takes in an int array and returns the first number that doesn't fit
+    /// https://www.codewars.com/kata/5526fc09a1bbd946250002dc
+    /// </summary>
+    /// <param name="arr"></param>
+    /// <returns>int = first odd/even number</returns>
     public int ParityOutlier(int[] arr);
 
-/// <summary>
-/// Will take in string and replace all letters with their corresponding number in the alphabet
-/// https://www.codewars.com/kata/546f922b54af40e1e90001da
-/// </summary>
-/// <param name="text"></param>
-/// <returns></returns>
+    /// <summary>
+    /// Will take in string and replace all letters with their corresponding number in the alphabet
+    /// https://www.codewars.com/kata/546f922b54af40e1e90001da
+    /// </summary>
+    /// <param name="text"></param>
+    /// <returns></returns>
     public string ReplaceWithAlphabetPosition(string text);
 
-/// <summary>
-/// Checking if a walk will take 10 minutes and return you to the starting point
-/// https://www.codewars.com/kata/54da539698b8a2ad76000228
-/// </summary>
-/// <returns>false || true</returns>
+    /// <summary>
+    /// Checking if a walk will take 10 minutes and return you to the starting point
+    /// https://www.codewars.com/kata/54da539698b8a2ad76000228
+    /// </summary>
+    /// <returns>false || true</returns>
     public bool ValidWalk(string[] walk);
 
-/// <summary>
-/// Takes in a number and multiplies each digit with each other until it is left with only  1 digit
-/// https://www.codewars.com/kata/55bf01e5a717a0d57e0000ec
-/// </summary>
-/// <param name="n"></param>
-/// <returns>int number of processes needed to reach 1 digit</returns>
+    /// <summary>
+    /// Takes in a number and multiplies each digit with each other until it is left with only  1 digit
+    /// https://www.codewars.com/kata/55bf01e5a717a0d57e0000ec
+    /// </summary>
+    /// <param name="n"></param>
+    /// <returns>int number of processes needed to reach 1 digit</returns>
     public int Persistence(long n);
 
-/// <summary>
-/// Takes in string where words are seperated by _ or - and converts it to camel case
-/// If first letter is capital during input, it converts sentence to Pascal case
-/// https://www.codewars.com/kata/517abf86da9663f1d2000003
-/// </summary>
-/// <param name="str"></param>
-/// <returns>One word string where each word which is either camel case or pascal case</returns>
+    /// <summary>
+    /// Takes in string where words are seperated by _ or - and converts it to camel case
+    /// If first letter is capital during input, it converts sentence to Pascal case
+    /// https://www.codewars.com/kata/517abf86da9663f1d2000003
+    /// </summary>
+    /// <param name="str"></param>
+    /// <returns>One word string where each word which is either camel case or pascal case</returns>
     public string CamelCase(string str);
 
-/// <summary>
-/// takes in any argument and removes all repeating elements next to each other. Prints out result.
-/// https://www.codewars.com/kata/54e6533c92449cc251001667
-/// </summary>
-/// <typeparam name="T"></typeparam>
-/// <param name="iterable"></param>
+    /// <summary>
+    /// takes in any argument and removes all repeating elements next to each other. Prints out result.
+    /// https://www.codewars.com/kata/54e6533c92449cc251001667
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <param name="iterable"></param>
     public void UniqueInOrder<T>(IEnumerable<T> iterable);
 
-/// <summary>
-/// takes in string and checks if it is a pangram
-/// A pangram is a sentence that uses all letters in the alphabet(A-Z)
-/// This method ignores letter case
-/// https://www.codewars.com/kata/545cedaa9943f7fe7b000048
-/// </summary>
-/// <param name="str"></param>
-/// <returns>true if it is a pangram / false if it is not a pangram</returns>
+    /// <summary>
+    /// takes in string and checks if it is a pangram
+    /// A pangram is a sentence that uses all letters in the alphabet(A-Z)
+    /// This method ignores letter case
+    /// https://www.codewars.com/kata/545cedaa9943f7fe7b000048
+    /// </summary>
+    /// <param name="str"></param>
+    /// <returns>true if it is a pangram / false if it is not a pangram</returns>
     public bool IsPangram(string str);
+
+    /// <summary>
+    /// Checks if number is an Armstrong number.
+    /// An Armstrong number is a number where each digit put to the power of the 
+    /// amount of digits in number, added together resutlts in that number
+    /// https://www.codewars.com/kata/5287e858c6b5a9678200083c
+    /// </summary>
+    /// <param name="value"></param>
+    /// <returns></returns>
+    public bool IsArmstrongNumber(int value);
 }
