@@ -161,4 +161,22 @@ public class SixKyu : I6kyu
             .Remove(0, 1)
             .Replace(" ", "");
     }
+
+    public void UniqueInOrder<T>(IEnumerable<T> iterable)
+    {
+        List<T> result = new List<T> {iterable.ToList()[0]};
+        for (int i = 1;i < iterable.Count(); i++)
+        {
+            //alternativ if statement
+            //if (!EqualityComparer<T>.Default.Equals(iterable.ElementAt(i), iterable.ElementAt(i - 1)))
+            if (Convert.ToString(iterable.ToList()[i]) != 
+                Convert.ToString(iterable.ToList()[i-1])) 
+            {
+                result.Add(iterable.ElementAt(i));
+            }
+        }
+
+
+        foreach(T t in result)Console.Write(t);
+    }
 }

@@ -25,8 +25,9 @@ class Program
         //int[] arr = {5, 22, 55, 40, 2, 6};
         //Console.WriteLine(kyu7.SumOfTwoSmallestNumbers(arr));
         //Console.WriteLine(kyu7.GetSum(1, 15));
-        string[] input = {"Ryan", "Kieran", "Jason", "Yous"};
-        foreach (string str in kyu7.FriendOrFoe(input)) Console.WriteLine(str);
+        //string[] input = {"Ryan", "Kieran", "Jason", "Yous"};
+        //foreach (string str in kyu7.FriendOrFoe(input)) Console.WriteLine(str);
+        
         
         SixKyu kyu6 = new SixKyu();
         //Console.WriteLine(kyu6.HowManyOnes(55));
@@ -41,6 +42,7 @@ class Program
         //Console.WriteLine(kyu6.ValidWalk(arr));
         //Console.WriteLine(kyu6.Persistence(39));
         //Console.WriteLine(kyu6.CamelCase("the-StEalth_warrior_talks"));
+        kyu6.UniqueInOrder("ffffiiiiissssskkkkk1223334fffiiisssk");
         
 
         FiveKyu kyu5 = new FiveKyu();

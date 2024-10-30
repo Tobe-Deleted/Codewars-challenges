@@ -78,4 +78,12 @@ public interface I6kyu
 /// <param name="str"></param>
 /// <returns>One word string where each word which is either camel case or pascal case</returns>
     public string CamelCase(string str);
+
+/// <summary>
+/// takes in any argument and removes all repeating elements next to each other. Prints out result.
+/// https://www.codewars.com/kata/54e6533c92449cc251001667
+/// </summary>
+/// <typeparam name="T"></typeparam>
+/// <param name="iterable"></param>
+    public void UniqueInOrder<T>(IEnumerable<T> iterable);
 }
