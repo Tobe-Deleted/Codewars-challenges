@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Linq;
 using System.Globalization;
+using System.Security.Cryptography.X509Certificates;
 public class SixKyu : I6kyu
 {
     public int HowManyOnes(int n)
@@ -179,4 +180,12 @@ public class SixKyu : I6kyu
 
         foreach(T t in result)Console.Write(t);
     }
+
+    public bool IsPangram(string str)
+        => str.ToLower()
+              .Distinct()
+              .Count("abcdefghijklmnopqrstuvwxyz"
+                    .Contains) == 26;
+
+
 }

@@ -86,4 +86,14 @@ public interface I6kyu
 /// <typeparam name="T"></typeparam>
 /// <param name="iterable"></param>
     public void UniqueInOrder<T>(IEnumerable<T> iterable);
+
+/// <summary>
+/// takes in string and checks if it is a pangram
+/// A pangram is a sentence that uses all letters in the alphabet(A-Z)
+/// This method ignores letter case
+/// https://www.codewars.com/kata/545cedaa9943f7fe7b000048
+/// </summary>
+/// <param name="str"></param>
+/// <returns>true if it is a pangram / false if it is not a pangram</returns>
+    public bool IsPangram(string str);
 }

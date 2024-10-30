@@ -42,7 +42,8 @@ class Program
         //Console.WriteLine(kyu6.ValidWalk(arr));
         //Console.WriteLine(kyu6.Persistence(39));
         //Console.WriteLine(kyu6.CamelCase("the-StEalth_warrior_talks"));
-        kyu6.UniqueInOrder("ffffiiiiissssskkkkk1223334fffiiisssk");
+        //kyu6.UniqueInOrder("ffffiiiiissssskkkkk1223334fffiiisssk");
+        Console.WriteLine(kyu6.IsPangram("The quick brown fox jumps over the lazy dog"));
         
 
         FiveKyu kyu5 = new FiveKyu();
