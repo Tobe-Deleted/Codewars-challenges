@@ -106,4 +106,11 @@ public interface I6kyu
     /// <param name="value"></param>
     /// <returns></returns>
     public bool IsArmstrongNumber(int value);
+
+    /// <summary>
+    /// takes in string with a number in each word. Orders the words by the number
+    /// </summary>
+    /// <param name="words"></param>
+    /// <returns>returns string with words in numbered order</returns>
+    public string WordOrder(string words);
 }

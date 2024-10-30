@@ -201,4 +201,27 @@ public class SixKyu : I6kyu
         }
         return value == armstrongedNumber;
     }
+
+    public string WordOrder(string words)
+    {
+        //better solution: 
+        //return string.Join(" ", words.Split().OrderBy(w => w.SingleOrDefault(char.IsDigit)));
+        // SingleOrDefault(source, condition) > returns the only element in source that matches condition
+        // w is source, IsDigit is condition.
+        if (words == "") return words;
+        string[] strArr = words.Split(' ');
+        string result = "";
+        for (int i = 1; i <= strArr.Length; i++)  
+        {  
+            Console.WriteLine(i);
+            foreach (string str in strArr)
+            {
+                Console.WriteLine(str);
+                if (str.Contains(i.ToString())) result += str + " ";
+            }
+            Console.WriteLine($"Current result = {result}");
+            Console.ReadLine();
+        }
+        return result.Trim();
+    }
 }
