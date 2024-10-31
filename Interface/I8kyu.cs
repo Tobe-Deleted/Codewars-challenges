@@ -16,4 +16,11 @@ public interface I8kyu
     /// <param name="year"></param>
     /// <returns>returns int representing the century</returns>
     public int CenturyFromYear(int year);
+
+    /// <summary>
+    /// Adds together every number of given array
+    /// </summary>
+    /// <param name="array"></param>
+    /// <returns>double with sum of all numbers in given array</returns>
+    public double SumOfArray(double[] array);
 }
