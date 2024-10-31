@@ -27,6 +27,7 @@ class Program
         //Console.WriteLine(kyu7.GetSum(1, 15));
         //string[] input = {"Ryan", "Kieran", "Jason", "Yous"};
         //foreach (string str in kyu7.FriendOrFoe(input)) Console.WriteLine(str);
+        Console.WriteLine(kyu7.Mask("55500770"));
         
         
         SixKyu kyu6 = new SixKyu();
@@ -45,7 +46,7 @@ class Program
         //kyu6.UniqueInOrder("ffffiiiiissssskkkkk1223334fffiiisssk");
         //Console.WriteLine(kyu6.IsPangram("The quick brown fox jumps over the lazy dog"));
         //Console.WriteLine(kyu6.IsArmstrongNumber(153));
-        Console.WriteLine(kyu6.WordOrder("is2 Thi1s T4est 3a"));
+        //Console.WriteLine(kyu6.WordOrder("is2 Thi1s T4est 3a"));
         
 
         FiveKyu kyu5 = new FiveKyu();

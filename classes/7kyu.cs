@@ -143,4 +143,11 @@ public class SevenKyu : I7kyu
         return l;
         //return names.Where(names => names.Length == 4); bedre løsning
     }
+    public string Mask(string cc)
+    {
+        if (cc.Length < 5) return cc;
+        string result = cc.Remove(0, Math.Min(cc.Length -4, cc.Length - 0));
+        for(int i = 0; i < cc.Length -4; i++) result = result.Insert(0, "#");
+        return result;
+    }
 }

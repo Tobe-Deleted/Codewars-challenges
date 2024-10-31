@@ -23,7 +23,7 @@ public class FourKyu
 
                     //Splits the string into the different numbers
                     string[] strArr = expression.Replace('?', Convert.ToChar(
-                                                                Convert.ToString(i)))
+                                                              Convert.ToString(i)))
                                                 .Split('*', '=', '+');
 
                     //checks if number starts with 0; Skips testing 0 if it does
