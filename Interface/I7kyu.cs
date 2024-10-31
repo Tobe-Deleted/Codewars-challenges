@@ -95,4 +95,12 @@ public interface I7kyu
     /// <param name="names"></param>
     /// <returns>return names.Length == 4</returns>
     public IEnumerable<string> FriendOrFoe(string[] names);
+    
+    /// <summary>
+    /// takes a string and masks all but 4 characters
+    /// https://www.codewars.com/kata/5412509bd436bd33920011bc
+    /// </summary>
+    /// <param name="cc"></param>
+    /// <returns>string with only 4 last characters revealed</returns>
+    public string Mask(string cc);
 }
