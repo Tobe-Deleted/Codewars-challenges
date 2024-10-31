@@ -19,6 +19,7 @@ public interface I8kyu
 
     /// <summary>
     /// Adds together every number of given array
+    /// https://www.codewars.com/kata/53dc54212259ed3d4f00071c
     /// </summary>
     /// <param name="array"></param>
     /// <returns>double with sum of all numbers in given array</returns>
