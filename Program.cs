@@ -10,6 +10,8 @@ class Program
         EightKyu kyu8 = new EightKyu();
         //Console.WriteLine(kyu8.Litres(11.8));
         //Console.WriteLine(kyu8.CenturyFromYear(1705));
+        /*double[] d = {5, 6, 1, 8};
+        Console.WriteLine(kyu8.SumOfArray(d));*/
 
         
         SevenKyu kyu7 = new SevenKyu();
@@ -27,7 +29,7 @@ class Program
         //Console.WriteLine(kyu7.GetSum(1, 15));
         //string[] input = {"Ryan", "Kieran", "Jason", "Yous"};
         //foreach (string str in kyu7.FriendOrFoe(input)) Console.WriteLine(str);
-        Console.WriteLine(kyu7.Mask("55500770"));
+        //Console.WriteLine(kyu7.Mask("55500770"));
         
         
         SixKyu kyu6 = new SixKyu();

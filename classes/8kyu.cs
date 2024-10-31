@@ -1,4 +1,5 @@
 using System;
+using System.Security.Cryptography.X509Certificates;
 public class EightKyu : I8kyu
 {
     public int Litres(double time)
@@ -15,4 +16,6 @@ public class EightKyu : I8kyu
         if (year % 100 == 0) return year / 100;
                              return year / 100 + 1;
     }
+
+    public double SumOfArray(double[] array) => array.Sum();
 }
