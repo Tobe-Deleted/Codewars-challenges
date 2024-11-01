@@ -274,32 +274,10 @@ public class FourKyu
         char op = '+';
         for(int i = 0; i < romanNumeral.Length -2; i++)
         {
-            switch (romanNumeral[i])
-            {
-                case 'I':
-                    if(romanNumeral[i+1] != 'I') op = '-';
-                    break;
-                case 'V':
-                    s += $"{op}5";
-                    break;
-                case 'X':
-                    s += $"{op}10";
-                    break;
-                case 'L':
-                    s += $"{op}50";
-                    break;
-                case 'C':
-                    s += $"{op}100";
-                    break;
-                case 'D':
-                    s += $"{op}500";
-                    break;
-                case 'M':
-                    s += $"{op}1000";
-                    break;
-                default:
-                    return -1;
-            }
+            if (romanNumeral[i] == 'I' && "VXLCDM".Contains(romanNumeral[i+1]) && "VXLCDM".Contains(romanNumeral[i+2]) ||
+                romanNumeral[i] == 'X' && "LCDM".Contains(romanNumeral[i+1]) && "LCDM".Contains(romanNumeral[i+2]) ||
+                romanNumeral[i] == 'C' && "DM".Contains(romanNumeral[i+1]) && "DM".Contains(romanNumeral[i+2]))
+                op = '-';
 
             switch (romanNumeral[i])
             {
