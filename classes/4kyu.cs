@@ -1,3 +1,4 @@
+using System.Data;
 using System.Formats.Asn1;
 using System.Linq.Expressions;
 using System.Security.Cryptography.X509Certificates;
@@ -186,7 +187,7 @@ public class FourKyu
                 r += "DCC";
                 break;
             case '8':
-                r += "CCM";
+                r += "DCCC";
                 break;
             case '9':
                 r += "CM";
@@ -221,7 +222,7 @@ public class FourKyu
                 r += "LXX";
                 break;
             case '8':
-                r += "XXC";
+                r += "LXXX";
                 break;
             case '9':
                 r += "XC";
@@ -256,7 +257,7 @@ public class FourKyu
                 r += "VII";
                 break;
             case '8':
-                r += "IIX";
+                r += "VIII";
                 break;
             case '9':
                 r += "IX";
@@ -269,14 +270,19 @@ public class FourKyu
     
     public int FromRoman(string romanNumeral)
     {
-        int r = 0;
+        DataTable dt = new DataTable();
         string s = "";
-        char op = '+';
-        for(int i = 0; i < romanNumeral.Length -2; i++)
+        char op;
+        romanNumeral += "  ";
+        for(int i = 0; i < romanNumeral.Length; i++)
         {
-            if (romanNumeral[i] == 'I' && "VXLCDM".Contains(romanNumeral[i+1]) && "VXLCDM".Contains(romanNumeral[i+2]) ||
-                romanNumeral[i] == 'X' && "LCDM".Contains(romanNumeral[i+1]) && "LCDM".Contains(romanNumeral[i+2]) ||
-                romanNumeral[i] == 'C' && "DM".Contains(romanNumeral[i+1]) && "DM".Contains(romanNumeral[i+2]))
+            op = '+';
+            if (romanNumeral[i] == 'I' && "VXLCDM".Contains(romanNumeral[i+1]) ||
+                romanNumeral[i] == 'I' && "VXLCDM".Contains(romanNumeral[i+2]) ||
+                romanNumeral[i] == 'X' && "LCDM".Contains(romanNumeral[i+1]) ||
+                romanNumeral[i] == 'X' && "LCDM".Contains(romanNumeral[i+2]) ||
+                romanNumeral[i] == 'C' && "DM".Contains(romanNumeral[i+1]) ||
+                romanNumeral[i] == 'C' && "DM".Contains(romanNumeral[i+2]))
                 op = '-';
 
             switch (romanNumeral[i])
@@ -303,9 +309,10 @@ public class FourKyu
                     s += $"{op}1000";
                     break;
                 default:
-                return -1;     
+                break;     
             }       
+            Console.WriteLine(Convert.ToInt32(dt.Compute(s, "")));
         }
-        return r;
+        return Convert.ToInt32(dt.Compute(s, ""));
     }
 }
