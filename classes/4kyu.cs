@@ -263,7 +263,7 @@ public class FourKyu
                 r += "IX";
                 break;
             default:
-            return "wtf?";
+                return "wtf?";
         }
         return r;
     }
@@ -273,10 +273,11 @@ public class FourKyu
         DataTable dt = new DataTable();
         string s = "";
         char op;
-        romanNumeral += "  ";
+        romanNumeral += "  "; //to keep index within range
         for(int i = 0; i < romanNumeral.Length; i++)
         {
             op = '+';
+            //TODO: Find easier way to do this part
             if (romanNumeral[i] == 'I' && "VXLCDM".Contains(romanNumeral[i+1]) ||
                 romanNumeral[i] == 'I' && "VXLCDM".Contains(romanNumeral[i+2]) ||
                 romanNumeral[i] == 'X' && "LCDM".Contains(romanNumeral[i+1]) ||
@@ -309,7 +310,7 @@ public class FourKyu
                     s += $"{op}1000";
                     break;
                 default:
-                break;     
+                    break;     
             }       
             Console.WriteLine(Convert.ToInt32(dt.Compute(s, "")));
         }
