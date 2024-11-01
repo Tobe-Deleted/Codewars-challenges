@@ -1,6 +1,7 @@
 using System.Formats.Asn1;
 using System.Linq.Expressions;
 using System.Security.Cryptography.X509Certificates;
+using System.Xml.XPath;
 
 public class FourKyu
 {
@@ -113,5 +114,156 @@ public class FourKyu
             isFirstZero = true;
         }
         return -1;
+    }
+
+    public string ToRoman(int n)
+    {
+        string r = "";
+        string s = n.ToString();
+        for (int i = 4; i > s.Length;)
+        {
+           s = s.Insert(0, "0");
+        }
+        // 1st digit
+        switch (s[0])
+        {
+            case '0':
+                break;
+            case '1':
+                r += "M";
+                break;
+            case '2':
+                r += "MM";
+                break;
+            case '3':
+                r += "MMM";
+                break;
+            case '4':
+                r += "MMMM";
+                break;
+            case '5':
+                r += "MMMMM";
+                break;
+            case '6':
+                r += "MMMMMM";
+                break;
+            case '7':
+                r += "MMMMMMM";
+                break;
+            case '8':
+                r += "MMMMMMMM";
+                break;
+            case '9':
+                r += "MMMMMMMMM";
+                break;
+            default:
+            return "wtf?";
+        }
+        // 2nd digit
+                switch (s[1])
+        {
+            case '0':
+                break;
+            case '1':
+                r += "C";
+                break;
+            case '2':
+                r += "CC";
+                break;
+            case '3':
+                r += "CCC";
+                break;
+            case '4':
+                r += "CD";
+                break;
+            case '5':
+                r += "D";
+                break;
+            case '6':
+                r += "DC";
+                break;
+            case '7':
+                r += "DCC";
+                break;
+            case '8':
+                r += "CCM";
+                break;
+            case '9':
+                r += "CM";
+                break;
+            default:
+            return "wtf?";
+        }
+        // 3rd digit
+                switch (s[2])
+        {
+            case '0':
+                break;
+            case '1':
+                r += "X";
+                break;
+            case '2':
+                r += "XX";
+                break;
+            case '3':
+                r += "XXX";
+                break;
+            case '4':
+                r += "XL";
+                break;
+            case '5':
+                r += "L";
+                break;
+            case '6':
+                r += "LX";
+                break;
+            case '7':
+                r += "LXX";
+                break;
+            case '8':
+                r += "XXC";
+                break;
+            case '9':
+                r += "XC";
+                break;
+            default:
+            return "wtf?";
+        }
+        //4th digit
+                switch (s[3])
+        {
+            case '0':
+                break;
+            case '1':
+                r += "I";
+                break;
+            case '2':
+                r += "II";
+                break;
+            case '3':
+                r += "III";
+                break;
+            case '4':
+                r += "IV";
+                break;
+            case '5':
+                r += "V";
+                break;
+            case '6':
+                r += "VI";
+                break;
+            case '7':
+                r += "VII";
+                break;
+            case '8':
+                r += "IIX";
+                break;
+            case '9':
+                r += "IX";
+                break;
+            default:
+            return "wtf?";
+        }
+        return r;
     }
 }
