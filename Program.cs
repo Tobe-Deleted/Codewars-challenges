@@ -58,6 +58,7 @@ class Program
         FourKyu kyu4 = new FourKyu();
         //Console.WriteLine(kyu4.FindMissingDigit("123?45-?=123?45")); //?
         Console.WriteLine(kyu4.ToRoman(2024));
+        Console.WriteLine(kyu4.FromRoman("MMXXIV"));
 
     }
 }

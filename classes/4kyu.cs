@@ -266,4 +266,68 @@ public class FourKyu
         }
         return r;
     }
+    
+    public int FromRoman(string romanNumeral)
+    {
+        int r = 0;
+        string s = "";
+        char op = '+';
+        for(int i = 0; i < romanNumeral.Length -2; i++)
+        {
+            switch (romanNumeral[i])
+            {
+                case 'I':
+                    if(romanNumeral[i+1] != 'I') op = '-';
+                    break;
+                case 'V':
+                    s += $"{op}5";
+                    break;
+                case 'X':
+                    s += $"{op}10";
+                    break;
+                case 'L':
+                    s += $"{op}50";
+                    break;
+                case 'C':
+                    s += $"{op}100";
+                    break;
+                case 'D':
+                    s += $"{op}500";
+                    break;
+                case 'M':
+                    s += $"{op}1000";
+                    break;
+                default:
+                    return -1;
+            }
+
+            switch (romanNumeral[i])
+            {
+                case 'I':
+                    s += $"{op}1";
+                    break;
+                case 'V':
+                    s += $"{op}5";
+                    break;
+                case 'X':
+                    s += $"{op}10";
+                    break;
+                case 'L':
+                    s += $"{op}50";
+                    break;
+                case 'C':
+                    s += $"{op}100";
+                    break;
+                case 'D':
+                    s += $"{op}500";
+                    break;
+                case 'M':
+                    s += $"{op}1000";
+                    break;
+                default:
+                return -1;     
+            }       
+        }
+        return r;
+    }
 }
