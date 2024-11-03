@@ -312,7 +312,6 @@ public class FourKyu
                 default:
                     break;     
             }       
-            Console.WriteLine(Convert.ToInt32(dt.Compute(s, "")));
         }
         return Convert.ToInt32(dt.Compute(s, ""));
     }
