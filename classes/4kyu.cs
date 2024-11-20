@@ -315,4 +315,62 @@ public class FourKyu
         }
         return Convert.ToInt32(dt.Compute(s, ""));
     }
+
+    public List<string> Top3(string str)
+    {
+        //A better way to solve + interesting use of string.Split
+        // var alphabets = new HashSet<char>(Enumerable.Range('a', 26).Select(i => (char)i));
+        // var separators = Enumerable.Range(0, 256).Select(i => (char)i).Where(c => !alphabets.Contains(c) && c != '\'').ToArray();
+
+        // return s.ToLower().Split(separators, StringSplitOptions.RemoveEmptyEntries)
+        //   .Select(word => new string(word.Where(alphabets.Append('\'').Contains).ToArray()))
+        //   .Where(word => alphabets.Any(word.Contains))
+        //   .GroupBy(word => word)
+        //   .OrderByDescending(group => group.Count())
+        //   .Take(3)
+        //   .Select(group => group.Key)
+        //   .ToList();
+        str = str.ToLower();
+        bool letters = false;
+        for(int i = 1; i < str.Length; i++)
+        {
+            if(Char.IsLetter(str.ToCharArray()[i])) letters = true;
+            if(str.ToCharArray()[i] == str.ToCharArray()[i-1] &&
+               str.ToCharArray()[i] == ' ')
+                    str = str.Remove(i, 1);
+        }
+            if(!letters)return new List<string> { };
+
+        string[] strArr = str.Replace("/", " ")
+                             .Replace(",", " ")
+                             .Replace(":", " ")
+                             .Replace(".", " ")
+                             .Replace(";", " ")
+                             .Replace("!", " ")
+                             .Replace("_", " ")
+                             .Replace("-", " ")
+                             .Replace("?", " ")
+                             .Split(' ');
+        
+        List<string> strList = strArr.ToList();
+        strList.RemoveAll(item => item == "");
+
+        var s1 = (from item in strList group item by item into x orderby 
+        x.Count() descending select x.Key).First();
+
+        strList.RemoveAll(item => item == s1);
+        if(strList.Count() < 1)
+            return new List<string> {s1}; 
+
+        var s2 = (from item in strList group item by item into x orderby
+        x.Count() descending select x.Key).First();
+
+        strList.RemoveAll(item => item == s2);
+        if(strList.Count() < 1)
+            return new List<string> {s1, s2}; 
+
+        var s3 = (from item in strList group item by item into x orderby
+        x.Count() descending select x.Key).First();
+        return new List<string> {s1, s2, s3};
+    }
 }

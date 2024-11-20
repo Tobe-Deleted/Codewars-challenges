@@ -8,7 +8,7 @@ class Program
     static void Main(string[] args)
     {
         ForFun ff = new ForFun();
-        ff.WhatNumber();
+        //ff.WhatNumber();
 
         EightKyu kyu8 = new EightKyu();
         //Console.WriteLine(kyu8.Litres(11.8));
@@ -62,6 +62,7 @@ class Program
         //Console.WriteLine(kyu4.FindMissingDigit("123?45-?=123?45")); //?
         //Console.WriteLine(kyu4.ToRoman(2024));
         //Console.WriteLine(kyu4.FromRoman("MMXXIV"));
+        foreach(string str in kyu4.Top3("  , e   .. "))Console.WriteLine(str);
 
     }
 }
