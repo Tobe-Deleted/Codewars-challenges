@@ -24,4 +24,11 @@ public interface I4kyu
     /// <param name="romanNumeral"></param>
     /// <returns>int with romanNumerals converted to decimal</returns>
     public int FromRoman(string romanNumeral);
+
+    /// <summary>
+    /// Takes in a string and finds the most used words in string. Will ignore all special characters
+    /// </summary>
+    /// <param name="str"></param>
+    /// <returns>Returns a list containing Top 3 most repeated word in string in descending order</returns>
+    public List<string> Top3(string str);
 }
