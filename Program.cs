@@ -15,6 +15,7 @@ class Program
         //Console.WriteLine(kyu8.CenturyFromYear(1705));
         /*double[] d = {5, 6, 1, 8};
         Console.WriteLine(kyu8.SumOfArray(d));*/
+        Console.WriteLine(kyu8.Paperwork(5, 5));
 
         
         SevenKyu kyu7 = new SevenKyu();
@@ -62,7 +63,7 @@ class Program
         //Console.WriteLine(kyu4.FindMissingDigit("123?45-?=123?45")); //?
         //Console.WriteLine(kyu4.ToRoman(2024));
         //Console.WriteLine(kyu4.FromRoman("MMXXIV"));
-        foreach(string str in kyu4.Top3("  , e   .. "))Console.WriteLine(str);
+        //foreach(string str in kyu4.Top3("  , e   .. "))Console.WriteLine(str);
 
     }
 }

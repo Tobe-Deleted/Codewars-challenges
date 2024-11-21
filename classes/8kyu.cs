@@ -14,8 +14,15 @@ public class EightKyu : I8kyu
     public int CenturyFromYear(int year)
     {
         if (year % 100 == 0) return year / 100;
-                             return year / 100 + 1;
+        return year / 100 + 1;
     }
 
     public double SumOfArray(double[] array) => array.Sum();
+
+    public int Paperwork(int n, int m)
+    {
+        if(n < 0 || m < 0) 
+            return 0;
+        return m * n;
+    }
 }

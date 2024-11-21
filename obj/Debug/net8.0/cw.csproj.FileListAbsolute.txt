@@ -43,3 +43,18 @@ C:\Users\Olive\Documents\kodehode\Codewars-challenges\obj\Debug\net8.0\refint\cw
 C:\Users\Olive\Documents\kodehode\Codewars-challenges\obj\Debug\net8.0\cw.pdb
 C:\Users\Olive\Documents\kodehode\Codewars-challenges\obj\Debug\net8.0\cw.genruntimeconfig.cache
 C:\Users\Olive\Documents\kodehode\Codewars-challenges\obj\Debug\net8.0\ref\cw.dll
+C:\Users\olli9\VSC\Personlig prosjekter\Codewars-challenges\bin\Debug\net8.0\cw.exe
+C:\Users\olli9\VSC\Personlig prosjekter\Codewars-challenges\bin\Debug\net8.0\cw.deps.json
+C:\Users\olli9\VSC\Personlig prosjekter\Codewars-challenges\bin\Debug\net8.0\cw.runtimeconfig.json
+C:\Users\olli9\VSC\Personlig prosjekter\Codewars-challenges\bin\Debug\net8.0\cw.dll
+C:\Users\olli9\VSC\Personlig prosjekter\Codewars-challenges\bin\Debug\net8.0\cw.pdb
+C:\Users\olli9\VSC\Personlig prosjekter\Codewars-challenges\obj\Debug\net8.0\cw.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\olli9\VSC\Personlig prosjekter\Codewars-challenges\obj\Debug\net8.0\cw.AssemblyInfoInputs.cache
+C:\Users\olli9\VSC\Personlig prosjekter\Codewars-challenges\obj\Debug\net8.0\cw.AssemblyInfo.cs
+C:\Users\olli9\VSC\Personlig prosjekter\Codewars-challenges\obj\Debug\net8.0\cw.csproj.CoreCompileInputs.cache
+C:\Users\olli9\VSC\Personlig prosjekter\Codewars-challenges\obj\Debug\net8.0\cw.sourcelink.json
+C:\Users\olli9\VSC\Personlig prosjekter\Codewars-challenges\obj\Debug\net8.0\cw.dll
+C:\Users\olli9\VSC\Personlig prosjekter\Codewars-challenges\obj\Debug\net8.0\refint\cw.dll
+C:\Users\olli9\VSC\Personlig prosjekter\Codewars-challenges\obj\Debug\net8.0\cw.pdb
+C:\Users\olli9\VSC\Personlig prosjekter\Codewars-challenges\obj\Debug\net8.0\cw.genruntimeconfig.cache
+C:\Users\olli9\VSC\Personlig prosjekter\Codewars-challenges\obj\Debug\net8.0\ref\cw.dll
