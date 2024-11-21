@@ -27,6 +27,7 @@ public interface I4kyu
 
     /// <summary>
     /// Takes in a string and finds the most used words in string. Will ignore all special characters
+    /// https://www.codewars.com/kata/51e056fe544cf36c410000fb
     /// </summary>
     /// <param name="str"></param>
     /// <returns>Returns a list containing Top 3 most repeated word in string in descending order</returns>

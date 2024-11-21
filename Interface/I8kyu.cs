@@ -24,4 +24,13 @@ public interface I8kyu
     /// <param name="array"></param>
     /// <returns>double with sum of all numbers in given array</returns>
     public double SumOfArray(double[] array);
+
+    /// <summary>
+    /// multiplies two positive numbers
+    /// https://www.codewars.com/kata/55f9b48403f6b87a7c0000bd/csharp
+    /// </summary>
+    /// <param name="n"></param>
+    /// <param name="m"></param>
+    /// <returns>n * m || 0 if n or m is negative</returns>
+    public int Paperwork(int n, int m);
 }
