@@ -32,4 +32,11 @@ public interface I4kyu
     /// <param name="str"></param>
     /// <returns>Returns a list containing Top 3 most repeated word in string in descending order</returns>
     public List<string> Top3(string str);
+
+    /// <summary>
+    /// Parses numbers written as words in a string to integers. zero to 1 million
+    /// </summary>
+    /// <param name="s"></param>
+    /// <returns>int with number parsed from string</returns>
+    public int ParseInt(string s);
 }

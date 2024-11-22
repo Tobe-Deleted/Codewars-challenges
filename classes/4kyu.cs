@@ -395,7 +395,6 @@ public class FourKyu
             else
                 a += ints[Array.IndexOf(str, st)];
             previous = ints[Array.IndexOf(str, st)];
-            Console.WriteLine(a);
         }
         return a;
     }
