@@ -35,6 +35,7 @@ public interface I4kyu
 
     /// <summary>
     /// Parses numbers written as words in a string to integers. zero to 1 million
+    /// https://www.codewars.com/kata/525c7c5ab6aecef16e0001a5
     /// </summary>
     /// <param name="s"></param>
     /// <returns>int with number parsed from string</returns>

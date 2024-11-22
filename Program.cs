@@ -64,7 +64,8 @@ class Program
         //Console.WriteLine(kyu4.ToRoman(2024));
         //Console.WriteLine(kyu4.FromRoman("MMXXIV"));
         //foreach(string str in kyu4.Top3("  , e   .. "))Console.WriteLine(str);
-        Console.WriteLine(kyu4.ParseInt("one thousand three hundred and thirty-seven"));
+        //Console.WriteLine(kyu4.ParseInt("one thousand three hundred and thirty-seven"));
+        foreach (string str in kyu4.GetPINs("11"))Console.WriteLine(str);
 
     }
 }

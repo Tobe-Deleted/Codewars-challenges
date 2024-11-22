@@ -2,6 +2,7 @@ using System.Data;
 using System.Formats.Asn1;
 using System.Linq.Expressions;
 using System.Security.Cryptography.X509Certificates;
+using System.Threading.Tasks.Dataflow;
 using System.Xml.XPath;
 
 public class FourKyu
@@ -397,5 +398,37 @@ public class FourKyu
             previous = ints[Array.IndexOf(str, st)];
         }
         return a;
+    }
+    public List<string> GetPINs(string observed)
+    {
+        List<string> adjacents = new List<string>{"08", "124", "2135", "326", "4157", "52468", "6359", "748", "85790", "968"};
+        List<string> list = new List<string>{};
+        int listLength = 1;
+        foreach(char ch in observed)
+        {
+            listLength *= adjacents[Convert.ToInt32(ch)-48].Length;
+        }
+        for (int i = 0; i < observed.Length; i++)
+        {
+            for (int n = 0; n < listLength / observed.Length; n++)
+            {
+                list.Add($"{observed[i]}");
+            }
+        }
+        int t = 0;
+        for (int n = 1; n < observed.Length; n++)
+        {
+            for(int i = 0; i < listLength; i++)
+            {
+                Console.WriteLine(observed[n]);
+                Console.WriteLine(observed);
+                list[i] += adjacents[Convert.ToInt32(observed[n])-48][t];
+                if(i - (t * (listLength / observed.Length)) > listLength / observed.Length )
+                {
+                    t++;
+                }
+            }
+        }
+        return list;
     }
 }
