@@ -373,4 +373,30 @@ public class FourKyu
         x.Count() descending select x.Key).First();
         return new List<string> {s1, s2, s3};
     }
+
+    public int ParseInt(string s)
+    {
+        Console.WriteLine(s);
+        string[] str = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety", "hundred", "thousand"};
+        int[] ints = {0, 1 ,2 ,3 ,4 ,5 ,6 ,7 ,8 ,9 ,10 ,11 ,12 ,13 ,14 ,15 ,16 ,17 ,18 ,19 ,20 ,30 ,40 ,50 ,60 ,70 ,80 ,90 ,100 ,1000};
+        int a = 0;
+        List<string> stringList = s.Replace(" and", "")
+                                   .Split(' ', '-')
+                                   .ToList();
+        int previous = 1;
+        foreach(string st in stringList)
+        {
+            if (st == "million") 
+                return 1000000;//Number will never be more than 1 million
+            if (st == "thousand")
+                a *= ints[Array.IndexOf(str, st)];
+            else if(st == "hundred")
+                a += 100 * previous - previous;
+            else
+                a += ints[Array.IndexOf(str, st)];
+            previous = ints[Array.IndexOf(str, st)];
+            Console.WriteLine(a);
+        }
+        return a;
+    }
 }

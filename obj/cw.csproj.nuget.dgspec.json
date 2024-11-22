@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\olli9\\VSC\\Personlig prosjekter\\Codewars-challenges\\cw.csproj": {}
+    "C:\\Users\\Olive\\Documents\\kodehode\\Codewars-challenges\\cw.csproj": {}
   },
   "projects": {
-    "C:\\Users\\olli9\\VSC\\Personlig prosjekter\\Codewars-challenges\\cw.csproj": {
+    "C:\\Users\\Olive\\Documents\\kodehode\\Codewars-challenges\\cw.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\olli9\\VSC\\Personlig prosjekter\\Codewars-challenges\\cw.csproj",
+        "projectUniqueName": "C:\\Users\\Olive\\Documents\\kodehode\\Codewars-challenges\\cw.csproj",
         "projectName": "cw",
-        "projectPath": "C:\\Users\\olli9\\VSC\\Personlig prosjekter\\Codewars-challenges\\cw.csproj",
-        "packagesPath": "C:\\Users\\olli9\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\olli9\\VSC\\Personlig prosjekter\\Codewars-challenges\\obj\\",
+        "projectPath": "C:\\Users\\Olive\\Documents\\kodehode\\Codewars-challenges\\cw.csproj",
+        "packagesPath": "C:\\Users\\Olive\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Olive\\Documents\\kodehode\\Codewars-challenges\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\olli9\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Olive\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"

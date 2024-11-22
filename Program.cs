@@ -13,9 +13,9 @@ class Program
         EightKyu kyu8 = new EightKyu();
         //Console.WriteLine(kyu8.Litres(11.8));
         //Console.WriteLine(kyu8.CenturyFromYear(1705));
-        /*double[] d = {5, 6, 1, 8};
-        Console.WriteLine(kyu8.SumOfArray(d));*/
-        Console.WriteLine(kyu8.Paperwork(5, 5));
+        // double[] d = {5, 6, 1, 8};
+        // Console.WriteLine(kyu8.SumOfArray(d));
+        //Console.WriteLine(kyu8.Paperwork(5, 5));
 
         
         SevenKyu kyu7 = new SevenKyu();
@@ -56,14 +56,15 @@ class Program
         
 
         FiveKyu kyu5 = new FiveKyu();
-        /*int[] arr = {1, 0, 2, 0, 1, 0, 1, 0, 3, 1};
-        kyu5.MoveZeroes(arr);*/
+        // int[] arr = {1, 0, 2, 0, 1, 0, 1, 0, 3, 1};
+        // kyu5.MoveZeroes(arr);
 
         FourKyu kyu4 = new FourKyu();
         //Console.WriteLine(kyu4.FindMissingDigit("123?45-?=123?45")); //?
         //Console.WriteLine(kyu4.ToRoman(2024));
         //Console.WriteLine(kyu4.FromRoman("MMXXIV"));
         //foreach(string str in kyu4.Top3("  , e   .. "))Console.WriteLine(str);
+        Console.WriteLine(kyu4.ParseInt("one thousand three hundred and thirty-seven"));
 
     }
 }
