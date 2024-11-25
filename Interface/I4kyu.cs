@@ -40,4 +40,12 @@ public interface I4kyu
     /// <param name="s"></param>
     /// <returns>int with number parsed from string</returns>
     public int ParseInt(string s);
+
+    /// <summary>
+    /// takes in a pin number and returns every possible combination if each digit
+    /// could also be one of the adjacent numbers on the keypad.
+    ///  https://www.codewars.com/kata/5263c6999e0f40dee200059d/
+    /// </summary>
+    /// <returns>list with each possible pin as string</returns>
+    public List<string> GetPINs();
 }
