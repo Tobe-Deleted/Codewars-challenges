@@ -405,49 +405,22 @@ public class FourKyu
         List<string> Combinations = new List<string>{};
         int possibleCombinations = 1;
         int t = 0;
-        int n = 0;
         foreach(char ch in observed)
         {
             possibleCombinations *= adjacents[ch-48].Length;
         }
-        for (int i = 0; i < possibleCombinations; i++) //1st digit
+        for (int i = 0; i < possibleCombinations; i++)
+            Combinations.Add("");
+        for (int n = 0; n < observed.Length; n++)
         {
-                Combinations.Add($"{adjacents[observed[0] -48][n]}");
-                t++;
-                if(t >= possibleCombinations / adjacents[observed[0]-48].Length)
-                {
-                    n++;
-                    t = 0;
-                }
-        }
-        if (observed.Length == 1) return Combinations;
-
-        n = 0; t = 0;
-        for(int i = 0; i < possibleCombinations; i++)// 2nd digit
-        {
-            Combinations[i] += $"{adjacents[observed[1]-48][n]}";
-            n++;
-            if (n >= adjacents[observed[1]-48].Length)
+            for (int i = 0; i < possibleCombinations; i++)
             {
-                n = 0;
+                    Combinations[i] += adjacents[observed[n]-48][t];
+                    t++;
+                    if (t >= adjacents[observed[n]-48].Length)
+                        t = 0;
             }
-        }
-
-        for (int digitnr = 2; digitnr < observed.Length; digitnr++)
-        {
-            if(observed.Length == digitnr) return Combinations;
-            for (int i = 0; i < possibleCombinations; i++)//3rd to 8th digit
-            {  
-                Combinations[i] += $"{adjacents[observed[digitnr]-48][n]}";
-                t++;
-                if (t >= adjacents[observed[digitnr -1]-48].Length)
-                {
-                    n++;
-                    t = 0;
-                }
-                if(n >= adjacents[observed[digitnr]-48].Length)
-                    n = 0;
-            }
+            Combinations.Sort();
         }
         return Combinations;
     }
