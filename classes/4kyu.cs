@@ -402,33 +402,42 @@ public class FourKyu
     public List<string> GetPINs(string observed)
     {
         List<string> adjacents = new List<string>{"08", "124", "2135", "326", "4157", "52468", "6359", "748", "85790", "968"};
-        List<string> list = new List<string>{};
-        int listLength = 1;
+        List<string> Combinations = new List<string>{};
+        int possibleCombinations = 1;
+        int t = 0;
+        int n = 0;
         foreach(char ch in observed)
         {
-            listLength *= adjacents[Convert.ToInt32(ch)-48].Length;
+            possibleCombinations *= adjacents[ch-48].Length;
         }
-        for (int i = 0; i < observed.Length; i++)
+        for (int i = 0; i < possibleCombinations; i++) //1st digit
         {
-            for (int n = 0; n < listLength / observed.Length; n++)
+                Combinations.Add($"{adjacents[observed[0] -48][n]}");
+                t++;
+                if(t == possibleCombinations / adjacents[observed[0]-48].Length)
+                    n++;
+        }
+        if (observed.Length == 1) return Combinations;
+
+        for(int i = 0; i < possibleCombinations; i++)// 2nd digit
+        {
+            Combinations[i] += $"{adjacents[observed[1]-48][t]}";
+            t++;
+            if (t >= adjacents[observed[1]-48].Length)
+                t = 0;
+        }
+        if(observed.Length == 2) return Combinations;
+
+        for (int i = 0; i < possibleCombinations; i++)//3rd digit
+        {  
+            Combinations[i] += $"{adjacents[observed[2]-48][n]}";
+            t++;
+            if (t >= adjacents[observed[2]-48].Length)
             {
-                list.Add($"{observed[i]}");
+                t = 0;
+                n++;
             }
         }
-        int t = 0;
-        for (int n = 1; n < observed.Length; n++)
-        {
-            for(int i = 0; i < listLength; i++)
-            {
-                Console.WriteLine(observed[n]);
-                Console.WriteLine(observed);
-                list[i] += adjacents[Convert.ToInt32(observed[n])-48][t];
-                if(i - (t * (listLength / observed.Length)) > listLength / observed.Length )
-                {
-                    t++;
-                }
-            }
-        }
-        return list;
+        return Combinations;
     }
 }
