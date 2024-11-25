@@ -414,28 +414,39 @@ public class FourKyu
         {
                 Combinations.Add($"{adjacents[observed[0] -48][n]}");
                 t++;
-                if(t == possibleCombinations / adjacents[observed[0]-48].Length)
+                if(t >= possibleCombinations / adjacents[observed[0]-48].Length)
+                {
                     n++;
+                    t = 0;
+                }
         }
         if (observed.Length == 1) return Combinations;
 
+        n = 0; t = 0;
         for(int i = 0; i < possibleCombinations; i++)// 2nd digit
         {
-            Combinations[i] += $"{adjacents[observed[1]-48][t]}";
-            t++;
-            if (t >= adjacents[observed[1]-48].Length)
-                t = 0;
-        }
-        if(observed.Length == 2) return Combinations;
-
-        for (int i = 0; i < possibleCombinations; i++)//3rd digit
-        {  
-            Combinations[i] += $"{adjacents[observed[2]-48][n]}";
-            t++;
-            if (t >= adjacents[observed[2]-48].Length)
+            Combinations[i] += $"{adjacents[observed[1]-48][n]}";
+            n++;
+            if (n >= adjacents[observed[1]-48].Length)
             {
-                t = 0;
-                n++;
+                n = 0;
+            }
+        }
+
+        for (int digitnr = 2; digitnr < observed.Length; digitnr++)
+        {
+            if(observed.Length == digitnr) return Combinations;
+            for (int i = 0; i < possibleCombinations; i++)//3rd to 8th digit
+            {  
+                Combinations[i] += $"{adjacents[observed[digitnr]-48][n]}";
+                t++;
+                if (t >= adjacents[observed[digitnr -1]-48].Length)
+                {
+                    n++;
+                    t = 0;
+                }
+                if(n >= adjacents[observed[digitnr]-48].Length)
+                    n = 0;
             }
         }
         return Combinations;
