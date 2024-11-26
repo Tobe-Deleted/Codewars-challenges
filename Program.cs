@@ -65,7 +65,24 @@ class Program
         //Console.WriteLine(kyu4.FromRoman("MMXXIV"));
         //foreach(string str in kyu4.Top3("  , e   .. "))Console.WriteLine(str);
         //Console.WriteLine(kyu4.ParseInt("one thousand three hundred and thirty-seven"));
-        foreach (string str in kyu4.GetPINs("893869"))Console.WriteLine(str);
+        //foreach (string str in kyu4.GetPINs("893869"))Console.WriteLine(str);
+
+        ThreeKyu kyu3 = new ThreeKyu();
+        int[,] test = {{1,2,3},{4,5,6},{7,8,9}};
+        int size = 3;
+        int tempSize = size;
+        int n = 1;
+        foreach(int i in kyu3.NxNSpiral(size))
+        {    
+            n++;
+            Console.Write(i); 
+            if (n > tempSize)
+            {
+                Console.WriteLine();
+                tempSize += size;
+            }
+
+        }
 
     }
 }
