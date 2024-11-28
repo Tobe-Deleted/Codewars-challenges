@@ -1,40 +1,45 @@
+using System;
+using System.Collections.Generic;
 public class ThreeKyu
 {
     public int[,] NxNSpiral(int size)
     {
-        for (int i = 0; i < size; i++)
+        
+        int[,] spiral = new int[size, size];
+        int[] lengths = new int[size];
+        lengths[0] = lengths[1] = lengths[2] = size;
+        int x = 0, y = 0, dx = 0, dy = 1;
+
+        for (int i = 3; i < size; i++)
         {
-            int[,] = {NxNSpiralBuilder(size, i)};
+            lengths[i] = lengths[i - 1];
+
+            if (i % 2 == 1)
+                lengths[i] -= 2;
         }
-        return null;
+        foreach (var l in lengths)Console.WriteLine($"length: {l}");
+        foreach (var length in lengths)
+        {
+            spiral = Move(spiral, ref x, ref y, dx, dy, length);
+            (dy, dx) = (-dx, dy);
+        }
+
+        return spiral;
     }
 
-    public int[] NxNSpiralBuilder(int size, int row)
+    public static int[,] Move(int[,] spiral, ref int x, ref int y, int dx, int dy, int length)
     {
-        bool IsZero = false;
-        string str = "";
-        int HowManyZeros = 0;
-        if (row % 2 == 1)
+        for (int i = 0; i < length; i++)
         {
-            for(int i = 0; i < size; i++)
-            {
-                if(row < size /2) // size / 2 should default to highest 25 => 13
-                    HowManyZeros = row -2;
-                else if (row == size / 2 + 1.5) ;
-
-                if (row == 1)
-                    str += 1;
-                else if(IsZero)str += 0;
-                else str += 1;
-                
-            }
+            spiral[x, y] = 1;
+            Console.WriteLine($"dx:{dx} dy:{dy} x:{x} y:{y}");
+            x += dx;
+            y += dy;
         }
-        else
-        {
 
-        }
-        return str.Split()
-                  .Select(int.Parse)
-                  .ToArray();
+        x -= dx;
+        y -= dy;
+
+        return spiral;
     }
 }
