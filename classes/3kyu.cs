@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
-public class ThreeKyu
+public class ThreeKyu : I3kyu
 {
     public int[,] NxNSpiral(int size)
     {
