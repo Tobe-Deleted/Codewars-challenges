@@ -12,12 +12,16 @@ public class ThreeKyu
 
         for (int i = 0; i < size; i++)
         {
-            if (i < 3)
-                steps -= 2;
+            Console.WriteLine($"iteration {i}");
+            if (i > 3 && counter == 2 ||
+                i > 3 && counter == 0
+               ) 
+                steps -= 2; 
             
-            for(int n = 0; n < steps; n++)
+            for(int n = 0; n < steps -1; n++)
             {
-                spiral[x, y] = 1;
+                Console.WriteLine($"x:{x} y:{y}");
+                spiral[x, y] = 1; //turns position x,y to 1
                 if (i % 2 ==0)
                 {
                     x += direction;
@@ -28,10 +32,10 @@ public class ThreeKyu
                 }
 
             }
-            if (i % 2 == 0)
-                direction = 1;
-            else
+            if (x == steps -1 && y == steps -1)
                 direction = -1;
+            else if (x == size - steps && y == size - steps)
+                direction = +1;
         }
         return spiral;
     }
