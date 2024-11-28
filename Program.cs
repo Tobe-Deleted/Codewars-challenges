@@ -69,7 +69,7 @@ class Program
 
         ThreeKyu kyu3 = new ThreeKyu();
         int[,] test = {{1,2,3},{4,5,6},{7,8,9}};
-        int size = 10;
+        int size = 25;
         int tempSize = size;
         int n = 1;
         foreach(int i in kyu3.NxNSpiral(size))
