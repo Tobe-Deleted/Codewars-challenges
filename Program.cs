@@ -1,6 +1,7 @@
 ﻿using System.Security.Cryptography;
 using System;
 using System.Runtime.InteropServices;
+using System.Numerics;
 namespace Codewars_test;
 
 class Program
@@ -68,21 +69,25 @@ class Program
         //foreach (string str in kyu4.GetPINs("893869"))Console.WriteLine(str);
 
         ThreeKyu kyu3 = new ThreeKyu();
-        Console.Write("Enter number:");
-        int size = Convert.ToInt32(Console.ReadLine());
-        int tempSize = size;
-        int n = 1;
-        foreach(int i in kyu3.NxNSpiral(size))
-        {    
-            n++;
-            Console.Write(i); 
-            if (n > tempSize)
-            {
-                Console.WriteLine();
-                tempSize += size;
-            }
+        // Console.Write("Enter number:");
+        // int size = Convert.ToInt32(Console.ReadLine());
+        // int tempSize = size;
+        // int n = 1;
+        // foreach(int i in kyu3.NxNSpiral(size))
+        // {    
+        //     n++;
+        //     Console.Write(i); 
+        //     if (n > tempSize)
+        //     {
+        //         Console.WriteLine();
+        //         tempSize += size;
+        //     }
 
-        }
+        // }
+        int eggs = 2;
+        int tries = 20;
+        BigInteger maxFloors = kyu3.EggDrop(eggs, tries);
+        Console.WriteLine($"With {eggs} eggs and {tries} tries, you can test up to {maxFloors} floors.");
 
     }
 }

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Numerics;
 using System.Security.Cryptography.X509Certificates;
 public class ThreeKyu : I3kyu
 {
@@ -34,5 +35,35 @@ public class ThreeKyu : I3kyu
         }
         spiral[x,y] = 1; // This step is usually done as part of the next iteration. This was the last, so we have to do it "manually"
         return spiral;
+    }
+
+    public BigInteger EggDrop(int n, int m)
+    {
+        // Create a 2D array to store results of subproblems
+        int[,] dp = new int[n + 1, m + 1];
+
+        // Fill the dp table
+        // dp[i][j] will store the maximum number of floors that can be tested with i eggs and j tries
+        for (int i = 0; i <= n; i++)
+        {
+            for (int j = 0; j <= m; j++)
+            {
+                // Base case: 0 tries or 1 egg, we can only test 0 or 1 floor
+                if (i == 0 || j == 0)
+                {
+                    dp[i, j] = 0;
+                }
+                else if (i == 1) // If we have only 1 egg, we can test j floors with j tries
+                {
+                    dp[i, j] = j;
+                }
+                else
+                {
+                    // Calculate dp[i][j] by testing from each floor and taking the best result
+                    dp[i, j] = dp[i - 1, j - 1] + dp[i, j - 1] + 1;
+                }
+            }
+        }
+        return dp[n, m];
     }
 }
