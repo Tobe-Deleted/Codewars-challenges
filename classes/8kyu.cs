@@ -25,4 +25,6 @@ public class EightKyu : I8kyu
             return 0;
         return m * n;
     }
+
+    
 }

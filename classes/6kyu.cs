@@ -192,12 +192,9 @@ public class SixKyu : I6kyu
         long armstrongedNumber = 0;
         foreach (char ch in value.ToString())
         {
-            armstrongedNumber += Convert.ToInt64(
-                                        Math.Pow(
-                                            int.Parse(
-                                                ch.ToString())
-                                            , value.ToString()
-                                                   .Length));
+            armstrongedNumber += Convert.ToInt64(Math.Pow(
+                                         int.Parse(ch.ToString()), value.ToString()
+                                                                        .Length));
         }
         return value == armstrongedNumber;
     }
