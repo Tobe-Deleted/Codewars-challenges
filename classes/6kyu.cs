@@ -236,7 +236,7 @@ public class SixKyu : I6kyu
     }
     public bool IsPrime(int num)
     {
-        for(int i = 2; i < num/3 +1; i++)
+        for(int i = 2; i < num/3 +1; i++) //Could do: i < root of num
         {
             if(num % i == 0) return false;
         }

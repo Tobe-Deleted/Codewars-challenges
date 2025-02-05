@@ -113,4 +113,20 @@ public interface I6kyu
     /// <param name="words"></param>
     /// <returns>returns string with words in numbered order</returns>
     public string WordOrder(string words);
+
+    /// <summary>
+    /// Takes an array of numbers, finds the sum and then the closest prime number higher or equal to that sum.
+    /// https://www.codewars.com/kata/5a946d9fba1bb5135100007c/csharp
+    /// </summary>
+    /// <param name="numbers"></param>
+    /// <returns>the difference between the sum and the closest prime number</returns>
+    public int MinimumNumber(int[] numbers);
+
+    /// <summary>
+    /// checks each number if they're a prime number
+    /// https://www.codewars.com/kata/5a946d9fba1bb5135100007c/csharp
+    /// </summary>
+    /// <param name="sum"></param>
+    /// <returns>return true if number is a prime number</returns>
+    public bool IsPrime(int sum);
 }
