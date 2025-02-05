@@ -68,7 +68,7 @@ class Program
         //Console.WriteLine(kyu4.ParseInt("one thousand three hundred and thirty-seven"));
         //foreach (string str in kyu4.GetPINs("893869"))Console.WriteLine(str);
 
-        ThreeKyu kyu3 = new ThreeKyu();
+        // ThreeKyu kyu3 = new ThreeKyu();
         // Console.Write("Enter number:");
         // int size = Convert.ToInt32(Console.ReadLine());
         // int tempSize = size;
@@ -84,10 +84,27 @@ class Program
         //     }
 
         // }
-        int eggs = 2;
-        int tries = 20;
-        BigInteger maxFloors = kyu3.EggDrop(eggs, tries);
-        Console.WriteLine($"With {eggs} eggs and {tries} tries, you can test up to {maxFloors} floors.");
+        // int eggs = 2;
+        // int tries = 20;
+        // BigInteger maxFloors = kyu3.EggDrop(eggs, tries);
+        // Console.WriteLine($"With {eggs} eggs and {tries} tries, you can test up to {maxFloors} floors.");
 
+    }
+
+    //example for coworker:
+    public class Product()
+    {
+        public int amount;
+        public int cost;
+    }
+    
+    public int ProdSum(List<Product> productList)
+    {
+        int sum = 0;
+        for(int i = 0; i > productList.Count(); i++)
+        {
+            sum += productList[i].amount * productList[i].cost;
+        }
+        return sum;
     }
 }
