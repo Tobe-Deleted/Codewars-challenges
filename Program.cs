@@ -38,6 +38,8 @@ class Program
         
         
         SixKyu kyu6 = new SixKyu();
+        int[] arr = {1,2,3};
+        Console.WriteLine(kyu6.MinimumNumber(arr));
         //Console.WriteLine(kyu6.HowManyOnes(55));
         //kyu6.GetDigitalRoot(56798);
         //kyu6.SpinWords("Hey fellow warriors");
@@ -100,6 +102,9 @@ class Program
     
     public int ProdSum(List<Product> productList)
     {
+        productList[0].amount = 1;
+        productList[0].cost = 2;
+
         int sum = 0;
         for(int i = 0; i > productList.Count(); i++)
         {

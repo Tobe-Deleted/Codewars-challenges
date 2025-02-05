@@ -3,6 +3,9 @@ using System.Collections;
 using System.Linq;
 using System.Globalization;
 using System.Security.Cryptography.X509Certificates;
+using System.Security.Cryptography;
+
+using System.Diagnostics.CodeAnalysis;
 public class SixKyu : I6kyu
 {
     public int HowManyOnes(int n)
@@ -220,5 +223,23 @@ public class SixKyu : I6kyu
             Console.ReadLine();
         }
         return result.Trim();
+    }
+
+    public int MinimumNumber(int[] numbers)
+    {
+        int sum = numbers.Sum();
+        for(int i = 0; i > -1; i++)
+        {
+            if(IsPrime(sum +i)) return i;
+        }
+        return 0;
+    }
+    public bool IsPrime(int num)
+    {
+        for(int i = 2; i < num/3 +1; i++)
+        {
+            if(num % i == 0) return false;
+        }
+        return true;
     }
 }
