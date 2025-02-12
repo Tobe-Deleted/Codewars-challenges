@@ -33,4 +33,12 @@ public interface I8kyu
     /// <param name="m"></param>
     /// <returns>n * m || 0 if n or m is negative</returns>
     public int Paperwork(int n, int m);
+
+    /// <summary>
+    /// Makes a string all uppercase letters
+    /// https://www.codewars.com/kata/57a0556c7cb1f31ab3000ad7/csharp
+    /// </summary>
+    /// <param name="str"></param>
+    /// <returns>str as UPPERCASE</returns>
+    public string MakeUpperCase(string str);
 }
