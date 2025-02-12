@@ -26,5 +26,10 @@ public class EightKyu : I8kyu
         return m * n;
     }
 
+    public string MakeUpperCase(string str)
+    {
+        return str.ToUpper();
+    }
+
     
 }

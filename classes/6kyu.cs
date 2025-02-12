@@ -57,7 +57,7 @@ public class SixKyu : I6kyu
             if (ch != '*')
             {
                 newStr = str.Remove(str.IndexOf(ch), 1);
-                if (newStr.Contains(ch) ^ check.Contains(ch)) 
+                if (newStr.Contains(ch) ^ check.Contains(ch)) // could be safer with: && check.Contains(ch)
                 {
                     count++;
                     check += Convert.ToString(ch);
@@ -213,14 +213,14 @@ public class SixKyu : I6kyu
         string result = "";
         for (int i = 1; i <= strArr.Length; i++)  
         {  
-            Console.WriteLine(i);
+            //Console.WriteLine(i);
             foreach (string str in strArr)
             {
-                Console.WriteLine(str);
+                //Console.WriteLine(str);
                 if (str.Contains(i.ToString())) result += str + " ";
             }
-            Console.WriteLine($"Current result = {result}");
-            Console.ReadLine();
+            //Console.WriteLine($"Current result = {result}");
+            //Console.ReadLine();
         }
         return result.Trim();
     }
