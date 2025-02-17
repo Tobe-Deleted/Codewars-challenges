@@ -38,8 +38,8 @@ class Program
         
         
         SixKyu kyu6 = new SixKyu();
-        int[] arr = {1,2,3};
-        Console.WriteLine(kyu6.MinimumNumber(arr));
+        // int[] arr = {1,2,3};
+        // Console.WriteLine(kyu6.MinimumNumber(arr));
         //Console.WriteLine(kyu6.HowManyOnes(55));
         //kyu6.GetDigitalRoot(56798);
         //kyu6.SpinWords("Hey fellow warriors");
@@ -61,6 +61,8 @@ class Program
         FiveKyu kyu5 = new FiveKyu();
         // int[] arr = {1, 0, 2, 0, 1, 0, 1, 0, 3, 1};
         // kyu5.MoveZeroes(arr);
+        int[][] close = kyu5.Closest("239382 162 254765 182 485944 134 468751 62 49780 108 54");
+        Console.WriteLine($"{close.Length} and {close[0].Length}");
 
         FourKyu kyu4 = new FourKyu();
         //Console.WriteLine(kyu4.FindMissingDigit("123?45-?=123?45")); //?

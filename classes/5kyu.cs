@@ -20,5 +20,15 @@ public class FiveKyu : I5kyu
         
     }
 
+// weight, index, nmbr
+
+    public int[][] Closest(string strng) 
+    {
+        int[][] result = new int[3][];
+        string[] numbers = strng.Split(' ');
+        return result;
+    }
+
+
 
 }
