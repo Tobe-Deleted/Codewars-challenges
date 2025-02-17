@@ -27,7 +27,6 @@ public class FiveKyu : I5kyu
         int[][] result = new int[2][];
         string[] numbers = strng.Split(' ');
         int[] weights = new int[numbers.Length];
-        Console.WriteLine(Convert.ToInt32('1'));
         int i = 0;
         foreach(string str in numbers)
         {
@@ -41,13 +40,19 @@ public class FiveKyu : I5kyu
         }
         int[] first = new int[3];
         int[] second = new int[3];
-        for(int n = 1; n < weights.Length; i++)
+        int[] sortedWeights = weights;
+        Array.Sort(sortedWeights);
+        for(int n = 1; n < weights.Length -1; n++)
         {
-            if(Math.Abs(weights[i-1] - weights[i]) < Math.Abs(first[0] - second[0]) || first[0] == null)
+            if(Math.Abs(sortedWeights[n-1] - sortedWeights[n]) < Math.Abs(first[0] - second[0]) || first[0] + second[0] == 0)
             {
-
+                int firstNumberIndex = Array.IndexOf(weights,sortedWeights[n-1]);
+                int secondNumberIndex = Array.IndexOf(weights,sortedWeights[n]);
+                first[0] = sortedWeights[n-1]; first[1] = firstNumberIndex; first[2] = Convert.ToInt32(numbers[firstNumberIndex]);
+                second[0] = sortedWeights[n]; second[1] = secondNumberIndex; second[2] = Convert.ToInt32(numbers[secondNumberIndex]);
             }
         }
+        result[0] = first; result[1] = second;
         return result;
     }
 
