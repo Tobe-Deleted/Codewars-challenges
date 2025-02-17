@@ -62,7 +62,7 @@ class Program
         // int[] arr = {1, 0, 2, 0, 1, 0, 1, 0, 3, 1};
         // kyu5.MoveZeroes(arr);
         int[][] close = kyu5.Closest("239382 162 254765 182 485944 134 468751 62 49780 108 54");
-        Console.WriteLine($"{close.Length} and {close[0].Length}");
+        Console.WriteLine($"{close.Length}");
 
         FourKyu kyu4 = new FourKyu();
         //Console.WriteLine(kyu4.FindMissingDigit("123?45-?=123?45")); //?
