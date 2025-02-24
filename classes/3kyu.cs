@@ -66,4 +66,20 @@ public class ThreeKyu : I3kyu
         }
         return dp[n, m];
     }
+
+    public BigInteger Fib(int n)
+    {
+        Console.WriteLine(n);
+        int limit = n;
+        BigInteger a = 0;
+        BigInteger b = 1;
+        if(n < 0) limit = n*-1;
+          
+        for(int i = 0; i < limit; i++)
+        {
+            (a, b) = (b, a+b);
+        }
+        
+        return n < 0 && n*-1 % 2 == 0 ? a * -1 : a;
+    }
 }

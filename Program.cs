@@ -61,9 +61,9 @@ class Program
         FiveKyu kyu5 = new FiveKyu();
         // int[] arr = {1, 0, 2, 0, 1, 0, 1, 0, 3, 1};
         // kyu5.MoveZeroes(arr);
-        int[][] close = kyu5.Closest("239382 162 254765 182 485944 134 468751 62 49780 108 54");
-        foreach(int[] arr in close)
-            foreach(int i in arr)Console.WriteLine($"{i}");
+        // int[][] close = kyu5.Closest("239382 162 254765 182 485944 134 468751 62 49780 108 54");
+        // foreach(int[] arr in close)
+        //     foreach(int i in arr)Console.WriteLine($"{i}");
 
         FourKyu kyu4 = new FourKyu();
         //Console.WriteLine(kyu4.FindMissingDigit("123?45-?=123?45")); //?
@@ -73,7 +73,9 @@ class Program
         //Console.WriteLine(kyu4.ParseInt("one thousand three hundred and thirty-seven"));
         //foreach (string str in kyu4.GetPINs("893869"))Console.WriteLine(str);
 
-        // ThreeKyu kyu3 = new ThreeKyu();
+        ThreeKyu kyu3 = new ThreeKyu();
+
+        Console.WriteLine(kyu3.Fib(96));
         // Console.Write("Enter number:");
         // int size = Convert.ToInt32(Console.ReadLine());
         // int tempSize = size;
