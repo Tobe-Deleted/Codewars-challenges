@@ -73,11 +73,34 @@ public class ThreeKyu : I3kyu
         BigInteger[,] matrix = {{0,1},{1,1}};
         
         // iteration method is too slow
-        for(int i = 0; i < limit; i++)
-        {
-            (matrix[0,0], matrix[0,1]) = (matrix[0,1], matrix[0,1] + matrix[0, 0]);
-        }
+        // for(int i = 0; i < limit; i++)
+        // {
+        //     (matrix[0,0], matrix[0,1]) = (matrix[0,1], matrix[0,1] + matrix[0, 0]);
+        // }
+
+        //log method
+        
         
         return n < 0 && Math.Abs(n) % 2 == 0 ? -matrix[0,0] : matrix[0,0];
+    }
+
+    private BigInteger[,] NTarget(BigInteger[,] matrix, int n) 
+    {
+        if(n = 1) return matrix;
+
+        if(n % 2 == 0)
+        {
+            BigInteger[,] halfN = NTarget(matrix, n/2)
+            return FibonacciCalculations(halfN, halfN)
+        }
+    }
+
+    private BigInteger[,] FibonacciCalculations(BigInteger[,] a, BigInteger b)
+    {
+        return new BigInteger 
+                   {
+                        {a[0,0] * b[0,0] + a[0,1] * b[1,0], a[0,0] b[0,1] a[0,1] b[1,1]}
+                        {a[1,0] * b[0,0] + a[0,0] * b[1,0], a[1,0] b[0,1] a[1,1] b[1,1]}
+                   }
     }
 }
