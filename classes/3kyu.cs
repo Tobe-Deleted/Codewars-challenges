@@ -69,38 +69,42 @@ public class ThreeKyu : I3kyu
 
     public BigInteger Fib(int n)
     {
-        int limit = Math.Abs(n);
+        if(n == 1)return 1;
+        if(n == 0)return 0;
         BigInteger[,] matrix = {{0,1},{1,1}};
+        int absN = Math.Abs(n);
         
         // iteration method is too slow
+        // BigInteger a = 0; BigInteger b = 1;
         // for(int i = 0; i < limit; i++)
         // {
-        //     (matrix[0,0], matrix[0,1]) = (matrix[0,1], matrix[0,1] + matrix[0, 0]);
+        //     (a, b) = (b, b + a);
         // }
-
-        //log method
+        // return n < 0 && Math.Abs(n) % 2 == 0 ? -a : a;
         
+        BigInteger[,] result = NTarget(matrix, absN -1);
         
-        return n < 0 && Math.Abs(n) % 2 == 0 ? -matrix[0,0] : matrix[0,0];
+        return n < 0 && Math.Abs(n) % 2 == 0 ? -result[0,0] : result[0,0];
     }
 
     private BigInteger[,] NTarget(BigInteger[,] matrix, int n) 
     {
-        if(n = 1) return matrix;
+        if(n == 1) return matrix;
 
         if(n % 2 == 0)
         {
-            BigInteger[,] halfN = NTarget(matrix, n/2)
-            return FibonacciCalculations(halfN, halfN)
+            BigInteger[,] halfN = NTarget(matrix, n/2);
+            return FibonacciCalculations(halfN, halfN);
         }
+        else return FibonacciCalculations(matrix, NTarget(matrix, n-1));
     }
 
-    private BigInteger[,] FibonacciCalculations(BigInteger[,] a, BigInteger b)
+    private BigInteger[,] FibonacciCalculations(BigInteger[,] matrixA, BigInteger[,] matrixB)
     {
-        return new BigInteger 
+        return new BigInteger[,] 
                    {
-                        {a[0,0] * b[0,0] + a[0,1] * b[1,0], a[0,0] b[0,1] a[0,1] b[1,1]}
-                        {a[1,0] * b[0,0] + a[0,0] * b[1,0], a[1,0] b[0,1] a[1,1] b[1,1]}
-                   }
+                        {matrixA[0,0] * matrixB[0,0] + matrixA[0,1] * matrixB[1,0], matrixA[0,0] * matrixB[0,1] + matrixA[0,1] * matrixB[1,1]},
+                        {matrixA[1,0] * matrixB[0,0] + matrixA[0,0] * matrixB[1,0], matrixA[1,0] * matrixB[0,1] + matrixA[1,1] * matrixB[1,1]}
+                   };
     }
 }
