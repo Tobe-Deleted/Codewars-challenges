@@ -69,17 +69,15 @@ public class ThreeKyu : I3kyu
 
     public BigInteger Fib(int n)
     {
-        Console.WriteLine(n);
-        int limit = n;
-        BigInteger a = 0;
-        BigInteger b = 1;
-        if(n < 0) limit = n*-1;
-          
+        int limit = Math.Abs(n);
+        BigInteger[,] matrix = {{0,1},{1,1}};
+        
+        // iteration method is too slow
         for(int i = 0; i < limit; i++)
         {
-            (a, b) = (b, a+b);
+            (matrix[0,0], matrix[0,1]) = (matrix[0,1], matrix[0,1] + matrix[0, 0]);
         }
         
-        return n < 0 && n*-1 % 2 == 0 ? a * -1 : a;
+        return n < 0 && Math.Abs(n) % 2 == 0 ? -matrix[0,0] : matrix[0,0];
     }
 }
