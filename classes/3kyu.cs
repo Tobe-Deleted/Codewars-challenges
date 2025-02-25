@@ -115,10 +115,50 @@ public class ThreeKyu : I3kyu
         // belongs to FibAttemptTwo()
         return new BigInteger[,] 
                    {
-                        {matrixA[0,0] * matrixB[0,0] + matrixA[0,1] * matrixB[1,0], matrixA[0,0] * matrixB[0,1] + matrixA[0,1] * matrixB[1,1]},
-                        {matrixA[1,0] * matrixB[0,0] + matrixA[1,1] * matrixB[1,0], matrixA[1,0] * matrixB[0,1] + matrixA[1,1] * matrixB[1,1]}
+                        {   matrixA[0,0] * matrixB[0,0] + matrixA[0,1] * matrixB[1,0], 
+                            matrixA[0,0] * matrixB[0,1] + matrixA[0,1] * matrixB[1,1]   },
+                        {   matrixA[1,0] * matrixB[0,0] + matrixA[1,1] * matrixB[1,0], 
+                            matrixA[1,0] * matrixB[0,1] + matrixA[1,1] * matrixB[1,1]   }
                    };
     }
 
-    
+    public BigInteger Fib(int n)
+    {
+        if (n == 0) return 0;
+        if (n == 1) return 1;
+
+        int absN = Math.Abs(n);
+        BigInteger[,] baseMatrix = { { 1, 1 }, { 1, 0 } };
+
+        BigInteger[,] result = IterativeMatrixPower(baseMatrix, absN - 1);
+
+        return (n < 0 && absN % 2 == 0) ? -result[0, 0] : result[0, 0];
+    }
+
+    private BigInteger[,] IterativeMatrixPower(BigInteger[,] matrix, int n)
+    {
+        BigInteger[,] result = { { 1, 0 }, { 0, 1 } }; 
+
+        while (n > 0)
+        {
+            if ((n&1)==1) 
+                result = MultiplyMatrices(result, matrix);
+
+            matrix = MultiplyMatrices(matrix, matrix); 
+            n >>= 1; 
+        }
+
+        return result;
+    }
+
+    private BigInteger[,] MultiplyMatrices(BigInteger[,] matrixA, BigInteger[,] matrixB)
+    {
+        return new BigInteger[,]
+        {
+            { matrixA[0,0] * matrixB[0,0] + matrixA[0,1] * matrixB[1,0], 
+              matrixA[0,0] * matrixB[0,1] + matrixA[0,1] * matrixB[1,1] },
+            { matrixA[1,0] * matrixB[0,0] + matrixA[1,1] * matrixB[1,0],  
+              matrixA[1,0] * matrixB[0,1] + matrixA[1,1] * matrixB[1,1] }
+        };
+    }
 }

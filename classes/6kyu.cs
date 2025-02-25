@@ -242,4 +242,23 @@ public class SixKyu : I6kyu
         }
         return true;
     }
+
+    public double[] Tribonacci(double[] signature, int n)
+    {
+        double[] result = new double[n];
+        if (n == 0) return result;
+        result[0] = signature[0];
+        if (n == 1) return result;
+        result[1] = signature[1];
+        if (n == 2) return result;
+      
+        double a = signature[0], b = signature[1], c = signature[2];
+      
+        for(int i = 2; i < n; i++)
+        {
+            result[i] = c;
+            (a,b,c) = (b,c,a+b+c);
+        }
+        return result;
+    }
 }
