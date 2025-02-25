@@ -67,20 +67,24 @@ public class ThreeKyu : I3kyu
         return dp[n, m];
     }
 
-    public BigInteger Fib(int n)
+    public BigInteger FibAttemptOne(int n)
     {
+        // iteration method is too slow
+        BigInteger a = 0; BigInteger b = 1;
+        int limit = Math.Abs(n);
+        for(int i = 0; i < limit; i++)
+        {
+            (a, b) = (b, b + a);
+        }
+        return n < 0 && Math.Abs(n) % 2 == 0 ? -a : a;
+    }
+    public BigInteger FibAttemptTwo(int n)
+    {
+        // deep recursive causes stack overflow
         if(n == 1)return 1;
         if(n == 0)return 0;
         BigInteger[,] baseMatrix = {{1,1},{1,0}};
         int absN = Math.Abs(n);
-        
-        // iteration method is too slow
-        // BigInteger a = 0; BigInteger b = 1;
-        // for(int i = 0; i < limit; i++)
-        // {
-        //     (a, b) = (b, b + a);
-        // }
-        // return n < 0 && Math.Abs(n) % 2 == 0 ? -a : a;
         
         BigInteger[,] result = NTarget(baseMatrix, absN -1);
         
@@ -89,7 +93,7 @@ public class ThreeKyu : I3kyu
 
     private BigInteger[,] NTarget(BigInteger[,] matrix, int n) 
     {
-        // Console.WriteLine($"{matrix[0,0]},{matrix[0,1]} | {matrix[1,0]}, {matrix[1,1]}");
+        //belongs to FibAttemptTwo()
         if(n == 1) return matrix;
 
         if(n % 2 == 0)
@@ -107,11 +111,14 @@ public class ThreeKyu : I3kyu
     }
 
     private BigInteger[,] FibonacciCalculations(BigInteger[,] matrixA, BigInteger[,] matrixB)
-    {
+    { 
+        // belongs to FibAttemptTwo()
         return new BigInteger[,] 
                    {
                         {matrixA[0,0] * matrixB[0,0] + matrixA[0,1] * matrixB[1,0], matrixA[0,0] * matrixB[0,1] + matrixA[0,1] * matrixB[1,1]},
                         {matrixA[1,0] * matrixB[0,0] + matrixA[1,1] * matrixB[1,0], matrixA[1,0] * matrixB[0,1] + matrixA[1,1] * matrixB[1,1]}
                    };
     }
+
+    
 }
