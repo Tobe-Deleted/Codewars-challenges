@@ -129,4 +129,13 @@ public interface I6kyu
     /// <param name="sum"></param>
     /// <returns>return true if number is a prime number</returns>
     public bool IsPrime(int sum);
+
+    /// <summary>
+    /// Takes in an array of three doubles that is used as a starting point for tribonacci logic and an int refering to how many numbers you want returned
+    /// https://www.codewars.com/kata/556deca17c58da83c00002db
+    /// </summary>
+    /// <param name="signature"></param>
+    /// <param name="n"></param>
+    /// <returns>an array of n numbers in the tribonacci sequence from the starting point given</returns>
+    public double[] Tribonacci(double[] signature, int n)
 }
