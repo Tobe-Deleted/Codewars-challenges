@@ -170,7 +170,8 @@ public class ThreeKyu : I3kyu
         while(n < max)
         {
             bool isPrime = true;
-            n+=2;
+            n+= Convert.ToString(n).Length;
+            if(n % 2 == 0)n += -1;
             int boundary = Convert.ToInt32(Math.Floor(Math.Sqrt(n)));
             for(int i = 2; i <= boundary; i++)
             {
