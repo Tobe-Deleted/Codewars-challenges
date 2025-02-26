@@ -161,4 +161,31 @@ public class ThreeKyu : I3kyu
               matrixA[1,0] * matrixB[0,1] + matrixA[1,1] * matrixB[1,1] }
         };
     }
+
+    public IEnumerable<int> Stream()
+    {
+        int max = 15485864;
+        int n = 17;
+        List<int> result = new List<int> { 2, 3, 5, 7, 11, 13, 17 };
+        while(n < max)
+        {
+            bool isPrime = true;
+            n+=2;
+            int boundary = Convert.ToInt32(Math.Floor(Math.Sqrt(n)));
+            for(int i = 2; i <= boundary; i++)
+            {
+                if(n % i == 0)
+                {
+                    isPrime = false;
+                    break;
+                }
+            }
+            if(isPrime) 
+            {
+                result.Add(n);
+            }
+        }
+        return result;
+    }
+
 }

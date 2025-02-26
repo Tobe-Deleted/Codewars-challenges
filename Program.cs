@@ -75,7 +75,8 @@ class Program
 
         ThreeKyu kyu3 = new ThreeKyu();
 
-        Console.WriteLine(kyu3.Fib(10));
+        foreach(int i in kyu3.Stream())Console.WriteLine(i);
+        // Console.WriteLine(kyu3.Fib(10));
         // Console.Write("Enter number:");
         // int size = Convert.ToInt32(Console.ReadLine());
         // int tempSize = size;

@@ -137,5 +137,5 @@ public interface I6kyu
     /// <param name="signature"></param>
     /// <param name="n"></param>
     /// <returns>an array of n numbers in the tribonacci sequence from the starting point given</returns>
-    public double[] Tribonacci(double[] signature, int n)
+    public double[] Tribonacci(double[] signature, int n);
 }
