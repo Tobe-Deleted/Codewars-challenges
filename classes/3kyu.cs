@@ -1,4 +1,5 @@
 using System;
+using System.Data;
 using System.Collections.Generic;
 using System.Numerics;
 using System.Security.Cryptography.X509Certificates;
@@ -192,9 +193,16 @@ public class ThreeKyu : I3kyu
         }
     }
 
-    public static double Calculate(string s)
+    public double Calculate(string s) // not working
     {
-        return 0;
+        s = Regex.Replace(s, @"(\d+)\s*\^\s*(\d+)", match =>
+        {
+            double baseNum = Convert.ToDouble(match.Groups[1].Value);
+            double exponent = Convert.ToDouble(match.Groups[2].Value);
+            return Math.Pow(baseNum, exponent).ToString();
+        });
+        DataTable dt = new DataTable();
+        return Convert.ToDouble(dt.Compute(s, ""));
     }
 
 }

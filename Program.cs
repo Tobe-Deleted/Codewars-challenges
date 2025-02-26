@@ -75,7 +75,8 @@ class Program
 
         ThreeKyu kyu3 = new ThreeKyu();
 
-        foreach(int i in kyu3.Stream())Console.WriteLine(i);
+        Console.WriteLine(kyu3.Calculate("3+4*2"));
+        // foreach(int i in kyu3.Stream())Console.WriteLine(i);
         // Console.WriteLine(kyu3.Fib(10));
         // Console.Write("Enter number:");
         // int size = Convert.ToInt32(Console.ReadLine());

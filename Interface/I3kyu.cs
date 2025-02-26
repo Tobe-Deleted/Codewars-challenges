@@ -1,3 +1,4 @@
+using System.Numerics;
 public interface I3kyu
 {
     /// <summary>
