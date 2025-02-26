@@ -164,29 +164,37 @@ public class ThreeKyu : I3kyu
 
     public IEnumerable<int> Stream()
     {
-        int max = 15485864;
-        int n = 17;
-        List<int> result = new List<int> { 2, 3, 5, 7, 11, 13, 17 };
-        while(n < max)
+        yield return 2;
+        const int max = 16000000;
+        
+        List<int> primes = new List<int> {2};
+        for(int i = 3; i < max; i += 2)
         {
             bool isPrime = true;
-            n+= Convert.ToString(n).Length;
-            if(n % 2 == 0)n += -1;
-            int boundary = Convert.ToInt32(Math.Floor(Math.Sqrt(n)));
-            for(int i = 2; i <= boundary; i++)
+            int boundary = (int)Math.Sqrt(i);
+            
+            foreach(int p in primes)
             {
-                if(n % i == 0)
+                if(p > boundary) break;
+
+                if(i % p == 0)
                 {
                     isPrime = false;
                     break;
                 }
             }
+
             if(isPrime) 
             {
-                result.Add(n);
+                primes.Add(i);
+                yield return i;
             }
         }
-        return result;
+    }
+
+    public static double Calculate(string s)
+    {
+        return 0;
     }
 
 }
