@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Xml.XPath;
 public class FiveKyu : I5kyu
 {
     public int[] MoveZeroes(int[] arr)
@@ -67,6 +68,20 @@ public class FiveKyu : I5kyu
         return result;
     }
 
-
-
+    public string PigIt(string str)
+    {
+        string result = "";
+        foreach(string s in str.Split(' '))
+        {
+            if(Char.IsLetter(s[0]))
+            {
+                result += $"{s.Remove(0,1)}{s[0]}ay ";
+            }
+            else
+            {
+                result += s;
+            }
+        }
+        return result.Trim();
+    }
 }
