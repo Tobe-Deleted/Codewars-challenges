@@ -261,4 +261,9 @@ public class SixKyu : I6kyu
         }
         return result;
     }
+
+    public int GetUnique(IEnumerable<int> numbers)
+    {
+        return numbers.Last(n => numbers.Count(i => i == n) == 1);
+    }
 }

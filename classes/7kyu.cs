@@ -150,4 +150,7 @@ public class SevenKyu : I7kyu
         for(int i = 0; i < cc.Length -4; i++) result = result.Insert(0, "#");
         return result;
     }
+
+    public long FindNextSquare(long num)
+        => Math.Sqrt(num) % 1 == 0 ? (long)Math.Pow(Math.Sqrt(num) +1, 2) : -1 ;
 }

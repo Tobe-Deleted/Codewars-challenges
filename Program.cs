@@ -20,6 +20,8 @@ class Program
 
         
         SevenKyu kyu7 = new SevenKyu();
+        
+        Console.WriteLine(kyu7.FindNextSquare(144));
         //kyu7.IsIsogram("MoOse");
         //kyu7.GetMidChar("testing");
         //kyu7.IsSquare(25);
@@ -38,6 +40,8 @@ class Program
         
         
         SixKyu kyu6 = new SixKyu();
+
+        // Console.WriteLine(new int[]{1,1,1,2,3,3,3,4,5,4,5});
         // int[] arr = {1,2,3};
         // Console.WriteLine(kyu6.MinimumNumber(arr));
         //Console.WriteLine(kyu6.HowManyOnes(55));
@@ -75,7 +79,7 @@ class Program
 
         ThreeKyu kyu3 = new ThreeKyu();
 
-        Console.WriteLine(kyu3.Calculate("3+4*2"));
+        // Console.WriteLine(kyu3.Calculate("3+4*2"));
         // foreach(int i in kyu3.Stream())Console.WriteLine(i);
         // Console.WriteLine(kyu3.Fib(10));
         // Console.Write("Enter number:");

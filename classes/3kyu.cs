@@ -195,12 +195,12 @@ public class ThreeKyu : I3kyu
 
     public double Calculate(string s) // not working
     {
-        s = Regex.Replace(s, @"(\d+)\s*\^\s*(\d+)", match =>
-        {
-            double baseNum = Convert.ToDouble(match.Groups[1].Value);
-            double exponent = Convert.ToDouble(match.Groups[2].Value);
-            return Math.Pow(baseNum, exponent).ToString();
-        });
+        // s = Regex.Replace(s, @"(\d+)\s*\^\s*(\d+)", match =>
+        // {
+        //     double baseNum = Convert.ToDouble(match.Groups[1].Value);
+        //     double exponent = Convert.ToDouble(match.Groups[2].Value);
+        //     return Math.Pow(baseNum, exponent).ToString();
+        // });
         DataTable dt = new DataTable();
         return Convert.ToDouble(dt.Compute(s, ""));
     }
