@@ -424,4 +424,20 @@ public class FourKyu
         }
         return Combinations;
     }
+
+    public static (int, int)[][] BuildMatchesTable(int numberOfTeams)
+    {
+        int[] teams = Enumerable.Range(1, numberOfTeams).ToArray();
+        int numberOfRounds = numberOfTeams -1;
+        List<(int, int)[]> schedule = new List<(int, int)[]>{};
+        for (int round = 0; round < numberOfRounds; round++)
+    {
+        List<(int, int)> matches = new List<(int, int)>();
+
+        for (int i = 0; i < numberOfTeams / 2; i++)
+        {
+            matches.Add((teams[i], teams[numberOfTeams -1 -i]));
+        }
+        }
+    }
 }
