@@ -31,5 +31,8 @@ public class EightKyu : I8kyu
         return str.ToUpper();
     }
 
-    
+    public double FindAverage(double[] array)
+    {
+        return array.Sum() / array.Length;
+    }
 }

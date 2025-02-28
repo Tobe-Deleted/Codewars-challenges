@@ -12,6 +12,8 @@ class Program
         //ff.WhatNumber();
 
         EightKyu kyu8 = new EightKyu();
+
+        Console.WriteLine(new double[]{2, 3, 6, 7, 1});
         //Console.WriteLine(kyu8.Litres(11.8));
         //Console.WriteLine(kyu8.CenturyFromYear(1705));
         // double[] d = {5, 6, 1, 8};
@@ -21,7 +23,7 @@ class Program
         
         SevenKyu kyu7 = new SevenKyu();
         
-        Console.WriteLine(kyu7.FindNextSquare(144));
+        // Console.WriteLine(kyu7.FindNextSquare(144));
         //kyu7.IsIsogram("MoOse");
         //kyu7.GetMidChar("testing");
         //kyu7.IsSquare(25);
