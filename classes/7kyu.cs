@@ -152,5 +152,8 @@ public class SevenKyu : I7kyu
     }
 
     public long FindNextSquare(long num)
-        => Math.Sqrt(num) % 1 == 0 ? (long)Math.Pow(Math.Sqrt(num) +1, 2) : -1 ;
+    {
+        long sqrt = (long)Math.Sqrt(num);
+        return sqrt * sqrt == num ? (sqrt +1) * (sqrt +1) : -1;
+    }
 }
