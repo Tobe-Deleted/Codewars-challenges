@@ -425,19 +425,32 @@ public class FourKyu
         return Combinations;
     }
 
-    public static (int, int)[][] BuildMatchesTable(int numberOfTeams)
+    public (int, int)[][] BuildMatchesTable(int numberOfTeams)
     {
         int[] teams = Enumerable.Range(1, numberOfTeams).ToArray();
         int numberOfRounds = numberOfTeams -1;
+        List<int> rotation = Enumerable.Range(2, numberOfTeams -1).ToList();
         List<(int, int)[]> schedule = new List<(int, int)[]>{};
         for (int round = 0; round < numberOfRounds; round++)
-    {
-        List<(int, int)> matches = new List<(int, int)>();
-
-        for (int i = 0; i < numberOfTeams / 2; i++)
         {
-            matches.Add((teams[i], teams[numberOfTeams -1 -i]));
+            List<(int, int)> matches = new List<(int, int)>();
+
+            for (int i = 0; i < numberOfTeams / 2; i++)
+            {
+                matches.Add((teams[i], teams[numberOfTeams -1 -i]));
+            }
+            schedule.Add(matches.ToArray());
+
+            // rotation algorithm ( team 1 will keep its place)
+            int first = rotation[0];
+            rotation.RemoveAt(0);
+            rotation.Add(first);
+
+            for(int n = 1; n < numberOfTeams; n++)
+            {
+                teams[n] = rotation[n-1];
+            }
         }
-        }
+        return schedule.ToArray();
     }
 }

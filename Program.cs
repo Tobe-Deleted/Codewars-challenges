@@ -13,7 +13,7 @@ class Program
 
         EightKyu kyu8 = new EightKyu();
 
-        Console.WriteLine(new double[]{2, 3, 6, 7, 1});
+        // Console.WriteLine(new double[]{2, 3, 6, 7, 1});
         //Console.WriteLine(kyu8.Litres(11.8));
         //Console.WriteLine(kyu8.CenturyFromYear(1705));
         // double[] d = {5, 6, 1, 8};
@@ -72,6 +72,12 @@ class Program
         //     foreach(int i in arr)Console.WriteLine($"{i}");
 
         FourKyu kyu4 = new FourKyu();
+
+        var schedule = kyu4.BuildMatchesTable(6);
+        foreach (var round in schedule)
+        {
+            Console.WriteLine(string.Join(" | ", round.Select(match => $"({match.Item1}, {match.Item2})")));
+        }
         //Console.WriteLine(kyu4.FindMissingDigit("123?45-?=123?45")); //?
         //Console.WriteLine(kyu4.ToRoman(2024));
         //Console.WriteLine(kyu4.FromRoman("MMXXIV"));
