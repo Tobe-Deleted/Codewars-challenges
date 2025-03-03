@@ -48,4 +48,13 @@ public interface I4kyu
     /// </summary>
     /// <returns>list with each possible pin as string</returns>
     public List<string> GetPINs();
+
+    /// <summary>
+    /// Takes in a number and creates a round robin tournament with that many teams
+    /// https://www.codewars.com/kata/561c20edc71c01139000017c
+    /// </summary>
+    /// <param name="numberOfTeams"></param>
+    /// <returns>a list of match ups between each team for each round</returns>
+    public (int, int)[][] BuildMatchesTable(int numberOfTeams);
+
 }
