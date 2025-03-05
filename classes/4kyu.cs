@@ -487,7 +487,36 @@ public class FourKyu
             {
                 column[n] = sudokuBoard[i][n];
             }
+            if(column.Distinct().Count() != sudokuRowLength) return false;
         }
 
+        // Checks that each box only contains a single instance of each number
+        int[,] boxes = new int[sudokuRowLength,sudokuRowLength];
+        int x = 0;
+        int z = 0;
+        int counter1 = 0;
+        for(int i = 0; i < sudokuRowLength; i++)
+        {
+            int y = 0; 
+            int counter2 = 0;
+            if(counter1 == Math.Sqrt(sudokuRowLength))
+            {
+                x += (int)Math.Sqrt(sudokuRowLength);
+                counter1 = 0;
+            }
+            for(int n = 0; n < sudokuRowLength; n++)
+            {
+                if(counter2 == Math.Sqrt(sudokuRowLength))
+                {
+                    x++;
+                    y += (int)Math.Sqrt(sudokuRowLength);
+                    counter2 = 0;
+                }
+                boxes[x,n+z-y] = sudokuBoard[i][n];
+                counter2++;
+            }
+            z += (int)Math.Sqrt(sudokuRowLength);
+            counter1++;
+        }
     }
 }
