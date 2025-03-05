@@ -453,4 +453,41 @@ public class FourKyu
         }
         return schedule.ToArray();
     }
+
+    //sudoku variables:
+    private int[][] sudokuBoard;
+    private int sudokuFullLength;
+    private int sudokuRowLength;
+    public void Sudoku(int[][] sudokuData)
+    {
+        sudokuBoard = sudokuData;
+        sudokuFullLength = sudokuData.Length;
+        sudokuRowLength = (int)Math.Sqrt(sudokuData.Length);
+    }
+
+    public bool IsValid()
+    {    
+        // Checks size
+        if(sudokuRowLength < 1 || Math.Sqrt(sudokuRowLength) % 1 != 0) return false;
+
+        // Checks that integers are within bounds
+        foreach(int[] ia in sudokuBoard)
+            foreach(int i in ia)
+                if (i < 1 || i > sudokuRowLength) return false;
+        
+        // Checks that each row only contains a single instance of each number
+        foreach(int[] ia in sudokuBoard)
+            if(ia.Distinct().Count() != sudokuRowLength) return false;
+
+        // Checks that each column only contains a single instance of each number
+        for(int i = 0; i < sudokuRowLength; i++)
+        {
+            int[] column = new int[sudokuRowLength];
+            for(int n = 0; n < sudokuRowLength; n++)
+            {
+                column[n] = sudokuBoard[i][n];
+            }
+        }
+
+    }
 }
