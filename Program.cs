@@ -71,13 +71,28 @@ class Program
         // foreach(int[] arr in close)
         //     foreach(int i in arr)Console.WriteLine($"{i}");
 
-        FourKyu kyu4 = new FourKyu();
+        //FourKyu kyu4 = new FourKyu();
 
-        var schedule = kyu4.BuildMatchesTable(6);
-        foreach (var round in schedule)
-        {
-            Console.WriteLine(string.Join(" | ", round.Select(match => $"({match.Item1}, {match.Item2})")));
-        }
+        var sudokuTest = new FourKyu(
+      new int[][] {
+      new int[] {7,8,4, 1,5,9, 3,2,6},
+      new int[] {5,3,9, 6,7,2, 8,4,1},
+      new int[] {6,1,2, 4,3,8, 7,5,9},
+    
+      new int[] {9,2,8, 7,1,5, 4,6,3},
+      new int[] {3,5,7, 8,4,6, 1,9,2},
+      new int[] {4,6,1, 9,2,3, 5,8,7},
+      
+      new int[] {8,7,6, 3,9,4, 2,1,5},
+      new int[] {2,4,3, 5,6,1, 9,7,8},
+      new int[] {1,9,5, 2,8,7, 6,3,4}
+      });
+        Console.WriteLine($"test shows: {sudokuTest.IsValid()}");
+        // var schedule = kyu4.BuildMatchesTable(6);
+        // foreach (var round in schedule)
+        // {
+        //     Console.WriteLine(string.Join(" | ", round.Select(match => $"({match.Item1}, {match.Item2})")));
+        // }
         //Console.WriteLine(kyu4.FindMissingDigit("123?45-?=123?45")); //?
         //Console.WriteLine(kyu4.ToRoman(2024));
         //Console.WriteLine(kyu4.FromRoman("MMXXIV"));
