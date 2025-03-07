@@ -57,4 +57,10 @@ public interface I4kyu
     /// <returns>a list of match ups between each team for each round</returns>
     public (int, int)[][] BuildMatchesTable(int numberOfTeams);
 
+    /// <summary>
+    /// validates a sudoku solution
+    /// https://www.codewars.com/kata/540afbe2dc9f615d5e000425
+    /// </summary>
+    /// <returns>true or false depending on the state of the sudoku board</returns>
+    public bool IsValid();
 }

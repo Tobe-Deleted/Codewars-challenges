@@ -454,14 +454,14 @@ public class FourKyu
         return schedule.ToArray();
     }
 
-    //sudoku variables:
+    //sudoku constructor:
     private int[][] sudokuBoard;
     private int sudokuRowLength;
-    public FourKyu(int[][] sudokuData)
-    {
-        sudokuBoard = sudokuData;
-        sudokuRowLength = sudokuData.Length;
-    }
+    // public FourKyu(int[][] sudokuData)
+    // {
+    //     sudokuBoard = sudokuData;
+    //     sudokuRowLength = sudokuData.Length;
+    // }
 
     public bool IsValid()
     {    
