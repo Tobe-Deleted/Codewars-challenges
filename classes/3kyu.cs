@@ -205,4 +205,38 @@ public class ThreeKyu : I3kyu
         return Convert.ToDouble(dt.Compute(s, ""));
     }
 
+    public string Decode(string p_what)
+    {
+        string alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.,? ";
+        var dict1 = new Dictionary<int, char>();
+        for(int i = 0; i < alphabet.Length; i++)
+        {
+            dict1.Add(i+1, alphabet[i]);
+        }
+
+        var dict2 = new Dictionary<char, int>();
+        for(int i = 0; i < alphabet.Length; i++)
+        {
+            dict2.Add(alphabet[i], i+1);
+        }
+
+        string result = "";
+        for(int i = 0; i <= alphabet.Length; i++)
+        {
+            if(!alphabet.Contains(p_what[i]))
+            {
+                result += p_what[i];
+                continue;
+            }
+            var tempDict = new Dictionary<char, int>();
+            for(int n = 0; n < alphabet.Length; n++)
+            {
+                tempDict.Add(alphabet[n], dict2[alphabet[n]]* (2 + i));
+            }
+
+        }
+        
+        return result;
+    }
+
 }

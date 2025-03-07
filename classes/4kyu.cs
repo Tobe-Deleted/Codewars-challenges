@@ -455,75 +455,75 @@ public class FourKyu
     }
 
     //sudoku constructor:
-    private int[][] sudokuBoard;
-    private int sudokuRowLength;
-    // public FourKyu(int[][] sudokuData)
-    // {
-    //     sudokuBoard = sudokuData;
-    //     sudokuRowLength = sudokuData.Length;
-    // }
+    // private int[][] sudokuBoard;
+    // private int sudokuRowLength;
+    // // public FourKyu(int[][] sudokuData)
+    // // {
+    // //     sudokuBoard = sudokuData;
+    // //     sudokuRowLength = sudokuData.Length;
+    // // }
 
-    public bool IsValid()
-    {    
-        // Checks size
-        Console.WriteLine(sudokuRowLength);
-        if(sudokuRowLength < 1 || Math.Sqrt(sudokuRowLength) % 1 != 0) return false;
-        // Checks that integers are within bounds
-        foreach(int[] ia in sudokuBoard)
-            foreach(int i in ia)
-                if (i < 1 || i > sudokuRowLength) return false;
+    // public bool IsValid()
+    // {    
+    //     // Checks size
+    //     Console.WriteLine(sudokuRowLength);
+    //     if(sudokuRowLength < 1 || Math.Sqrt(sudokuRowLength) % 1 != 0) return false;
+    //     // Checks that integers are within bounds
+    //     foreach(int[] ia in sudokuBoard)
+    //         foreach(int i in ia)
+    //             if (i < 1 || i > sudokuRowLength) return false;
         
-        // Checks that each row only contains a single instance of each number
-        foreach(int[] ia in sudokuBoard)
-            if(ia.Distinct().Count() != sudokuRowLength) return false;
+    //     // Checks that each row only contains a single instance of each number
+    //     foreach(int[] ia in sudokuBoard)
+    //         if(ia.Distinct().Count() != sudokuRowLength) return false;
 
-        // Checks that each column only contains a single instance of each number
-        for(int i = 0; i < sudokuRowLength; i++)
-        {
-            int[] column = new int[sudokuRowLength];
-            for(int n = 0; n < sudokuRowLength; n++)
-            {
-                column[n] = sudokuBoard[n][i];
-            }
-            if(column.Distinct().Count() != sudokuRowLength) return false;
-        }
+    //     // Checks that each column only contains a single instance of each number
+    //     for(int i = 0; i < sudokuRowLength; i++)
+    //     {
+    //         int[] column = new int[sudokuRowLength];
+    //         for(int n = 0; n < sudokuRowLength; n++)
+    //         {
+    //             column[n] = sudokuBoard[n][i];
+    //         }
+    //         if(column.Distinct().Count() != sudokuRowLength) return false;
+    //     }
 
-        // Checks that each box only contains a single instance of each number
-        int[][] boxes = new int[sudokuRowLength][];
-        for(int i = 0; i < sudokuRowLength; i++)
-            boxes[i] = new int[sudokuRowLength];
-        int z = 0;
-        int a = 0;
-        int counter1 = 0;
-        for(int i = 0; i < sudokuRowLength; i++)
-        {
-            int x = 0;
-            int y = 0; 
-            int counter2 = 0;
-            if(counter1 == Math.Sqrt(sudokuRowLength))
-            {
-                a += (int)Math.Sqrt(sudokuRowLength);
-                counter1 = 0;
-            }
-            for(int n = 0; n < sudokuRowLength; n++)
-            {
-                if(counter2 == Math.Sqrt(sudokuRowLength))
-                {
-                    x++;
-                    y += (int)Math.Sqrt(sudokuRowLength);
-                    counter2 = 0;
-                }
-                boxes[x+a][n+z-y] = sudokuBoard[i][n];
-                counter2++;
-            }
-            z += (int)Math.Sqrt(sudokuRowLength);
-            if(z == sudokuRowLength) z = 0;
-            counter1++;
-        }
-        foreach(int[] ia in boxes)
-        {
-            if(ia.Distinct().Count() != sudokuRowLength) return false;
-        }
-      return true;
-    }
+    //     // Checks that each box only contains a single instance of each number
+    //     int[][] boxes = new int[sudokuRowLength][];
+    //     for(int i = 0; i < sudokuRowLength; i++)
+    //         boxes[i] = new int[sudokuRowLength];
+    //     int z = 0;
+    //     int a = 0;
+    //     int counter1 = 0;
+    //     for(int i = 0; i < sudokuRowLength; i++)
+    //     {
+    //         int x = 0;
+    //         int y = 0; 
+    //         int counter2 = 0;
+    //         if(counter1 == Math.Sqrt(sudokuRowLength))
+    //         {
+    //             a += (int)Math.Sqrt(sudokuRowLength);
+    //             counter1 = 0;
+    //         }
+    //         for(int n = 0; n < sudokuRowLength; n++)
+    //         {
+    //             if(counter2 == Math.Sqrt(sudokuRowLength))
+    //             {
+    //                 x++;
+    //                 y += (int)Math.Sqrt(sudokuRowLength);
+    //                 counter2 = 0;
+    //             }
+    //             boxes[x+a][n+z-y] = sudokuBoard[i][n];
+    //             counter2++;
+    //         }
+    //         z += (int)Math.Sqrt(sudokuRowLength);
+    //         if(z == sudokuRowLength) z = 0;
+    //         counter1++;
+    //     }
+    //     foreach(int[] ia in boxes)
+    //     {
+    //         if(ia.Distinct().Count() != sudokuRowLength) return false;
+    //     }
+    //   return true;
+    // }
 }

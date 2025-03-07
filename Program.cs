@@ -101,7 +101,8 @@ class Program
         //foreach (string str in kyu4.GetPINs("893869"))Console.WriteLine(str);
 
         ThreeKyu kyu3 = new ThreeKyu();
-
+        // tC5kcOuKAr!
+        Console.WriteLine(kyu3.Decode("a"));
         // Console.WriteLine(kyu3.Calculate("3+4*2"));
         // foreach(int i in kyu3.Stream())Console.WriteLine(i);
         // Console.WriteLine(kyu3.Fib(10));
