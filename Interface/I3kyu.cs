@@ -32,4 +32,13 @@ public interface I3kyu
     /// <param name="m"></param>
     /// <returns></returns>
     public BigInteger EggDrop(int n, int m);
+
+
+    /// <summary>
+    /// takes in an encrypted string and decodes it
+    /// https://www.codewars.com/kata/52cf02cd825aef67070008fa
+    /// </summary>
+    /// <param name="p_what"></param>
+    /// <returns>a decoded message</returns>
+    public string Decode(string p_what);
 }
