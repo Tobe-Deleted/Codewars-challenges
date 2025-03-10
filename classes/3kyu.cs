@@ -221,7 +221,7 @@ public class ThreeKyu : I3kyu
         }
 
         string result = "";
-        for(int i = 0; i <= alphabet.Length; i++)
+        for(int i = 0; i <= p_what.Length; i++)
         {
             if(!alphabet.Contains(p_what[i]))
             {
@@ -231,7 +231,7 @@ public class ThreeKyu : I3kyu
             var tempDict = new Dictionary<char, int>();
             for(int n = 0; n < alphabet.Length; n++)
             {
-                tempDict.Add(alphabet[n], dict2[alphabet[n]]* (2 + i));
+                tempDict.Add(alphabet[n], (int)(dict2[alphabet[n]]* Math.Pow(2, i)));
             }
 
         }
