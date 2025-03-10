@@ -3,6 +3,7 @@ using System.Data;
 using System.Collections.Generic;
 using System.Numerics;
 using System.Security.Cryptography.X509Certificates;
+using System.Text;
 public class ThreeKyu : I3kyu
 {
     public int[,] NxNSpiral(int size)
@@ -215,12 +216,12 @@ public class ThreeKyu : I3kyu
             dict.Add(alphabet[i], i+1);
         }
 
-        string result = "";
+        StringBuilder result = new StringBuilder();
         for(int i = 0; i < p_what.Length; i++)
         {
-            if(!alphabet.Contains(p_what[i]))
+            if(!dict.ContainsKey(p_what[i]))
             {
-                result += p_what[i];
+                result.Append(p_what[i]);
                 continue;
             }
             var tempDict = new Dictionary<int, char>();
@@ -234,10 +235,10 @@ public class ThreeKyu : I3kyu
                 tempDict.Add(entry, alphabet[n]);
             }
 
-            result += tempDict[alphabet.IndexOf(p_what[i])+1];
+            result.Append(tempDict[alphabet.IndexOf(p_what[i])+1]);
         }
         
-        return result;
+        return result.ToString();
     }
 
 }
