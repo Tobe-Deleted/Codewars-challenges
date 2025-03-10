@@ -227,15 +227,12 @@ public class ThreeKyu : I3kyu
             var tempDict = new Dictionary<int, char>();
             for(int n = 0; n < alphabet.Length; n++)
             {
-                int entry = (int)(dict[alphabet[n]]* Math.Pow(2, i+1));
-                while(entry > alphabet.Length)
-                {
-                    entry += -alphabet.Length -1;
-                }
-                tempDict.Add(entry, alphabet[n]);
+                BigInteger shift = BigInteger.Pow(2, 1+i);
+                int newIndex = (int)((dict[alphabet[n]] * shift) % (alphabet.Length +1));
+                tempDict.Add(newIndex, alphabet[n]);
             }
 
-            result.Append(tempDict[alphabet.IndexOf(p_what[i])+1]);
+            result.Append(tempDict[dict[p_what[i]]]);
         }
         
         return result.ToString();

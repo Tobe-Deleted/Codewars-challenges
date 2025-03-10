@@ -106,7 +106,7 @@ class Program
         ThreeKyu kyu3 = new ThreeKyu();
         // atC5kcOuKAr!
         // yFNYhdmEdViBbxc40,ROYNxwfwvjg5CHUYUhiIkp2CMIvZ.1qPz
-        Console.WriteLine(kyu3.Decode("atC5kcOuKAr!"));
+        Console.WriteLine(kyu3.Decode("yFNYhdmEdViBbxc40,ROYNxwfwvjg5CHUYUhiIkp2CMIvZ.1qPz"));
         // Console.WriteLine(kyu3.Calculate("3+4*2"));
         // foreach(int i in kyu3.Stream())Console.WriteLine(i);
         // Console.WriteLine(kyu3.Fib(10));
