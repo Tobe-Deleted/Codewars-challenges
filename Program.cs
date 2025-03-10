@@ -100,9 +100,13 @@ class Program
         //Console.WriteLine(kyu4.ParseInt("one thousand three hundred and thirty-seven"));
         //foreach (string str in kyu4.GetPINs("893869"))Console.WriteLine(str);
 
+
+
+
         ThreeKyu kyu3 = new ThreeKyu();
-        // tC5kcOuKAr!
-        Console.WriteLine(kyu3.Decode("a"));
+        // atC5kcOuKAr!
+        // yFNYhdmEdViBbxc40,ROYNxwfwvjg5CHUYUhiIkp2CMIvZ.1qPz
+        Console.WriteLine(kyu3.Decode("atC5kcOuKAr!"));
         // Console.WriteLine(kyu3.Calculate("3+4*2"));
         // foreach(int i in kyu3.Stream())Console.WriteLine(i);
         // Console.WriteLine(kyu3.Fib(10));

@@ -208,32 +208,33 @@ public class ThreeKyu : I3kyu
     public string Decode(string p_what)
     {
         string alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.,? ";
-        var dict1 = new Dictionary<int, char>();
-        for(int i = 0; i < alphabet.Length; i++)
-        {
-            dict1.Add(i+1, alphabet[i]);
-        }
 
-        var dict2 = new Dictionary<char, int>();
+        var dict = new Dictionary<char, int>();
         for(int i = 0; i < alphabet.Length; i++)
         {
-            dict2.Add(alphabet[i], i+1);
+            dict.Add(alphabet[i], i+1);
         }
 
         string result = "";
-        for(int i = 0; i <= p_what.Length; i++)
+        for(int i = 0; i < p_what.Length; i++)
         {
             if(!alphabet.Contains(p_what[i]))
             {
                 result += p_what[i];
                 continue;
             }
-            var tempDict = new Dictionary<char, int>();
+            var tempDict = new Dictionary<int, char>();
             for(int n = 0; n < alphabet.Length; n++)
             {
-                tempDict.Add(alphabet[n], (int)(dict2[alphabet[n]]* Math.Pow(2, i)));
+                int entry = (int)(dict[alphabet[n]]* Math.Pow(2, i+1));
+                while(entry > alphabet.Length)
+                {
+                    entry += -alphabet.Length -1;
+                }
+                tempDict.Add(entry, alphabet[n]);
             }
 
+            result += tempDict[alphabet.IndexOf(p_what[i])+1];
         }
         
         return result;
