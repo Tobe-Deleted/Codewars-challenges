@@ -176,4 +176,5 @@ public class SevenKyu : I7kyu
         }
         return result;
     }
+
 }

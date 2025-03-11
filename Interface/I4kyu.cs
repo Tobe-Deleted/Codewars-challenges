@@ -63,4 +63,12 @@ public interface I4kyu
     /// </summary>
     /// <returns>true or false depending on the state of the sudoku board</returns>
     public bool IsValid();
+
+    /// <summary>
+    /// takes in a (int, int) array and returns the amount of intervals not overlapping
+    /// https://www.codewars.com/kata/52b7ed099cdc285c300001cd
+    /// </summary>
+    /// <param name="intervals"></param>
+    /// <returns></returns>
+    public int SumIntervals((int, int)[] intervals);
 }

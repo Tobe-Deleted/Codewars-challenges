@@ -23,7 +23,7 @@ class Program
         
         SevenKyu kyu7 = new SevenKyu();
         
-        Console.WriteLine(kyu7.binaryArrayToNumber(new int[]{0, 0, 0, 1})); 
+        // Console.WriteLine(kyu7.binaryArrayToNumber(new int[]{0, 0, 0, 1})); 
         // Console.WriteLine(kyu7.FindNextSquare(144));
         //kyu7.IsIsogram("MoOse");
         //kyu7.GetMidChar("testing");
@@ -72,8 +72,12 @@ class Program
         // foreach(int[] arr in close)
         //     foreach(int i in arr)Console.WriteLine($"{i}");
 
+
+
+
         FourKyu kyu4 = new FourKyu();
 
+        Console.WriteLine(kyu4.SumIntervals(new (int, int)[] { (1, 5), (3, 7), (10, 15) })); // 11
         //   var sudokuTest = new FourKyu(
         //   new int[][] {
         //   new int[] {7,8,4, 1,5,9, 3,2,6},

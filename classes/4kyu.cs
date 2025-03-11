@@ -526,4 +526,28 @@ public class FourKyu
     //     }
     //   return true;
     // }
+
+    public int SumIntervals((int, int)[] intervals)
+    {       
+        if(intervals.Length < 1) return 0;
+        (int, int)[] sortedIntervals = intervals.OrderBy(x => x.Item1).ToArray();
+        int result = 0;
+        int start = sortedIntervals[0].Item1;
+        int end = sortedIntervals[0].Item1;
+        foreach(var (i1, i2) in sortedIntervals)
+        {
+            if(i1 >= end)
+            {
+                Console.WriteLine($"{start} {end}");
+                result += Math.Abs(end - start);
+                start = i1;
+                end = i2;
+            }
+            if(i2 > end)
+            {
+                end = i2;
+            }
+        }
+        return result + Math.Abs(end - start);
+    }
 }

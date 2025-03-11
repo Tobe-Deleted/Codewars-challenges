@@ -35,4 +35,10 @@ public class EightKyu : I8kyu
     {
         return array.Sum() / array.Length;
     }
+
+    public int[] Flip(char dir, int[] arr)
+    {
+        Array.Sort(arr);
+        return dir == 'R' ? arr : arr.Reverse().ToArray();
+    }
 }

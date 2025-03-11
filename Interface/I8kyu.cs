@@ -41,4 +41,13 @@ public interface I8kyu
     /// <param name="str"></param>
     /// <returns>str as UPPERCASE</returns>
     public string MakeUpperCase(string str);
+
+    /// <summary>
+    /// flips an array in either direction
+    /// https://www.codewars.com/kata/5f70c883e10f9e0001c89673
+    /// </summary>
+    /// <param name="dir"></param>
+    /// <param name="arr"></param>
+    /// <returns></returns>
+    public int[] Flip(char dir, int[] arr);
 }
