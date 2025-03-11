@@ -23,6 +23,7 @@ class Program
         
         SevenKyu kyu7 = new SevenKyu();
         
+        Console.WriteLine(kyu7.binaryArrayToNumber(new int[]{0, 0, 0, 1})); 
         // Console.WriteLine(kyu7.FindNextSquare(144));
         //kyu7.IsIsogram("MoOse");
         //kyu7.GetMidChar("testing");
@@ -106,7 +107,7 @@ class Program
         ThreeKyu kyu3 = new ThreeKyu();
         // atC5kcOuKAr!
         // yFNYhdmEdViBbxc40,ROYNxwfwvjg5CHUYUhiIkp2CMIvZ.1qPz
-        Console.WriteLine(kyu3.Decode("yFNYhdmEdViBbxc40,ROYNxwfwvjg5CHUYUhiIkp2CMIvZ.1qPz"));
+        // Console.WriteLine(kyu3.Decode("yFNYhdmEdViBbxc40,ROYNxwfwvjg5CHUYUhiIkp2CMIvZ.1qPz"));
         // Console.WriteLine(kyu3.Calculate("3+4*2"));
         // foreach(int i in kyu3.Stream())Console.WriteLine(i);
         // Console.WriteLine(kyu3.Fib(10));

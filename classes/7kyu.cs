@@ -156,4 +156,24 @@ public class SevenKyu : I7kyu
         long sqrt = (long)Math.Sqrt(num);
         return sqrt * sqrt == num ? (sqrt +1) * (sqrt +1) : -1;
     }
+
+    public string ReverseWords(string str)
+    {
+        string[] arr = str.Split(' ');
+        Array.Reverse(arr);
+        return new string(String.Join(" ", arr).Reverse().ToArray());
+    }
+
+    public int binaryArrayToNumber(int[] BinaryArray)
+    {
+        int range = BinaryArray.Length;
+        int bitValue = 1 << range;
+        int result = 0;
+        for(int i = 0; i < range; i++)
+        {
+            bitValue >>= 1;
+            result += BinaryArray[i] * bitValue;
+        }
+        return result;
+    }
 }

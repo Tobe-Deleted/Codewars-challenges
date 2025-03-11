@@ -103,4 +103,19 @@ public interface I7kyu
     /// <param name="cc"></param>
     /// <returns>string with only 4 last characters revealed</returns>
     public string Mask(string cc);
+
+    /// <summary>
+    /// takes in a binary int array and returns the decimal equivalent
+    /// https://www.codewars.com/kata/578553c3a1b8d5c40300037c
+    /// </summary>
+    /// <param name="BinaryArray"></param>
+    /// <returns>integer with decimal value of the binary array</returns>
+    public int binaryArrayToNumber(int[] BinaryArray);
+
+    /// <summary>
+    /// takes in a string and returns each words reversed in the same order
+    /// </summary>
+    /// <param name="str"></param>
+    /// <returns>string</returns>
+    public string ReverseWords(string str);
 }
