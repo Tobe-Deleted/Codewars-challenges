@@ -266,4 +266,26 @@ public class SixKyu : I6kyu
     {
         return numbers.Last(n => numbers.Count(i => i == n) == 1);
     }
+
+    public static string[] MagicMusicBox(string[] words)
+    {
+        string [] distinctWords = words.Distinct().ToArray();
+        string [] notes = {"DO", "RE", "MI", "FA", "SOL", "LA", "SI"};
+        int noteNum = 0;
+        int wl = words.Length; 
+        List<string> result = new List<string>();
+        for(int i = 0; i < wl; i++)
+        {
+            if(distinctWords.Contains(notes[noteNum]))
+            {
+                result.Add(notes[noteNum]);
+                noteNum++;
+            }
+            if (i == wl -1)
+            {
+
+            }
+        }
+        return result.ToArray();
+    }
 }
