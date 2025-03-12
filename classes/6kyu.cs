@@ -1,4 +1,5 @@
 using System;
+using System.Numerics;
 using System.Collections;
 using System.Linq;
 using System.Globalization;
@@ -267,25 +268,79 @@ public class SixKyu : I6kyu
         return numbers.Last(n => numbers.Count(i => i == n) == 1);
     }
 
-    public static string[] MagicMusicBox(string[] words)
+    public string[] MagicMusicBox(string[] words)
     {
-        string [] distinctWords = words.Distinct().ToArray();
         string [] notes = {"DO", "RE", "MI", "FA", "SOL", "LA", "SI"};
+        HashSet<string> usedWords = new HashSet<string>();
+        bool loop = false;
+        bool loop2 = false;
         int noteNum = 0;
         int wl = words.Length; 
         List<string> result = new List<string>();
         for(int i = 0; i < wl; i++)
         {
-            if(distinctWords.Contains(notes[noteNum]))
+            if(noteNum == notes.Length)
             {
-                result.Add(notes[noteNum]);
-                noteNum++;
-            }
-            if (i == wl -1)
-            {
+                if(loop2)break;
+                loop2 = true;
+                noteNum = 0;
 
+            }
+            Console.Write(words[i]);
+            if(words[i].Contains(notes[noteNum]) && usedWords.Add(words[i]))
+            {
+                Console.WriteLine(" added");
+                result.Add(words[i]);
+                noteNum++;
+                loop2 = false;
+                loop = true;
+            }
+            else Console.WriteLine();
+            if (i == wl -1 && loop)
+            {
+                i = -1;
+                loop = false;
             }
         }
         return result.ToArray();
+    }
+
+    public int SumOfDigitGroups(BigInteger[] numbers)
+    {
+        
+        string[] strNumbers = new string[numbers.Length];
+        Dictionary<string, int> dict = new Dictionary<string, int>();
+        List<List<string>> groups = new List<List<string>>();
+        for (int i = 0; i < numbers.Length; i++)
+        {
+            strNumbers[i] = numbers[i].ToString();
+        }
+
+        foreach(string str in strNumbers)
+        {
+            if(dict.TryAdd(new string(str.OrderBy(c => c).ToArray()), groups.Count()))
+            {
+                groups.Add(new List<string> {str});
+            }
+            else
+            {
+                groups[dict[new string(str.OrderBy(c => c).ToArray())]].Add(str);
+            }
+        }
+        
+        groups = groups.Select(x => x.OrderBy(y => y).ToList()).ToList(); 
+
+        BigInteger[] result = new BigInteger[groups.Count()];
+        for (int i = 0; i < groups.Count(); i++)
+        {
+            result[i] = BigInteger.Parse(groups[i][0]);
+        }
+        BigInteger sum = 0;
+        foreach(BigInteger bi in result)
+        {
+            sum += bi;
+        }
+        Console.WriteLine(sum);
+        return sum.ToString().Sum(c => c - '0');
     }
 }

@@ -44,6 +44,10 @@ class Program
         
         SixKyu kyu6 = new SixKyu();
 
+        Console.WriteLine(kyu6.SumOfDigitGroups(new BigInteger[] { 1234, 3142, 66654, 65466, 2143 }));
+        // foreach(string str in kyu6.MagicMusicBox(new string[] 
+        // {"ENDOW"," ROW"," MONTAIN"," JOURNEY"," LIBRARY"," MOUNTAIN"," PARK"," EMIGRANT"," FACTORIAL"," RELATE"," CREDIBLE"," FARMERS"," FANATIC"," SOLID"," PREDOMINATE"," CONSISTENT"," SITUATION"," LATERAL"," BASIC"," FACILITATE"," COLLABORATE"," DESOLATE"," SISTER"," FARMERS"," HOUSE"," SISTER"," BEDROOM"," CREDIBLE"," FACTORIAL"," KITCHEN"," SINGULAR"," MONTAIN"," CONSOLIDATE"," SISTER"," MIMICRY"," SOLSTICE"," SISTER"," EXAMPLE"," REACTOR"," DODGE"," DESOLATE"," DOBLE"," HELICOPTER"," FARMLAND"," HELICOPTER"," KITCHEN"," FAITHFUL"," FACTOR"," EMIGRANT"," CLOUD"," RESIST"," ENDORSE"," DESOLATE"," DOBLE"," ENDOW"," MOUNTAIN"," FACILITATE"," DOCTOR"," FACILITATE"," LANDSCAPE"," MIRACLE"," CONSISTENT"," FAIRYTALE"," FANTASTIC"," BASIC"," WIND"," VISIBLE"," FOUNTAIN"," LATERAL"," SITUATION"," HORIZON"," RESIST"," SOLUBLE"," SOLUBLE"," CLOUD"," REINFORCE"," SINGULAR"," KITCHEN"," MONTAIN"," SADOMASOCHISM"," EMIGRANT"," ABSOLUTE"," PERMITS"," EMIGRANT"," INNOVATION"," RELATION"," SALARY"," DESOLATE"," RESOLUTE"," COMIC"," BASIC"," KITCHEN"," EROSION"," FANTASTIC"," DESOLATE"," COMMIT"," REACTOR"} ))
+        //     Console.Write(str + ", ");
         // Console.WriteLine(new int[]{1,1,1,2,3,3,3,4,5,4,5});
         // int[] arr = {1,2,3};
         // Console.WriteLine(kyu6.MinimumNumber(arr));
@@ -77,9 +81,9 @@ class Program
 
         FourKyu kyu4 = new FourKyu();
 
-        Console.WriteLine(kyu4.SumIntervals(new (int, int)[] { (1, 5), (3, 7), (10, 15) })); // 11
-        //   var sudokuTest = new FourKyu(
-        //   new int[][] {
+        // Console.WriteLine(kyu4.SumIntervals(new (int, int)[] { (1, 5), (3, 7), (10, 15) })); // 11
+        //  var sudokuTest = new FourKyu(
+        //  new int[][] {
         //   new int[] {7,8,4, 1,5,9, 3,2,6},
         //   new int[] {5,3,9, 6,7,2, 8,4,1},
         //   new int[] {6,1,2, 4,3,8, 7,5,9},
