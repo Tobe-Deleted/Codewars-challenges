@@ -1,3 +1,5 @@
+using System.Numerics;
+
 public interface I6kyu
 {
     /// <summary>
@@ -138,4 +140,14 @@ public interface I6kyu
     /// <param name="n"></param>
     /// <returns>an array of n numbers in the tribonacci sequence from the starting point given</returns>
     public double[] Tribonacci(double[] signature, int n);
+
+    /// <summary>
+    /// takes in a BigInteger array. 
+    /// Groups the numbers by their digits and their frequency. 
+    /// Takes the smallest numbers in each group and sums them together.
+    /// https://www.codewars.com/kata/5a9a70cf5084d74ff90000f7
+    /// </summary>
+    /// <param name="numbers"></param>
+    /// <returns>the sum of the digits of the sum of all the smallest numbers as an integer</returns>
+    public int SumOfDigitGroups(BigInteger[] numbers);
 }
