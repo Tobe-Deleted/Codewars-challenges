@@ -84,4 +84,43 @@ public class FiveKyu : I5kyu
         }
         return result.Trim();
     }
+
+    public Dictionary<string, int> Interpret(string[] program)
+    {
+        Dictionary<string, int> result = new Dictionary<string, int>();
+        foreach(string str in program)
+        {
+            string[] order = str.Split(' ');
+            string key = order[1];
+            int value = 0;
+            value = Jump(program, value, key, 1);
+            if(!result.TryAdd(key, value))
+            {
+                result[key] = value;
+            }
+        }
+        return result;
+    }
+
+    private int Jump(string[] program, int value, string key, int index)
+    {
+        string[] order = program[index].Split(' ');
+        switch(order[0])
+            {
+                case "mov":
+                    value = Convert.ToInt32(order[2]);
+                    break;
+                case "inc":
+                    value++;
+                    break;
+                case "dec":
+                    value--;
+                    break;
+                case "jnz":
+                    if(value == 0) break;
+                    value = Jump(program, value, key, index + Convert.ToInt32(order[3]));
+                    break;
+            }
+            return value;
+    }
 }

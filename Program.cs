@@ -70,6 +70,9 @@ class Program
         
 
         FiveKyu kyu5 = new FiveKyu();
+
+        Dictionary<string, int> dict = kyu5.Interpret("mov a 5", "inc a", "dec a", "dec a", "jnz a -1", "inc a");
+        Console.WriteLine(dict["a"]);
         // int[] arr = {1, 0, 2, 0, 1, 0, 1, 0, 3, 1};
         // kyu5.MoveZeroes(arr);
         // int[][] close = kyu5.Closest("239382 162 254765 182 485944 134 468751 62 49780 108 54");
