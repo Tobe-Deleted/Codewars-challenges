@@ -318,29 +318,34 @@ public class SixKyu : I6kyu
 
         foreach(string str in strNumbers)
         {
-            if(dict.TryAdd(new string(str.OrderBy(c => c).ToArray()), groups.Count()))
+            string sortedDigits = new string(str.OrderBy(c => c).ToArray());
+          
+            if(dict.TryAdd(sortedDigits, groups.Count()))
             {
                 groups.Add(new List<string> {str});
             }
             else
             {
-                groups[dict[new string(str.OrderBy(c => c).ToArray())]].Add(str);
+                groups[dict[sortedDigits]].Add(str);
             }
         }
-        
-        groups = groups.Select(x => x.OrderBy(y => y).ToList()).ToList(); 
 
+        groups = groups.Where(x => x.Count() > 1).ToList();
+        groups = groups.Select(x => x.OrderBy(y => y).ToList()).ToList();
+      
+        int gc = groups.Count();
         BigInteger[] result = new BigInteger[groups.Count()];
-        for (int i = 0; i < groups.Count(); i++)
+      
+        for (int i = 0; i < gc; i++)
         {
             result[i] = BigInteger.Parse(groups[i][0]);
         }
+      
         BigInteger sum = 0;
         foreach(BigInteger bi in result)
         {
             sum += bi;
         }
-        Console.WriteLine(sum);
         return sum.ToString().Sum(c => c - '0');
     }
 }
