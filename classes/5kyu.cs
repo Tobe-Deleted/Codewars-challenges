@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq.Expressions;
 using System.Xml.XPath;
 public class FiveKyu : I5kyu
 {
@@ -88,12 +89,36 @@ public class FiveKyu : I5kyu
     public Dictionary<string, int> Interpret(string[] program)
     {
         Dictionary<string, int> result = new Dictionary<string, int>();
-        foreach(string str in program)
+        string[][] orders = program.Select(x => x.Split(' ')) // TODO: can't sort them out. Needs to be executed in order
+                                   .ToArray()
+                                   .OrderBy(x => x[1]).ToArray();
+
+        for(int i = 0; i < program.Length; i++)
         {
-            string[] order = str.Split(' ');
-            string key = order[1];
-            int value = 0;
-            value = Jump(program, value, key, 1);
+            string key = orders[i][1];
+            int value = result.TryGetValue(key, out int k) ? k : 0;
+            switch(orders[i][0])
+            {
+                case "mov":
+                    Console.WriteLine($"{i} mov");
+                    value = GetValue(orders[i][2], result);
+                    break;
+                case "inc":
+                    Console.WriteLine($"{i} inc");
+                    value++;
+                    break;
+                case "dec":
+                    Console.WriteLine($"{i} dec");
+                    value--;
+                    break;
+                case "jnz":
+                    Console.WriteLine($"{i} jnz | value = {value} | +-i?{GetValue(orders[i][2], result)}");
+                    if(value == 0) break;
+                    i += GetValue(orders[i][2], result) -1;
+                    Console.WriteLine(i);
+                    break;
+            }
+            Console.ReadKey();
             if(!result.TryAdd(key, value))
             {
                 result[key] = value;
@@ -102,25 +127,8 @@ public class FiveKyu : I5kyu
         return result;
     }
 
-    private int Jump(string[] program, int value, string key, int index)
+    private int GetValue(string input, Dictionary<string, int> result) 
     {
-        string[] order = program[index].Split(' ');
-        switch(order[0])
-            {
-                case "mov":
-                    value = Convert.ToInt32(order[2]);
-                    break;
-                case "inc":
-                    value++;
-                    break;
-                case "dec":
-                    value--;
-                    break;
-                case "jnz":
-                    if(value == 0) break;
-                    value = Jump(program, value, key, index + Convert.ToInt32(order[3]));
-                    break;
-            }
-            return value;
+        return int.TryParse(input, out int num) ? num : result.GetValueOrDefault(input, 0);
     }
 }
