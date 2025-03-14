@@ -89,46 +89,45 @@ public class FiveKyu : I5kyu
     public Dictionary<string, int> Interpret(string[] program)
     {
         Dictionary<string, int> result = new Dictionary<string, int>();
-        string[][] orders = program.Select(x => x.Split(' ')) // TODO: can't sort them out. Needs to be executed in order
-                                   .ToArray()
-                                   .OrderBy(x => x[1]).ToArray();
-
+        string[][] orders = program.Select(x => x.Split(' ')).ToArray();
+        
         for(int i = 0; i < program.Length; i++)
         {
+            if(orders[i][0] == "mov")
+            {
+                Console.WriteLine(orders[i][0] + " " + orders[i][1] + " " + orders[i][2]);
+                result.TryAdd(orders[i][1], 0);
+            }
             string key = orders[i][1];
-            int value = result.TryGetValue(key, out int k) ? k : 0;
+            int value = result.TryGetValue(key, out int v) ? v : Convert.ToInt32(key);
+
             switch(orders[i][0])
             {
                 case "mov":
-                    Console.WriteLine($"{i} mov");
                     value = GetValue(orders[i][2], result);
                     break;
                 case "inc":
-                    Console.WriteLine($"{i} inc");
                     value++;
                     break;
                 case "dec":
-                    Console.WriteLine($"{i} dec");
                     value--;
                     break;
                 case "jnz":
-                    Console.WriteLine($"{i} jnz | value = {value} | +-i?{GetValue(orders[i][2], result)}");
                     if(value == 0) break;
                     i += GetValue(orders[i][2], result) -1;
-                    Console.WriteLine(i);
                     break;
             }
-            Console.ReadKey();
-            if(!result.TryAdd(key, value))
+            if(result.ContainsKey(key))
             {
                 result[key] = value;
             }
+                
         }
         return result;
     }
 
     private int GetValue(string input, Dictionary<string, int> result) 
     {
-        return int.TryParse(input, out int num) ? num : result.GetValueOrDefault(input, 0);
+        return result.TryGetValue(input, out int value) ? value : Convert.ToInt32(input);
     }
 }
