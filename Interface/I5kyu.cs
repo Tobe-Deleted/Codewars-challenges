@@ -15,4 +15,17 @@ public interface I5kyu
     /// <param name="strng"></param>
     /// <returns>An array with two intArrays containing weight, position, number of the two closest numbers by weight</returns>
     public int[][] Closest(string strng);
+
+    /// <summary>
+    /// a simple interpreter of assembler which will support the following instructions:
+
+    /// mov x y - copies y (either a constant value or the content of a register) into register x
+    /// inc x - increases the content of the register x by one
+    /// dec x - decreases the content of the register x by one
+    /// jnz x y - jumps to an instruction y steps away (positive means forward, negative means backward, y can be a register or a constant), but only if x (a constant or a register) is not zero
+    /// https://www.codewars.com/kata/58e24788e24ddee28e000053/
+    /// </summary>
+    /// <param name="program"></param>
+    /// <returns>Dictionary<string, int> with <register, value></returns>
+    public Dictionary<string, int> Interpret(string[] program);
 }

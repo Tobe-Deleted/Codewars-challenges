@@ -95,7 +95,6 @@ public class FiveKyu : I5kyu
         {
             if(orders[i][0] == "mov")
             {
-                Console.WriteLine(orders[i][0] + " " + orders[i][1] + " " + orders[i][2]);
                 result.TryAdd(orders[i][1], 0);
             }
             string key = orders[i][1];
