@@ -18,7 +18,6 @@ public interface I5kyu
 
     /// <summary>
     /// a simple interpreter of assembler which will support the following instructions:
-
     /// mov x y - copies y (either a constant value or the content of a register) into register x
     /// inc x - increases the content of the register x by one
     /// dec x - decreases the content of the register x by one

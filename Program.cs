@@ -71,9 +71,9 @@ class Program
 
         FiveKyu kyu5 = new FiveKyu();
 
-        Dictionary<string, int> dict = kyu5.Interpret(new string[]{"mov d 100","dec d","mov b d","jnz b -2","inc d","mov a d","jnz 5 10","mov c a"});
-        // Expected: { a: 318009, b: 196418, c: 0, d: 0 }, Actual: { a: 318009, b: 196418, c: 0, d: 0, 1: 1 }
-        foreach(var kvp in dict)Console.WriteLine($"{kvp.Key}: {kvp.Value}");
+        // Dictionary<string, int> dict = kyu5.Interpret(new string[]{"mov d 100","dec d","mov b d","jnz b -2","inc d","mov a d","jnz 5 10","mov c a"});
+        // // Expected: { a: 318009, b: 196418, c: 0, d: 0 }, Actual: { a: 318009, b: 196418, c: 0, d: 0, 1: 1 }
+        // foreach(var kvp in dict)Console.WriteLine($"{kvp.Key}: {kvp.Value}");
         // int[] arr = {1, 0, 2, 0, 1, 0, 1, 0, 3, 1};
         // kyu5.MoveZeroes(arr);
         // int[][] close = kyu5.Closest("239382 162 254765 182 485944 134 468751 62 49780 108 54");
@@ -143,6 +143,10 @@ class Program
         // BigInteger maxFloors = kyu3.EggDrop(eggs, tries);
         // Console.WriteLine($"With {eggs} eggs and {tries} tries, you can test up to {maxFloors} floors.");
 
+
+
+        // 2nd kyu
+        Console.WriteLine(TwoKyu.Interpret("\n; My first program\nmov  a, 5\ninc  a\ncall function\nmsg  '(5+1)/2 = ', a    ; output message\nend\n\nfunction:\n    div  a, 2\n    ret\n"));
     }
 
     //example for coworker:
