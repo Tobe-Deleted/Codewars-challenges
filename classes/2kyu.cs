@@ -26,7 +26,7 @@ public static class TwoKyu
                 continue;
             if(orders[i][0] == "end" || orders[i][0] == "ret") 
                 return registers;
-            orders[i][1] = orders[i][1].Replace(",", ""); // removes comma from register name
+            orders[i][1] = orders[i][1].Replace(",", "");
             if(orders[i][0] == "mov")
                 registers.TryAdd(orders[i][1], 0);
                 
@@ -107,12 +107,26 @@ public static class TwoKyu
                     }
                     break;
                 case "msg":
-                    msg = program[i].Substring(program[i].IndexOf("\'")+1);
-                    msg = msg.Remove(msg.IndexOf("\'"));
-                    string msgRegister = program[i].Substring(program[i].IndexOf("\',")+2, 2).Trim();
-                    msg += GetValue(msgRegister, registers);
-                    if(!orders[i][1].Contains('\''))
-                        msg = GetValue(orders[i][1], registers) + msg;
+                    string tempMsg = program[i];
+                    
+                    if(tempMsg.Contains(";"))
+                    {
+                        tempMsg = tempMsg.Remove(tempMsg.IndexOf(';'));
+                    }
+
+                    string[]splitMsg = tempMsg.Substring(4)
+                                              .Trim()  
+                                              .Split(",")
+                                              .Select(st => st.Trim())
+                                              .ToArray();
+
+                    foreach(string s in splitMsg)
+                    {
+                        if(s.StartsWith('\''))
+                            msg += s.Trim('\'');
+                        else
+                            msg += "" + GetValue(s, registers);
+                    }
                     break;
                 case "mov":
                     registers[key] = GetValue(orders[i][2], registers);
