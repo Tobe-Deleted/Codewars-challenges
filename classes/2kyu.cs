@@ -107,7 +107,7 @@ public static class TwoKyu
                     }
                     break;
                 case "msg":
-                    string tempMsg = program[i];
+                    string tempMsg = program[i].Trim();
                     
                     if(tempMsg.Contains(";"))
                     {
@@ -116,7 +116,7 @@ public static class TwoKyu
 
                     string[]splitMsg = tempMsg.Substring(4)
                                               .Trim()  
-                                              .Split(",")
+                                              .Split(",") //splits things wrong when there is a comma inside string
                                               .Select(st => st.Trim())
                                               .ToArray();
 
