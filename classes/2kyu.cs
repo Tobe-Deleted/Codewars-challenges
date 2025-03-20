@@ -8,6 +8,7 @@ public static class TwoKyu
     private static string msg = "";
     public static string Interpret(string input)
     {
+        msg = "";
         string[] inputSorted = input.Split('\n', StringSplitOptions.RemoveEmptyEntries); //splits each line in the input into an array  
         InterpretOrders(inputSorted, new Dictionary<string, int>()); //interprets the orders and saves the result to registers  
         
