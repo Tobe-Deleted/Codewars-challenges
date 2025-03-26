@@ -348,4 +348,25 @@ public class SixKyu : I6kyu
         }
         return sum.ToString().Sum(c => c - '0');
     }
+
+    public int FindEvenIndex(int[] arr)
+    {
+        int index = 0;
+        int left = 0;
+        for(int i = 0; i < arr.Length; i++)
+        {
+            int right = 0;
+            for(int n = i+1; n < arr.Length; n++)
+            {
+                right += arr[n];
+            }
+            if(right == left) 
+            {
+                index = i;
+                break;
+            }
+            left += arr[i];
+        }
+        return index;
+    }
 }

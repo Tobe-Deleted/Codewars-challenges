@@ -44,6 +44,7 @@ class Program
         
         SixKyu kyu6 = new SixKyu();
 
+        Console.WriteLine(kyu6.FindEvenIndex(new int[] {1,2,3,4,3,2,1}));
         // Console.WriteLine(kyu6.SumOfDigitGroups(new BigInteger[] { 1234, 3142, 66654, 65466, 2143 }));
         // foreach(string str in kyu6.MagicMusicBox(new string[] 
         // {"ENDOW"," ROW"," MONTAIN"," JOURNEY"," LIBRARY"," MOUNTAIN"," PARK"," EMIGRANT"," FACTORIAL"," RELATE"," CREDIBLE"," FARMERS"," FANATIC"," SOLID"," PREDOMINATE"," CONSISTENT"," SITUATION"," LATERAL"," BASIC"," FACILITATE"," COLLABORATE"," DESOLATE"," SISTER"," FARMERS"," HOUSE"," SISTER"," BEDROOM"," CREDIBLE"," FACTORIAL"," KITCHEN"," SINGULAR"," MONTAIN"," CONSOLIDATE"," SISTER"," MIMICRY"," SOLSTICE"," SISTER"," EXAMPLE"," REACTOR"," DODGE"," DESOLATE"," DOBLE"," HELICOPTER"," FARMLAND"," HELICOPTER"," KITCHEN"," FAITHFUL"," FACTOR"," EMIGRANT"," CLOUD"," RESIST"," ENDORSE"," DESOLATE"," DOBLE"," ENDOW"," MOUNTAIN"," FACILITATE"," DOCTOR"," FACILITATE"," LANDSCAPE"," MIRACLE"," CONSISTENT"," FAIRYTALE"," FANTASTIC"," BASIC"," WIND"," VISIBLE"," FOUNTAIN"," LATERAL"," SITUATION"," HORIZON"," RESIST"," SOLUBLE"," SOLUBLE"," CLOUD"," REINFORCE"," SINGULAR"," KITCHEN"," MONTAIN"," SADOMASOCHISM"," EMIGRANT"," ABSOLUTE"," PERMITS"," EMIGRANT"," INNOVATION"," RELATION"," SALARY"," DESOLATE"," RESOLUTE"," COMIC"," BASIC"," KITCHEN"," EROSION"," FANTASTIC"," DESOLATE"," COMMIT"," REACTOR"} ))
@@ -146,7 +147,7 @@ class Program
 
 
         // 2nd kyu
-        Console.WriteLine(TwoKyu.Interpret("\nmov   a, 11           ; value1\nmov   b, 3            ; value2\ncall  mod_func\nmsg   'mod(', a, ', ', b, ') = ', d        ; output\nend\n\n; Mod function\nmod_func:\n    mov   c, a        ; temp1\n    div   c, b\n    mul   c, b\n    mov   d, a        ; temp2\n    sub   d, c\n    ret\n"));
+        // Console.WriteLine(TwoKyu.Interpret("\nmov   a, 11           ; value1\nmov   b, 3            ; value2\ncall  mod_func\nmsg   'mod(', a, ', ', b, ') = ', d        ; output\nend\n\n; Mod function\nmod_func:\n    mov   c, a        ; temp1\n    div   c, b\n    mul   c, b\n    mov   d, a        ; temp2\n    sub   d, c\n    ret\n"));
     }
 
     //example for coworker:
