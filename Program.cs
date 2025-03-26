@@ -147,7 +147,7 @@ class Program
 
 
         // 2nd kyu is static
-        Console.WriteLine(TwoKyu.Interpret("\nmov   a, 2            ; value1\nmov   b, 10           ; value2\nmov   c, a            ; temp1\nmov   d, b            ; temp2\ncall  proc_func\ncall  print\nend\n\nproc_func:\n    cmp   d, 1\n    je    continue\n    mul   c, a\n    dec   d\n    call  proc_func\n\ncontinue:\n    ret\n\nprint:\n    msg a, '^', b, ' = ', c\n    ret\n"));
+        Console.WriteLine(TwoKyu.Interpret("\nmov t, 111   ; instruction mov t, 111\nmov e, 18   ; instruction mov e, 18\ncall func\nmsg 'Random result: ', k\nend\n\nfunc:\n  cmp t, e\n  jne exit\n  mov k, t\n  div k, e\n  ret\n; Do nothing\nexit:\n  msg 'Do nothing'\n"));
     }
 
     //example for coworker:

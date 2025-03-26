@@ -22,6 +22,7 @@ public static class TwoKyu
         int cmp = 0; // 0 = undefined, 1 = x>y, 2 = x<y, 3 = x==y
         for(int i = start; i < program.Length; i++)
         {
+            Console.WriteLine($"{i} og {program[i]}");
             if(orders[i].Length < 1) 
                 continue;
             if(orders[i][0] == ";") 
@@ -110,6 +111,7 @@ public static class TwoKyu
                     }
                     break;
                 case "msg":
+                    msg = "";
                     string tempMsg = program[i].Trim();
                     bool isString = false;
                     if(tempMsg.Contains(";"))
@@ -139,9 +141,14 @@ public static class TwoKyu
                     foreach(string s in splitMsg)
                     {
                         if(s.StartsWith('\''))
+                        {
                             msg += s.Trim('\'');
+                        }
                         else
+                        {
+                            registers.TryAdd(s, 0);
                             msg += "" + GetValue(s, registers);
+                        }
                     }
                     break;
                 case "mov":
