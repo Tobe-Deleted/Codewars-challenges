@@ -150,4 +150,12 @@ public interface I6kyu
     /// <param name="numbers"></param>
     /// <returns>the sum of the digits of the sum of all the smallest numbers as an integer</returns>
     public int SumOfDigitGroups(BigInteger[] numbers);
+
+    /// <summary>
+    /// Takes in an array and finds the index of where the sum of the left side is equal to the sum of the right side.
+    /// https://www.codewars.com/kata/5679aa472b8f57fb8c000047/
+    /// </summary>
+    /// <param name="arr"></param>
+    /// <returns>index of middle number as an integer</returns>
+    public int FindEvenIndex(int[] arr);
 }
