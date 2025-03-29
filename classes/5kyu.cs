@@ -129,4 +129,72 @@ public class FiveKyu : I5kyu
     {
         return result.TryGetValue(input, out int value) ? value : Convert.ToInt32(input);
     }
+    private int[,] unsafeTiles = new int[8,8];
+      
+        public int BishopsAndRooks(int[][] chessBoard)
+        {
+            unsafeTiles = new int[8,8];
+            for(int i = 0; i < 8; i++)
+            {
+                for(int n = 0; n < 8; n++)
+                {
+                    if(chessBoard[i][n] == -1)
+                    {
+                        Bishop(i, n, chessBoard);
+                    }
+                    if(chessBoard[i][n] == 1)
+                    {
+                        Rook(i, n, chessBoard);
+                    }
+                }
+            }
+            for(int i = 0; i < 8; i++)
+            {
+                for(int j = 0; j < 8; j++)
+                    Console.Write(unsafeTiles[i,j] + " ");
+                Console.WriteLine();
+            }
+            return unsafeTiles.Cast<int>().Count(x => x == 0);
+        }
+        
+        private void Bishop(int x, int y, int[][] chessBoard)
+        {
+            for(int i = 0; i < 4; i++)
+            {
+                int xx = x;
+                int yy = y;
+                int dy = i == 0 ? 1 : i == 1 ? 1 : -1;
+                int dx = i == 0 ? 1 : i == 2 ? 1 : -1;
+              
+                while(true)
+                {
+                    unsafeTiles[xx,yy] = 2;
+                    xx += dx;
+                    yy += dy;
+                    if(xx !< 8 || yy !< 8 || xx !> -1 || yy !> -1) break;
+                    if(chessBoard[xx][yy] != 0) break;
+                }
+            }
+            
+        }
+      
+        private void Rook(int x, int y, int[][] chessBoard)
+        {
+            for(int i = 0; i < 4; i++)
+            {
+                int xx = x;
+                int yy = y;
+                int dy = i == 0 ? 1 : i == 1 ? -1 : 0;
+                int dx = i == 2 ? 1 : i == 3 ? -1 : 0;
+              
+                while(true)
+                {
+                    unsafeTiles[xx,yy] = 2;
+                    xx += dx;
+                    yy += dy;
+                    if(xx !< 8 || yy !< 8 || xx !> -1 || yy !> -1) break;
+                    if(chessBoard[xx][yy] != 0) break;
+                }
+            }
+        }
 }

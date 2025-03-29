@@ -6,13 +6,13 @@ using System.Collections.Generic;
 public static class TwoKyu
 {
     private static string msg = "";
-    public static string Interpret(string input)
+    public static string? Interpret(string input)
     {
         msg = "";
         string[] inputSorted = input.Split('\n', StringSplitOptions.RemoveEmptyEntries); //splits each line in the input into an array  
         InterpretOrders(inputSorted, new Dictionary<string, int>()); //interprets the orders and saves the result to registers  
         
-        return msg == "" ? null : msg;
+        return string.IsNullOrEmpty(msg) ? null : msg;
     }
 
     public static Dictionary<string, int> InterpretOrders(string[] program, Dictionary<string, int> registers, int start = 0)
