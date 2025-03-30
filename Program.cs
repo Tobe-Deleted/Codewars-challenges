@@ -73,14 +73,14 @@ class Program
         FiveKyu kyu5 = new FiveKyu();
 
         Console.WriteLine(kyu5.BishopsAndRooks(new int[][]{
-                new int[]{1,0,0,0,0,0,0,0}, 
-                new int[]{0,0,0,0,0,0,0,0}, 
-                new int[]{0,-1,0,0,1,0,0,0}, 
+                new int[]{0,0,0,0,0,1,0,0}, 
                 new int[]{0,0,0,0,0,0,0,0}, 
                 new int[]{0,0,0,0,0,0,0,0}, 
-                new int[]{0,0,0,-1,-1,0,0,0}, 
+                new int[]{0,-1,1,0,1,0,0,0}, 
+                new int[]{0,0,0,0,0,-1,0,0}, 
                 new int[]{0,0,0,0,0,0,0,0}, 
-                new int[]{0,0,0,0,0,0,0,0}}));
+                new int[]{0,0,0,1,0,0,0,0}, 
+                new int[]{-1,0,0,0,0,0,0,0}}));
         // Dictionary<string, int> dict = kyu5.Interpret(new string[]{"mov d 100","dec d","mov b d","jnz b -2","inc d","mov a d","jnz 5 10","mov c a"});
         // // Expected: { a: 318009, b: 196418, c: 0, d: 0 }, Actual: { a: 318009, b: 196418, c: 0, d: 0, 1: 1 }
         // foreach(var kvp in dict)Console.WriteLine($"{kvp.Key}: {kvp.Value}");

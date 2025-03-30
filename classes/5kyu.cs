@@ -129,7 +129,7 @@ public class FiveKyu : I5kyu
     {
         return result.TryGetValue(input, out int value) ? value : Convert.ToInt32(input);
     }
-    private int[,] unsafeTiles = new int[8,8];
+        private int[,] unsafeTiles = new int[8,8];
       
         public int BishopsAndRooks(int[][] chessBoard)
         {
@@ -148,12 +148,6 @@ public class FiveKyu : I5kyu
                     }
                 }
             }
-            for(int i = 0; i < 8; i++)
-            {
-                for(int j = 0; j < 8; j++)
-                    Console.Write(unsafeTiles[i,j] + " ");
-                Console.WriteLine();
-            }
             return unsafeTiles.Cast<int>().Count(x => x == 0);
         }
         
@@ -165,13 +159,12 @@ public class FiveKyu : I5kyu
                 int yy = y;
                 int dy = i == 0 ? 1 : i == 1 ? 1 : -1;
                 int dx = i == 0 ? 1 : i == 2 ? 1 : -1;
-              
                 while(true)
                 {
                     unsafeTiles[xx,yy] = 2;
                     xx += dx;
                     yy += dy;
-                    if(xx !< 8 || yy !< 8 || xx !> -1 || yy !> -1) break;
+                    if(xx > 7 || yy > 7 || xx < 0 || yy < 0) break;
                     if(chessBoard[xx][yy] != 0) break;
                 }
             }
@@ -186,14 +179,15 @@ public class FiveKyu : I5kyu
                 int yy = y;
                 int dy = i == 0 ? 1 : i == 1 ? -1 : 0;
                 int dx = i == 2 ? 1 : i == 3 ? -1 : 0;
-              
                 while(true)
                 {
                     unsafeTiles[xx,yy] = 2;
                     xx += dx;
                     yy += dy;
-                    if(xx !< 8 || yy !< 8 || xx !> -1 || yy !> -1) break;
-                    if(chessBoard[xx][yy] != 0) break;
+                    if(xx > 7 || yy > 7 || xx < 0 || yy < 0) 
+                        break;
+                    if(chessBoard[xx][yy] != 0) 
+                        break;
                 }
             }
         }
