@@ -375,7 +375,7 @@ public class SixKyu : I6kyu
         string[] result = new string[nFloors];
         for(int i = 0; i < nFloors; i++)
         {
-            result[i] = new string(' ', nFloors-1-i) + new string('*', 1 + (i*2)) + new string(' ', nFloors-1-i);
+            result[i] = string.Concat(new string(' ', nFloors -1 -i), new string('*', 1 + i*2), new string(' ', nFloors -1 -i));
         }
         return result;
     }
