@@ -44,7 +44,8 @@ class Program
         
         SixKyu kyu6 = new SixKyu();
 
-        foreach(string s in kyu6.TowerBuilder(5))Console.WriteLine(s);
+        // Console.WriteLine(kyu6.High("what time are we climbing up to the volcano"));
+        // foreach(string s in kyu6.TowerBuilder(10))Console.WriteLine(s);
         // Console.WriteLine(kyu6.FindEvenIndex(new int[] {1,2,3,4,3,2,1}));
         // Console.WriteLine(kyu6.SumOfDigitGroups(new BigInteger[] { 1234, 3142, 66654, 65466, 2143 }));
         // foreach(string str in kyu6.MagicMusicBox(new string[] 
@@ -135,20 +136,20 @@ class Program
         // foreach(int i in kyu3.Stream())Console.WriteLine(i);
         // Console.WriteLine(kyu3.Fib(10));
         // Console.Write("Enter number:");
-        // int size = Convert.ToInt32(Console.ReadLine());
-        // int tempSize = size;
-        // int n = 1;
-        // foreach(int i in kyu3.NxNSpiral(size))
-        // {    
-        //     n++;
-        //     Console.Write(i); 
-        //     if (n > tempSize)
-        //     {
-        //         Console.WriteLine();
-        //         tempSize += size;
-        //     }
+        int size = Convert.ToInt32(Console.ReadLine());
+        int tempSize = size;
+        int n = 1;
+        foreach(int i in kyu3.NxNSpiral(size))
+        {    
+            n++;
+            Console.Write(i); 
+            if (n > tempSize)
+            {
+                Console.WriteLine();
+                tempSize += size;
+            }
 
-        // }
+        }
         // int eggs = 2;
         // int tries = 20;
         // BigInteger maxFloors = kyu3.EggDrop(eggs, tries);
@@ -160,7 +161,9 @@ class Program
         // Console.WriteLine(TwoKyu.Interpret("\nmov t, 111   ; instruction mov t, 111\nmov e, 18   ; instruction mov e, 18\ncall func\nmsg 'Random result: ', k\nend\n\nfunc:\n  cmp t, e\n  jne exit\n  mov k, t\n  div k, e\n  ret\n; Do nothing\nexit:\n  msg 'Do nothing'\n"));
     }
 
-    //example for coworker:
+    //examples for coworker:
+
+
     public class Product()
     {
         public int amount;

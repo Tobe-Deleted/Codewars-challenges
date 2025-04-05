@@ -379,4 +379,26 @@ public class SixKyu : I6kyu
         }
         return result;
     }
+
+    public string High(string s)
+    {
+        int highScore = 0;
+        string result = "";
+
+        foreach(string word in s.Split(' '))
+        {
+            int score = 0;
+            foreach(char c in word)
+            {
+                score += Convert.ToInt32(c);
+            }
+            score -= 96 * word.Length;
+            if(score > highScore) 
+            {
+                highScore = score;
+                result = word;
+            }
+        }
+        return result;
+    }
 }
