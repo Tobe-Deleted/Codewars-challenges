@@ -97,6 +97,7 @@ class Program
 
         FourKyu kyu4 = new FourKyu();
 
+        Console.WriteLine(kyu4.FormatDuration(62));
         // Console.WriteLine(kyu4.SumIntervals(new (int, int)[] { (1, 5), (3, 7), (10, 15) })); // 11
         //  var sudokuTest = new FourKyu(
         //  new int[][] {

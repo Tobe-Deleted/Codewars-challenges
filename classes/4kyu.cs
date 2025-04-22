@@ -550,4 +550,28 @@ public class FourKyu
         }
         return result + Math.Abs(end - start);
     }
+
+    public string FormatDuration(int seconds)
+    {
+        if (seconds == 0) return "now";
+        int years = seconds / 31536000;
+        seconds %= 31536000;
+        int days = seconds / 86400;
+        seconds %= 86400;
+        int hours = seconds / 3600;
+        seconds %= 3600;
+        int minutes = seconds / 60;
+        seconds %= 60;
+
+        List<string> timeUnits = new List<string>();
+        if (years > 0) timeUnits.Add($"{years} year{(years > 1 ? "s" : "")}");
+        if (days > 0) timeUnits.Add($"{days} day{(days > 1 ? "s" : "")}");
+        if (hours > 0) timeUnits.Add($"{hours} hour{(hours > 1 ? "s" : "")}");
+        if (minutes > 0) timeUnits.Add($"{minutes} minute{(minutes > 1 ? "s" : "")}");
+        if (seconds > 0) timeUnits.Add($"{seconds} second{(seconds > 1 ? "s" : "")}");
+
+        return string.Join(", ", timeUnits.Take(timeUnits.Count - 1)) +
+               (timeUnits.Count > 1 ? " and " : "") +
+               timeUnits.Last();
+    }
 }
